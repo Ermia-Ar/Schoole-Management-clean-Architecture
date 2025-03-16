@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idetity.NET", "Idetity.NET\Idetity.NET.csproj", "{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.NET", "Idetity.NET\Identity.NET.csproj", "{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{B4333FF3-F012-456F-AC05-3C13B5794E0D}"
 EndProject

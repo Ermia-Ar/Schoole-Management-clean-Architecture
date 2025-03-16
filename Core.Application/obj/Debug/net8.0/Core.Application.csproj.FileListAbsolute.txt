@@ -12,3 +12,4 @@ C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\refint\
 C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.pdb
 C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.genruntimeconfig.cache
 C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\ref\Core.Application.dll
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.sourcelink.json

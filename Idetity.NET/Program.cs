@@ -2,11 +2,14 @@ using Microsoft.AspNetCore.Identity;
 using Infrastructure.Identity.Data;
 using System;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//string connectionString = ConfigurationManager.ConnectionStrings["DbLibrary"].ConnectionString;
 
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));

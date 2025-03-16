@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\infrastructure.sevices\\data\\appidentitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\data\\appidentitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\infrastructure.sevices\\data\\appidentitydbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\data\\appidentitydbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\infrastructure.sevices\\infrastructure.identity.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\infrastructure.identity.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\infrastructure.sevices\\data\\appidentitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\data\\appidentitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Idetity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Idetity.NET.csproj|solutionrelative:idetity.net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Idetity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Idetity.NET.csproj|solutionrelative:idetity.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Idetity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Idetity.NET.csproj|solutionrelative:idetity.net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\infrastructure.sevices\\infrastructure.identity.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\infrastructure.identity.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\core.application\\handlers\\userhandlers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,48 +46,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppIdentityDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
+              "RelativeToolTip": "Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T10:57:47.637Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppIdentityDbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
-              "RelativeDocumentMoniker": "Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
-              "RelativeToolTip": "Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAnwAcAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T09:43:10.418Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\appsettings.json",
               "RelativeDocumentMoniker": "Idetity.NET\\appsettings.json",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\appsettings.json",
               "RelativeToolTip": "Idetity.NET\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAbAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-16T09:34:55.83Z"
+              "WhenOpened": "2025-03-16T09:34:55.83Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Infrastructure.Identity.csproj",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Infrastructure.Identity.csproj",
               "RelativeDocumentMoniker": "Infrastructure.Sevices\\Infrastructure.Identity.csproj",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Infrastructure.Identity.csproj",
               "RelativeToolTip": "Infrastructure.Sevices\\Infrastructure.Identity.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-16T09:25:24.439Z"
+              "WhenOpened": "2025-03-16T09:25:24.439Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -97,21 +99,23 @@
               "RelativeDocumentMoniker": "Idetity.NET\\Program.cs",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Program.cs",
               "RelativeToolTip": "Idetity.NET\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T09:12:13.852Z"
+              "WhenOpened": "2025-03-16T09:12:13.852Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AppIdentityDbContext.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Data\\AppIdentityDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure.Sevices\\Data\\AppIdentityDbContext.cs",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Data\\AppIdentityDbContext.cs",
               "RelativeToolTip": "Infrastructure.Sevices\\Data\\AppIdentityDbContext.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAcwAwAAABJAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAcwBUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T09:03:34.465Z"
+              "WhenOpened": "2025-03-16T09:03:34.465Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -123,7 +127,8 @@
               "RelativeToolTip": "Core.Application\\Handlers\\UserHandlers.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T08:56:54.658Z"
+              "WhenOpened": "2025-03-16T08:56:54.658Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -135,7 +140,8 @@
               "RelativeToolTip": "Core.Application\\Queries\\UserQueries.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T08:52:11.417Z"
+              "WhenOpened": "2025-03-16T08:52:11.417Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -147,7 +153,8 @@
               "RelativeToolTip": "Core.Application\\Interfaces\\IdentitySevices\\IUserService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T08:51:18.755Z"
+              "WhenOpened": "2025-03-16T08:51:18.755Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -159,7 +166,8 @@
               "RelativeToolTip": "Core.Application\\Interfaces\\IdentitySevices\\IAuthService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T08:51:13.112Z"
+              "WhenOpened": "2025-03-16T08:51:13.112Z",
+              "EditorCaption": ""
             }
           ]
         }

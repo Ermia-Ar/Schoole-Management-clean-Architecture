@@ -6,23 +6,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Infrastructure.Identity.Data;
 
-namespace Infrastructure.Identity.Data
+public class AppIdentityDbContextFactory : IDesignTimeDbContextFactory<AppIdentityDbContext>
 {
-    public class AppIdentityDbContextFactory : IDesignTimeDbContextFactory<AppIdentityDbContext>
+    public AppIdentityDbContext CreateDbContext(string[] args)
     {
-        public AppIdentityDbContext CreateDbContext(string[] args)
-        {
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
+        // ساخت Configuration برای دسترسی به Connection String
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
 
-            var optionsBuilder = new DbContextOptionsBuilder<AppIdentityDbContext>();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("IdentityConnection"));
+        // ساخت DbContextOptions با استفاده از Connection String
+        var builder = new DbContextOptionsBuilder<AppIdentityDbContext>();
+        var connectionString = configuration.GetConnectionString("IdentityConnection");
+        builder.UseSqlServer(connectionString);
 
-            return new AppIdentityDbContext(optionsBuilder.Options);
-        }
+        return new AppIdentityDbContext(builder.Options);
     }
 }
 

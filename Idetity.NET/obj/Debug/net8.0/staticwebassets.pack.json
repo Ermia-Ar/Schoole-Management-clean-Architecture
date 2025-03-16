@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Idetity.NET.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Idetity.NET.bundle.scp.css"
+      "Id": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Identity.NET.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Identity.NET.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\wwwroot\\css\\site.css",
@@ -245,20 +245,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Idetity.NET.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Identity.NET.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Idetity.NET.props",
-      "PackagePath": "build\\Idetity.NET.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Identity.NET.props",
+      "PackagePath": "build\\Identity.NET.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Idetity.NET.props",
-      "PackagePath": "buildMultiTargeting\\Idetity.NET.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Identity.NET.props",
+      "PackagePath": "buildMultiTargeting\\Identity.NET.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Idetity.NET.props",
-      "PackagePath": "buildTransitive\\Idetity.NET.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Identity.NET.props",
+      "PackagePath": "buildTransitive\\Identity.NET.props"
     }
   ],
   "ElementsToRemove": []
