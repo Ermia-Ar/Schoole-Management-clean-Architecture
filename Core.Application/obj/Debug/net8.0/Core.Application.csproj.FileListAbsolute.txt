@@ -1,0 +1,14 @@
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\bin\Debug\net8.0\Core.Application.deps.json
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\bin\Debug\net8.0\Core.Application.runtimeconfig.json
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\bin\Debug\net8.0\Core.Application.dll
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\bin\Debug\net8.0\Core.Application.pdb
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.csproj.AssemblyReference.cache
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.AssemblyInfo.cs
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.dll
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\refint\Core.Application.dll
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.pdb
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\Core.Application.genruntimeconfig.cache
+C:\Users\DELL\source\repos\Idetity.NET\Core.Application\obj\Debug\net8.0\ref\Core.Application.dll
