@@ -12,18 +12,10 @@ public class AppIdentityDbContextFactory : IDesignTimeDbContextFactory<AppIdenti
 {
     public AppIdentityDbContext CreateDbContext(string[] args)
     {
-        // ساخت Configuration برای دسترسی به Connection String
-        var configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
-            .Build();
+        var optionsBuilder = new DbContextOptionsBuilder<AppIdentityDbContext>();
+        optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=IdentityDatabase;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
-        // ساخت DbContextOptions با استفاده از Connection String
-        var builder = new DbContextOptionsBuilder<AppIdentityDbContext>();
-        var connectionString = configuration.GetConnectionString("IdentityConnection");
-        builder.UseSqlServer(connectionString);
-
-        return new AppIdentityDbContext(builder.Options);
+        return new AppIdentityDbContext(optionsBuilder.Options);
     }
 }
 

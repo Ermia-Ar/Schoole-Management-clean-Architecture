@@ -15,11 +15,5 @@ namespace Infrastructure.Identity.Data
 
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            builder.ApplyConfigurationsFromAssembly(typeof(AppIdentityDbContext).Assembly);
-
-        }
     }
 }

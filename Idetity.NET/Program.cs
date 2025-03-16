@@ -9,52 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//string connectionString = ConfigurationManager.ConnectionStrings["DbLibrary"].ConnectionString;
-
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
-
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
-{
-    // User Options
-    options.User.RequireUniqueEmail = true;
-    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
-    // Signin Options
-    options.SignIn.RequireConfirmedEmail = true;
-    options.SignIn.RequireConfirmedPhoneNumber = false;
-    // Password Options
-    options.Password.RequireUppercase = false;
-    options.Password.RequiredUniqueChars = 0;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireDigit = true;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequiredLength = 8;
-    // LockOut
-    options.Lockout.AllowedForNewUsers = false;
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
-    options.Lockout.MaxFailedAccessAttempts = 3;
-    // Stores Options
-    //options.Stores.MaxLengthForKeys = 10;
-    options.Stores.ProtectPersonalData = false;
-
-    //options.Tokens.AuthenticatorTokenProvider = "";
-
-    //options.ClaimsIdentity.UserNameClaimType = "ClaimTypes.Name";
-})
-    .AddEntityFrameworkStores<AppIdentityDbContext>()
-    .AddDefaultTokenProviders();
-
-
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.AccessDeniedPath = "/Account/AccessDenied";
-    options.LoginPath = "/Account/Login";
-    options.LogoutPath = "/Account/LogOut";
-    options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromDays(3);
-});
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
 
