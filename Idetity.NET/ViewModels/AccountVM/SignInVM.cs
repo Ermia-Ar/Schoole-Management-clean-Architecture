@@ -13,7 +13,7 @@ namespace Identity.NET.ViewModels.AccountVM
         public string Password;
 
         [DataType(DataType.Password)]
-        public bool RemeberMe;
+        public bool RememberMe;
 
 
     }

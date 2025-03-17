@@ -9,5 +9,6 @@ namespace Core.Application.DTOs
 
         [JsonPropertyName("token")]
         public string Token { get; set; }
+
     }
 }

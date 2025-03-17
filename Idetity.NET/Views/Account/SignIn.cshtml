@@ -1,14 +1,13 @@
 ﻿@model  Identity.NET.ViewModels.AccountVM.SignInVM
 @{
     ViewData["Title"] = "Login";
-    var returnUrl =  ViewData["returnUrl"] as string;  
 }
 <h1>SignUp</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="SignIn" method="post" asp-route-returnUrl="@returnUrl">
+        <form asp-action="SignIn" method="post" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <input asp-for="Email_UserName" class="form-control" placeholder="Email or username" />
@@ -22,6 +21,11 @@
             <br />
             <div class="form-group">
                 <input type="submit" value="Register" class="btn btn-success" />
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="RememberMe" class="control-label"></label>
+                <input asp-for="RememberMe" class="form-check" />
             </div>
         </form>
         <br />

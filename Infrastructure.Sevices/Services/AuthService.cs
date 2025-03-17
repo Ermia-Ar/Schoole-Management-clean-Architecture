@@ -1,6 +1,7 @@
 ﻿using Core.Application.DTOs;
 using Core.Application.Interfaces.IdentitySevices;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.WebUtilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Infrastructure.Identity.Services
 {
@@ -26,9 +28,32 @@ namespace Infrastructure.Identity.Services
             throw new NotImplementedException();
         }
 
-        public Task<AuthenticationResponse> ConfirmEmailAsync(EmailConfirmationRequest emailConfirmationRequest)
+        public async Task<AuthenticationResponse> ConfirmEmailAsync(EmailConfirmationRequest emailConfirmationRequest)
         {
-            throw new NotImplementedException();
+            var user = await _userManager.FindByIdAsync(emailConfirmationRequest.UserId);
+            if (user == null)
+            {
+                return new AuthenticationResponse
+                {
+                    Succeeded = false,
+                    Errors = new Dictionary<string, string> { { "1", "Invalid Request" } }
+                };
+            }
+            var token = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(emailConfirmationRequest.Token));
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            if (result.Succeeded)
+            {
+
+                return new AuthenticationResponse
+                {
+                    Succeeded = true,
+                };
+            }
+            return new AuthenticationResponse
+            {
+                Succeeded = false,
+                Errors = new Dictionary<string, string> { { "1", "Invalid Request" } }
+            };
         }
 
         public Task<TokenResponse> GenerateEmailChangeAsync(ClaimsPrincipal user, string newEmail)
@@ -36,9 +61,24 @@ namespace Infrastructure.Identity.Services
             throw new NotImplementedException();
         }
 
-        public Task<TokenResponse> GenerateEmailConfirmationAsync(ClaimsPrincipal user)
+        public async Task<TokenResponse> GenerateEmailConfirmationAsync(ClaimsPrincipal principal)
         {
-            throw new NotImplementedException();
+            var User = await _userManager.GetUserAsync(principal);
+            if (User == null)
+            {
+                return new TokenResponse()
+                {
+                    Succeeded = false,
+                    Errors = new Dictionary<string, string>() { { string.Empty, "Invalid request." } }
+                };
+            }
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(User);
+            return new TokenResponse
+            {
+                Succeeded = true,
+                UserId = User.Id,
+                Token = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token))
+            };
         }
 
         public Task<TokenResponse> GeneratePasswordResetTokenAsync(string email)
@@ -66,13 +106,10 @@ namespace Infrastructure.Identity.Services
             var user = new IdentityUser();
             var isEmail = (await _userManager.FindByEmailAsync(signInRequest.Email_UserName)) == null ? false : true;
             if (isEmail)
-            {
                 user.Email = signInRequest.Email_UserName;
-            }
             else
-            {
                 user.UserName = signInRequest.Email_UserName;
-            }
+
 
             var result = await _signInManager.PasswordSignInAsync(user, signInRequest.Password, signInRequest.RememberMe, false);
             return result.Succeeded;
@@ -91,10 +128,7 @@ namespace Infrastructure.Identity.Services
                 UserName = signUpRequest.UserName,
             };
             var result = await _userManager.CreateAsync(user, signUpRequest.Password);
-            if (result.Succeeded)
-            {
-                await _signInManager.PasswordSignInAsync(signUpRequest.UserName, signUpRequest.Password, true, false);
-            }
+
             return result;
         }
     }

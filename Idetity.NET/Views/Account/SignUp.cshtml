@@ -9,14 +9,14 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="SignUp" method="post">
+        <form asp-action="SignUp" asp-controller = "Account" method="post" asp-route-returnUrl="@Model.returnUrl">
 
-@*             @if (ViewBag.IsSend)
+            @if (Model.IsConfirmEmailSend)
             {
                 <div class="alert alert-success">
                     Email Confimation Sned
                 </div>
-            } *@
+            }
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="UserName" class="control-label"></label>
@@ -39,7 +39,7 @@
                 <span asp-validation-for="RePassword" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-success" />
+                <input type="submit" value="Sign Up" class="btn btn-success" />
             </div>
         </form>
     </div>

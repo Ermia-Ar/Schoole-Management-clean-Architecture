@@ -10,6 +10,7 @@ using Core.Application.Commands;
 using Core.Application.DTOs;
 using FluentValidation;
 using Core.Application.Validators;
+using Core.Application.Interfaces.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
+
 
 #region Identity
 
@@ -49,14 +51,13 @@ builder.Services.ConfigureApplicationCookie(option =>
     option.Cookie.HttpOnly = true;
     option.ExpireTimeSpan = TimeSpan.FromSeconds(3);
 });
-
 #region ImediatR
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(SignInAsyncCommand).Assembly));
 builder.Services.AddScoped<IMediator, Mediator>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
-
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 #endregion
 
 #region Validation

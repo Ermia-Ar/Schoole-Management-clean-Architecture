@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\infrastructure.sevices\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|solutionrelative:idetity.net\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|solutionrelative:idetity.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\infrastructure.sevices\\data\\appidentitydbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\data\\appidentitydbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\core.application\\validators\\signuprequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\validators\\signuprequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\infrastructure.sevices\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|solutionrelative:idetity.net\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\views\\account\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|solutionrelative:idetity.net\\views\\account\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\viewmodels\\accountvm\\signinvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|solutionrelative:idetity.net\\viewmodels\\accountvm\\signinvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +34,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Sevices\\Services\\EmailSender.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Services\\EmailSender.cs",
+              "RelativeToolTip": "Infrastructure.Sevices\\Services\\EmailSender.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T17:23:54.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Sevices\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Services\\AuthService.cs",
+              "RelativeToolTip": "Infrastructure.Sevices\\Services\\AuthService.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAAG8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T17:07:12.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SignInVM.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\ViewModels\\AccountVM\\SignInVM.cs",
+              "RelativeDocumentMoniker": "Idetity.NET\\ViewModels\\AccountVM\\SignInVM.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\ViewModels\\AccountVM\\SignInVM.cs",
+              "RelativeToolTip": "Idetity.NET\\ViewModels\\AccountVM\\SignInVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T17:06:24.557Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -51,63 +94,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "SignIn.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Views\\Account\\SignIn.cshtml",
+              "RelativeDocumentMoniker": "Idetity.NET\\Views\\Account\\SignIn.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Views\\Account\\SignIn.cshtml",
+              "RelativeToolTip": "Idetity.NET\\Views\\Account\\SignIn.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T17:04:40.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SignUp.cshtml",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Views\\Account\\SignUp.cshtml",
               "RelativeDocumentMoniker": "Idetity.NET\\Views\\Account\\SignUp.cshtml",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Views\\Account\\SignUp.cshtml",
               "RelativeToolTip": "Idetity.NET\\Views\\Account\\SignUp.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAABcAAAAyAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T08:54:53.058Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Idetity.NET\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Idetity.NET\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T08:52:22.803Z",
+              "WhenOpened": "2025-03-17T17:04:38.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Program.cs",
-              "RelativeDocumentMoniker": "Idetity.NET\\Program.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Program.cs",
-              "RelativeToolTip": "Idetity.NET\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAADMAAAAAAAAA",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Idetity.NET\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Idetity.NET\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAAAEoAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T08:50:48.654Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppIdentityDbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
-              "RelativeDocumentMoniker": "Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
-              "RelativeToolTip": "Infrastructure.Sevices\\Data\\AppIdentityDbContextFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAACXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:01:24.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SignUpRequestValidator.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Validators\\SignUpRequestValidator.cs",
-              "RelativeDocumentMoniker": "Core.Application\\Validators\\SignUpRequestValidator.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Validators\\SignUpRequestValidator.cs",
-              "RelativeToolTip": "Core.Application\\Validators\\SignUpRequestValidator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T08:33:51.903Z"
+              "WhenOpened": "2025-03-17T14:39:18.473Z",
+              "EditorCaption": ""
             }
           ]
         },
