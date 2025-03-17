@@ -1,0 +1,41 @@
+﻿@model  Identity.NET.ViewModels.AccountVM.SignInVM
+@{
+    ViewData["Title"] = "Login";
+    var returnUrl =  ViewData["returnUrl"] as string;  
+}
+<h1>SignUp</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="SignIn" method="post" asp-route-returnUrl="@returnUrl">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Email_UserName" class="form-control" placeholder="Email or username" />
+                <span asp-validation-for="Email_UserName" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input asp-for="Password" class="form-control"  placeholder="Password"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-success" />
+            </div>
+        </form>
+        <br />
+        <a asp-controller="Account" asp-action="ForgetPassword">Forgot Password</a>
+
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

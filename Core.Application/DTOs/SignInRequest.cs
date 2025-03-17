@@ -5,7 +5,7 @@ namespace Core.Application.DTOs
     public class SignInRequest
     {
         [JsonPropertyName("email")]
-        public string Email { get; set; }
+        public string Email_UserName { get; set; }
 
         [JsonPropertyName("password")]
         public string Password { get; set; }

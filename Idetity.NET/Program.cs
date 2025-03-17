@@ -3,6 +3,13 @@ using Infrastructure.Identity.Data;
 using System;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using MediatR;
+using Core.Application.Interfaces.IdentitySevices;
+using Infrastructure.Identity.Services;
+using Core.Application.Commands;
+using Core.Application.DTOs;
+using FluentValidation;
+using Core.Application.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +17,51 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
+#region Identity
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(option =>
+{
+    //user 
+    option.User.RequireUniqueEmail = true;
+    option.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._";
+    //sign in 
+    option.SignIn.RequireConfirmedEmail = true;
+    // password
+    option.Password.RequireUppercase = false;
+    option.Password.RequireLowercase = true;
+    option.Password.RequiredLength = 8;
+    // lock out
+    option.Lockout.AllowedForNewUsers = false;
+    option.Lockout.MaxFailedAccessAttempts = 3;
+})
+    .AddEntityFrameworkStores<AppIdentityDbContext>()
+    .AddDefaultTokenProviders();
+
+#endregion
+
+builder.Services.ConfigureApplicationCookie(option =>
+{
+    option.AccessDeniedPath = "/Account/SignIn";
+    option.LogoutPath = "/";
+    option.LoginPath = "/Account/SignIn";
+    option.Cookie.HttpOnly = true;
+    option.ExpireTimeSpan = TimeSpan.FromSeconds(3);
+});
+
+#region ImediatR
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(SignInAsyncCommand).Assembly));
+builder.Services.AddScoped<IMediator, Mediator>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+#endregion
+
+#region Validation
+builder.Services.AddScoped<IValidator<SignUpRequest> , SignUpRequestValidator>();
+#endregion
 
 var app = builder.Build();
 

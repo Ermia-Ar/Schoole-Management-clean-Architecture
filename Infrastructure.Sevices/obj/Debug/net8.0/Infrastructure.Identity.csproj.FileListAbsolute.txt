@@ -13,3 +13,6 @@ C:\Users\DELL\source\repos\Idetity.NET\Infrastructure.Sevices\obj\Debug\net8.0\I
 C:\Users\DELL\source\repos\Idetity.NET\Infrastructure.Sevices\obj\Debug\net8.0\Infrastructure.Identity.genruntimeconfig.cache
 C:\Users\DELL\source\repos\Idetity.NET\Infrastructure.Sevices\obj\Debug\net8.0\ref\Infrastructure.Identity.dll
 C:\Users\DELL\source\repos\Idetity.NET\Infrastructure.Sevices\obj\Debug\net8.0\Infrastructure.Identity.sourcelink.json
+C:\Users\DELL\source\repos\Idetity.NET\Infrastructure.Sevices\bin\Debug\net8.0\Core.Application.dll
+C:\Users\DELL\source\repos\Idetity.NET\Infrastructure.Sevices\bin\Debug\net8.0\Core.Application.pdb
+C:\Users\DELL\source\repos\Idetity.NET\Infrastructure.Sevices\obj\Debug\net8.0\Infrastr.1C2BEB3C.Up2Date
