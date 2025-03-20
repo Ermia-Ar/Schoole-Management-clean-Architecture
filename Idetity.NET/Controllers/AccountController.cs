@@ -13,15 +13,11 @@ namespace Identity.NET.Controllers
 {
     public class AccountController : Controller
     {
-        private IValidator<SignUpRequest> _signUpValidator { get; set; }
-        private IValidator<SignInRequest> _signInValidator { get; set; }
         private IMediator _mediator;
 
-        public AccountController(IMediator mediator, IValidator<SignUpRequest> signUpValidator , IValidator<SignInRequest> signInValidator)
+        public AccountController(IMediator mediator)
         {
             this._mediator = mediator;
-            _signUpValidator = signUpValidator;
-            _signInValidator = signInValidator;
         }
 
 
@@ -30,6 +26,8 @@ namespace Identity.NET.Controllers
             return View();
         }
 
+
+        [HttpGet]
         public IActionResult SignIn()
         {
             return View();
@@ -38,20 +36,13 @@ namespace Identity.NET.Controllers
         [HttpPost]
         public async Task<IActionResult> SignIn(SignInVM model)
         {
-            //Validate 
             var signInRequest = new SignInRequest
             {
                 Password = model.Password,
-                Email_UserName = model.Email_UserName,
+                EmailOrUsername = model.EmailOrUserName,
                 RememberMe = model.RememberMe,
             };
-            var validationResult = _signInValidator.Validate(signInRequest);
 
-            if (!validationResult.IsValid)
-            {
-                validationResult.AddToModelState(ModelState);
-                return View("SignUp", model);
-            }
             //Sign In
             var requst = new SignInAsyncCommand
             {
@@ -59,13 +50,18 @@ namespace Identity.NET.Controllers
             };
             var result = await _mediator.Send(requst);
 
-            if (result == false)
+            if (result.ValidationResult != null)
+            {
+                result.ValidationResult.AddToModelState(ModelState);
+                return View(model);
+            }
+            else if (!result.Succeeded)
             {
                 ModelState.AddModelError(string.Empty, "User name or password is not valid");
                 return View(model);
             }
 
-            return RedirectToAction("Index" ,"Home");
+            return RedirectToAction("Index", "Home");
         }
 
 
@@ -90,13 +86,7 @@ namespace Identity.NET.Controllers
                 Password = model.Password,
                 ConfirmEmail = false,
             };
-            var validationResult = _signUpValidator.Validate(SignUpRequest);
 
-            if (!validationResult.IsValid)
-            {
-                validationResult.AddToModelState(ModelState);
-                return View("SignUp", model);
-            }
 
             //add user
             var requst = new SignUpAsyncCommand
@@ -105,11 +95,16 @@ namespace Identity.NET.Controllers
             };
             var result = await _mediator.Send(requst);
 
-            if (!result.Succeeded)
+            //validate add user
+            if (result.ValidationResult != null)
+            {
+                result.ValidationResult.AddToModelState(ModelState);
+            }
+            else if (!result.Succeeded)
             {
                 foreach (var item in result.Errors)
                 {
-                    ModelState.AddModelError(string.Empty, item.Description);
+                    ModelState.AddModelError(string.Empty, item);
                 }
                 return View(model);
             }
@@ -122,7 +117,7 @@ namespace Identity.NET.Controllers
             var genarateToken = await _mediator.Send(requestToken);
             string? confirmationLink = Url.Action(nameof(ConfirmEmail), "Acoount", new { userId = genarateToken.UserId, token = genarateToken.Token }, Request.Scheme);
 
-            // send email
+            // send email confirm
             var email = new EmailSenderCommand
             {
                 EmailRequest = new EmailRequest
@@ -137,7 +132,7 @@ namespace Identity.NET.Controllers
             if (res.Succeeded)
                 model.IsConfirmEmailSend = true;
             else
-                ModelState.AddModelError(string.Empty, res.Errors["1"]);
+                ModelState.AddModelError(string.Empty, res.Errors[0]);
 
             return View(model);
 
@@ -145,7 +140,7 @@ namespace Identity.NET.Controllers
 
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
-            if (userId == null || token == null) 
+            if (userId == null || token == null)
                 return BadRequest("user not found");
             var request = new ConfirmEmailAsyncCommand()
             {

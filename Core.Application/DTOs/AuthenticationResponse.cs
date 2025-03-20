@@ -1,13 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using FluentValidation.Results;
+using System.Text.Json.Serialization;
 
 namespace Core.Application.DTOs
 {
-    public class AuthenticationResponse
+    public class AuthenticationResponse : AuthenticationBaseResponse
     {
-        [JsonPropertyName("succeeded")]
-        public bool Succeeded { get; set; }
-        
-        [JsonPropertyName("errors")]
-        public Dictionary<string, string> Errors { get; set; }
+        public ValidationResult ValidationResult { get; set; }
     }
 }

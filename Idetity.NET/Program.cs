@@ -58,10 +58,14 @@ builder.Services.AddScoped<IMediator, Mediator>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
+
 #endregion
 
 #region Validation
+
 builder.Services.AddScoped<IValidator<SignUpRequest> , SignUpRequestValidator>();
+builder.Services.AddScoped<IValidator<SignInRequest>, SignInRequestValidator>();
+
 #endregion
 
 var app = builder.Build();

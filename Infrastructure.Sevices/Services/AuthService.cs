@@ -1,5 +1,6 @@
 ﻿using Core.Application.DTOs;
 using Core.Application.Interfaces.IdentitySevices;
+using MediatR.NotificationPublishers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using System;
@@ -28,15 +29,15 @@ namespace Infrastructure.Identity.Services
             throw new NotImplementedException();
         }
 
-        public async Task<AuthenticationResponse> ConfirmEmailAsync(EmailConfirmationRequest emailConfirmationRequest)
+        public async Task<AuthenticationBaseResponse> ConfirmEmailAsync(EmailConfirmationRequest emailConfirmationRequest)
         {
             var user = await _userManager.FindByIdAsync(emailConfirmationRequest.UserId);
             if (user == null)
             {
-                return new AuthenticationResponse
+                return new AuthenticationBaseResponse
                 {
                     Succeeded = false,
-                    Errors = new Dictionary<string, string> { { "1", "Invalid Request" } }
+                    Errors = new List<string> { "Invalid Request" }
                 };
             }
             var token = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(emailConfirmationRequest.Token));
@@ -44,15 +45,15 @@ namespace Infrastructure.Identity.Services
             if (result.Succeeded)
             {
 
-                return new AuthenticationResponse
+                return new AuthenticationBaseResponse
                 {
                     Succeeded = true,
                 };
             }
-            return new AuthenticationResponse
+            return new AuthenticationBaseResponse
             {
                 Succeeded = false,
-                Errors = new Dictionary<string, string> { { "1", "Invalid Request" } }
+                Errors = new List<string> { "Invalid Request" }
             };
         }
 
@@ -69,7 +70,7 @@ namespace Infrastructure.Identity.Services
                 return new TokenResponse()
                 {
                     Succeeded = false,
-                    Errors = new Dictionary<string, string>() { { string.Empty, "Invalid request." } }
+                    Errors = new List<string>() { "invalid request" }
                 };
             }
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(User);
@@ -101,18 +102,18 @@ namespace Infrastructure.Identity.Services
             throw new NotImplementedException();
         }
 
-        public async Task<bool> SignInAsync(SignInRequest signInRequest)
+        public async Task<AuthenticationResponse> SignInAsync(SignInRequest signInRequest)
         {
             var user = new IdentityUser();
-            var isEmail = (await _userManager.FindByEmailAsync(signInRequest.Email_UserName)) == null ? false : true;
+            var isEmail = (await _userManager.FindByEmailAsync(signInRequest.EmailOrUsername)) == null ? false : true;
             if (isEmail)
-                user.Email = signInRequest.Email_UserName;
+                user.Email = signInRequest.EmailOrUsername;
             else
-                user.UserName = signInRequest.Email_UserName;
+                user.UserName = signInRequest.EmailOrUsername;
 
 
             var result = await _signInManager.PasswordSignInAsync(user, signInRequest.Password, signInRequest.RememberMe, false);
-            return result.Succeeded;
+            return new AuthenticationResponse { Succeeded = true };
         }
 
         public Task SignOutAsync()
@@ -120,7 +121,7 @@ namespace Infrastructure.Identity.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IdentityResult> SignUpAsync(SignUpRequest signUpRequest)
+        public async Task<AuthenticationResponse> SignUpAsync(SignUpRequest signUpRequest)
         {
             var user = new IdentityUser
             {
@@ -129,7 +130,11 @@ namespace Infrastructure.Identity.Services
             };
             var result = await _userManager.CreateAsync(user, signUpRequest.Password);
 
-            return result;
+            return new AuthenticationResponse 
+            {
+                Succeeded = result.Succeeded ,
+                Errors = result.Errors.Select(x => x.Description).ToList()
+            };
         }
     }
 }

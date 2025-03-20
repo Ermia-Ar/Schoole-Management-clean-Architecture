@@ -16,7 +16,7 @@ namespace Identity.NET.ViewModels.AccountVM
         [Compare(nameof(Password))]
         public string RePassword { get; set; }
 
-        public string returnUrl { get; set; }   
+        //public string returnUrl { get; set; }   
         public bool IsConfirmEmailSend { get; set; }   
     }
 }

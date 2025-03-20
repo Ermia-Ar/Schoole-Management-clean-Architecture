@@ -1,13 +1,15 @@
 ﻿using Core.Application.Commands;
+using Core.Application.DTOs;
 using Core.Application.Interfaces.IdentitySevices;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 
 namespace Core.Application.Handlers
 {
-    public class SignUpAsyncHandler : IRequestHandler<SignUpAsyncCommand, IdentityResult>
+    public class SignUpAsyncHandler : IRequestHandler<SignUpAsyncCommand, AuthenticationResponse>
     {
-
+        private IValidator<SignUpRequest> _signUpValidator { get; set; }
         private IAuthService _authService { get; set; }
 
         public SignUpAsyncHandler(IAuthService userService)
@@ -15,8 +17,17 @@ namespace Core.Application.Handlers
             _authService = userService;
         }
 
-        public async Task<IdentityResult> Handle(SignUpAsyncCommand request, CancellationToken cancellationToken)
+        public async Task<AuthenticationResponse> Handle(SignUpAsyncCommand request, CancellationToken cancellationToken)
         {
+            var validationResult = await _signUpValidator.ValidateAsync(request.SignUpRequest);
+            if (!validationResult.IsValid)
+            {
+                return new AuthenticationResponse
+                {
+                    Succeeded = false,
+                    ValidationResult = validationResult
+                };
+            }
 
             return await _authService.SignUpAsync(request.SignUpRequest);
         }

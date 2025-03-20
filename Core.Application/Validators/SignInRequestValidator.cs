@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Core.Application.Validators
 {
-    public class SignInValidator : AbstractValidator<SignInRequest>
+    public class SignInRequestValidator : AbstractValidator<SignInRequest>
     {
-        public SignInValidator()
+        public SignInRequestValidator()
         {
-            RuleFor(x => x.Email_UserName)
+            RuleFor(x => x.EmailOrUsername)
                 .MinimumLength(4)
                  .NotNull();
 

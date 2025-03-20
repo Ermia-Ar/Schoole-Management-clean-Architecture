@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\infrastructure.sevices\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\core.application\\handlers\\signinasynchandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\handlers\\signinasynchandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,16 +15,28 @@
       "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|solutionrelative:idetity.net\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\core.application\\dtos\\authenticationresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\dtos\\authenticationresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\views\\account\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|solutionrelative:idetity.net\\views\\account\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\core.application\\interfaces\\identitysevices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\interfaces\\identitysevices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\viewmodels\\accountvm\\signinvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|solutionrelative:idetity.net\\viewmodels\\accountvm\\signinvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\core.application\\handlers\\signupasynchandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\handlers\\signupasynchandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\core.application\\dtos\\authenticationbaseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\dtos\\authenticationbaseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\core.application\\commands\\signupasynccommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\commands\\signupasynccommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|c:\\users\\dell\\source\\repos\\idetity.net\\idetity.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}|Idetity.NET\\Identity.NET.csproj|solutionrelative:idetity.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,14 +51,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EmailSender.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Services\\EmailSender.cs",
-              "RelativeDocumentMoniker": "Infrastructure.Sevices\\Services\\EmailSender.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Services\\EmailSender.cs",
-              "RelativeToolTip": "Infrastructure.Sevices\\Services\\EmailSender.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAABRAAAA",
+              "Title": "SignInAsyncHandler.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Handlers\\SignInAsyncHandler.cs",
+              "RelativeDocumentMoniker": "Core.Application\\Handlers\\SignInAsyncHandler.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Handlers\\SignInAsyncHandler.cs",
+              "RelativeToolTip": "Core.Application\\Handlers\\SignInAsyncHandler.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:23:54.683Z",
+              "WhenOpened": "2025-03-20T12:42:46.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Interfaces\\IdentitySevices\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Core.Application\\Interfaces\\IdentitySevices\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Interfaces\\IdentitySevices\\IAuthService.cs",
+              "RelativeToolTip": "Core.Application\\Interfaces\\IdentitySevices\\IAuthService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T12:38:03.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthenticationResponse.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\DTOs\\AuthenticationResponse.cs",
+              "RelativeDocumentMoniker": "Core.Application\\DTOs\\AuthenticationResponse.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\DTOs\\AuthenticationResponse.cs",
+              "RelativeToolTip": "Core.Application\\DTOs\\AuthenticationResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T12:34:18.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthenticationBaseResponse.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\DTOs\\AuthenticationBaseResponse.cs",
+              "RelativeDocumentMoniker": "Core.Application\\DTOs\\AuthenticationBaseResponse.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\DTOs\\AuthenticationBaseResponse.cs",
+              "RelativeToolTip": "Core.Application\\DTOs\\AuthenticationBaseResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T12:34:18.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Idetity.NET\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Idetity.NET\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAqwHQAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T14:39:18.473Z",
               "EditorCaption": ""
             },
             {
@@ -57,22 +121,9 @@
               "RelativeDocumentMoniker": "Infrastructure.Sevices\\Services\\AuthService.cs",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Services\\AuthService.cs",
               "RelativeToolTip": "Infrastructure.Sevices\\Services\\AuthService.cs",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAAAG8AAAAAAAAA",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAqwIcAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:07:12.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SignInVM.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\ViewModels\\AccountVM\\SignInVM.cs",
-              "RelativeDocumentMoniker": "Idetity.NET\\ViewModels\\AccountVM\\SignInVM.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\ViewModels\\AccountVM\\SignInVM.cs",
-              "RelativeToolTip": "Idetity.NET\\ViewModels\\AccountVM\\SignInVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:06:24.557Z",
+              "WhenOpened": "2025-03-20T12:26:48.507Z",
               "EditorCaption": ""
             },
             {
@@ -93,42 +144,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SignIn.cshtml",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Views\\Account\\SignIn.cshtml",
-              "RelativeDocumentMoniker": "Idetity.NET\\Views\\Account\\SignIn.cshtml",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Views\\Account\\SignIn.cshtml",
-              "RelativeToolTip": "Idetity.NET\\Views\\Account\\SignIn.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T17:04:40.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SignUp.cshtml",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Views\\Account\\SignUp.cshtml",
-              "RelativeDocumentMoniker": "Idetity.NET\\Views\\Account\\SignUp.cshtml",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Views\\Account\\SignUp.cshtml",
-              "RelativeToolTip": "Idetity.NET\\Views\\Account\\SignUp.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T17:04:38.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Idetity.NET\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Idetity.NET\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAAAEoAAAAkAAAA",
+              "DocumentIndex": 5,
+              "Title": "SignUpAsyncHandler.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Handlers\\SignUpAsyncHandler.cs",
+              "RelativeDocumentMoniker": "Core.Application\\Handlers\\SignUpAsyncHandler.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Handlers\\SignUpAsyncHandler.cs",
+              "RelativeToolTip": "Core.Application\\Handlers\\SignUpAsyncHandler.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T14:39:18.473Z",
+              "WhenOpened": "2025-03-20T12:26:25.281Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SignUpAsyncCommand.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Commands\\SignUpAsyncCommand.cs",
+              "RelativeDocumentMoniker": "Core.Application\\Commands\\SignUpAsyncCommand.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Commands\\SignUpAsyncCommand.cs",
+              "RelativeToolTip": "Core.Application\\Commands\\SignUpAsyncCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T12:26:17.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Program.cs",
+              "RelativeDocumentMoniker": "Idetity.NET\\Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Idetity.NET\\Program.cs",
+              "RelativeToolTip": "Idetity.NET\\Program.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAADwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T08:30:26.906Z"
             }
           ]
         },
