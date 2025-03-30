@@ -12,6 +12,15 @@ namespace Infrastructure.Identity.Services
 {
     public class UserService : IUserService
     {
+        //private SignInManager<IdentityUser> _signInManager { get; set; }
+        private UserManager<IdentityUser> _userManager { get; set; }
+
+        public UserService( UserManager<IdentityUser> userManager)
+        {
+            //_signInManager = signInManager;
+            _userManager = userManager;
+        }
+
         public Task<AuthenticationResponse> AddPasswordAsync(ClaimsPrincipal principal, string newPassword)
         {
             throw new NotImplementedException();
@@ -32,6 +41,23 @@ namespace Infrastructure.Identity.Services
             throw new NotImplementedException();
         }
 
+        public async Task<IdentityUser> FindByEmailOrNameAsync(string emailOrUsername)
+        {
+            var Email = await _userManager.FindByEmailAsync(emailOrUsername);
+            if (Email != null)
+            {
+                return Email;
+            }
+
+            var Name = await _userManager.FindByNameAsync(emailOrUsername);
+            if (Name != null)
+            {
+                return Name;
+            }
+
+            return null;
+        }
+
         public Task<ApplicationUserDto> FindByIdAsync(string userId)
         {
             throw new NotImplementedException();
@@ -45,6 +71,15 @@ namespace Infrastructure.Identity.Services
         public Task<string> GetPhoneNumberAsync(ClaimsPrincipal principal)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<IList<string>> GetRolesAsync(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            
+            var roles = await _userManager.GetRolesAsync(user);
+
+            return roles;
         }
 
         public Task<string> GetUserIdAsync(ClaimsPrincipal principal)

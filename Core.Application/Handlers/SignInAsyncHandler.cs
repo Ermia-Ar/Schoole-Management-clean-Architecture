@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Core.Application.Handlers
 {
-    public class SignInAsyncHandler : IRequestHandler<SignInAsyncCommand, AuthenticationResponse>
+    public class SignInAsyncHandler : IRequestHandler<SignInAsyncCommand, AuthenticationBaseResponse>
     {
         private IValidator<SignInRequest> _signInValidator { get; set; }
         private IAuthService _authService { get; set; }
@@ -18,7 +18,7 @@ namespace Core.Application.Handlers
             _signInValidator = signInValidator;
         }
 
-        public async Task<AuthenticationResponse> Handle(SignInAsyncCommand request, CancellationToken cancellationToken)
+        public async Task<AuthenticationBaseResponse> Handle(SignInAsyncCommand request, CancellationToken cancellationToken)
         {
             var validationResult = await _signInValidator.ValidateAsync(request.SignInRequest);
 

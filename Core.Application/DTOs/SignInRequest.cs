@@ -10,7 +10,5 @@ namespace Core.Application.DTOs
         [JsonPropertyName("password")]
         public string Password { get; set; }
 
-        [JsonPropertyName("rememberMe")]
-        public bool RememberMe { get; set; }
     }
 }

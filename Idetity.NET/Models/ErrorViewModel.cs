@@ -1,4 +1,4 @@
-namespace Idetity.NET.Models
+namespace School_Management.UI.Models
 {
     public class ErrorViewModel
     {

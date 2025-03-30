@@ -2,12 +2,12 @@
 
 namespace Core.Application.DTOs
 {
-    public class TokenResponse : AuthenticationResponse
+    public class TokenRequest
     {
         [JsonPropertyName("userId")]
-        public string UserId { get; set; }
+        public string EmailOrName { get; set; }
 
-        [JsonPropertyName("token")]
-        public string Token { get; set; }
+        [JsonPropertyName("roles")]
+        public IList<string> Roles { get; set; }
     }
 }

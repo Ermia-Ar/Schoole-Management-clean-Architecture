@@ -13,7 +13,7 @@ namespace Core.Application.DTOs
         [JsonPropertyName("password")]
         public string Password { get; set; }
 
-        [JsonPropertyName("confirm email")]
-        public bool ConfirmEmail { get; set; }
+        [JsonPropertyName("Roles")]
+        public string[] Roles { get; set; }
     }
 }

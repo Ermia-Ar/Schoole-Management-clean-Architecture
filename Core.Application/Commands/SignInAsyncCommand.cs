@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core.Application.Commands
 {
-    public class SignInAsyncCommand : IRequest<AuthenticationResponse>
+    public class SignInAsyncCommand : IRequest<AuthenticationBaseResponse>
     {
         public SignInRequest SignInRequest { get; set; }
     }

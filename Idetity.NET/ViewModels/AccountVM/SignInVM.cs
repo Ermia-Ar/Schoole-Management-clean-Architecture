@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Identity.NET.ViewModels.AccountVM
+namespace School_Management.UI.ViewModels.AccountVM
 {
     public class SignInVM
     {

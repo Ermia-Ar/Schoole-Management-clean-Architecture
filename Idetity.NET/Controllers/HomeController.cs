@@ -1,8 +1,8 @@
-using Idetity.NET.Models;
+using School_Management.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Idetity.NET.Controllers
+namespace School_Management.UI.Controllers
 {
     public class HomeController : Controller
     {

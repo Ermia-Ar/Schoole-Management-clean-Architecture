@@ -1,4 +1,5 @@
 ﻿using Core.Application.DTOs;
+using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
 namespace Core.Application.Interfaces.IdentitySevices
@@ -7,6 +8,7 @@ namespace Core.Application.Interfaces.IdentitySevices
     {
         Task<ApplicationUserDto> FindByIdAsync(string userId);
         Task<ApplicationUserDto> FindByEmailAsync(string email);
+        Task<IdentityUser> FindByEmailOrNameAsync(string emailOrUsername);
         Task<string> GetUserIdAsync(ClaimsPrincipal principal);
         Task<string> GetEmailAsync(ClaimsPrincipal principal);
         Task<string> GetUserNameAsync(ClaimsPrincipal principal);
@@ -17,5 +19,6 @@ namespace Core.Application.Interfaces.IdentitySevices
         Task<bool> HasPasswordAsync(ClaimsPrincipal principal);
         Task<AuthenticationResponse> SetPhoneNumberAsync(ClaimsPrincipal principal, string phoneNumber);
         Task<AuthenticationResponse> AddPasswordAsync(ClaimsPrincipal principal, string newPassword);
+        Task<IList<string>> GetRolesAsync(string  email);
     }
 }

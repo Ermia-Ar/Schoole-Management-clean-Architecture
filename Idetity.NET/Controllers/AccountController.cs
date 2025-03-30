@@ -3,13 +3,13 @@ using Core.Application.DTOs;
 using Core.Application.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Identity.NET.ViewModels.AccountVM;
+using School_Management.UI.ViewModels.AccountVM;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using NuGet.Common;
 
-namespace Identity.NET.Controllers
+namespace School_Management.UI.Controllers
 {
     public class AccountController : Controller
     {
@@ -36,6 +36,11 @@ namespace Identity.NET.Controllers
         [HttpPost]
         public async Task<IActionResult> SignIn(SignInVM model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             var signInRequest = new SignInRequest
             {
                 Password = model.Password,
@@ -78,7 +83,11 @@ namespace Identity.NET.Controllers
         [HttpPost]
         public async Task<IActionResult> SignUp(SignUpVM model)
         {
-            //validate
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             var SignUpRequest = new SignUpRequest
             {
                 Email = model.Email,
@@ -99,8 +108,9 @@ namespace Identity.NET.Controllers
             if (result.ValidationResult != null)
             {
                 result.ValidationResult.AddToModelState(ModelState);
+                return View(model);
             }
-            else if (!result.Succeeded)
+            else if (result.Succeeded == false)
             {
                 foreach (var item in result.Errors)
                 {
@@ -110,12 +120,12 @@ namespace Identity.NET.Controllers
             }
 
             //generate token
-            var requestToken = new GenerateEmailConfirmationAsyncCommand()
+            var requestToken = new GenerateTokenAsyncCommand()
             {
-                user = User
+                email = model.Email
             };
             var genarateToken = await _mediator.Send(requestToken);
-            string? confirmationLink = Url.Action(nameof(ConfirmEmail), "Acoount", new { userId = genarateToken.UserId, token = genarateToken.Token }, Request.Scheme);
+            string? confirmationLink = Url.Action(nameof(ConfirmEmail), "Account", new { userId = genarateToken.EmailOrName, token = genarateToken.Token }, Request.Scheme);
 
             // send email confirm
             var email = new EmailSenderCommand
@@ -144,7 +154,7 @@ namespace Identity.NET.Controllers
                 return BadRequest("user not found");
             var request = new ConfirmEmailAsyncCommand()
             {
-                emailConfirmationRequest = new EmailConfirmationRequest
+                emailConfirmationRequest = new TokenConfirmationResponse
                 {
                     Token = token,
                     UserId = userId

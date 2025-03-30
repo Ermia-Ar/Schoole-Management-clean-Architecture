@@ -41,7 +41,7 @@ namespace Infrastructure.Identity.Services
                 catch (Exception ex)
                 {
                     await Task.CompletedTask;
-                    return new AuthenticationResponse { Succeeded = false , Errors = new Dictionary<string, string> { {"1" , "Email is invalid." } } };
+                    return new AuthenticationResponse { Succeeded = false, Errors = new List<string> { "1", "Email is invalid." } };
                 }
             }
         }

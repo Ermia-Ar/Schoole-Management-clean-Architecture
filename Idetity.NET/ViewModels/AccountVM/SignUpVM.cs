@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Identity.NET.ViewModels.AccountVM
+namespace School_Management.UI.ViewModels.AccountVM
 {
     public class SignUpVM
     {

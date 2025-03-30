@@ -12,9 +12,10 @@ namespace Core.Application.Handlers
         private IValidator<SignUpRequest> _signUpValidator { get; set; }
         private IAuthService _authService { get; set; }
 
-        public SignUpAsyncHandler(IAuthService userService)
+        public SignUpAsyncHandler(IAuthService userService, IValidator<SignUpRequest> signUpValidator)
         {
             _authService = userService;
+            _signUpValidator = signUpValidator;
         }
 
         public async Task<AuthenticationResponse> Handle(SignUpAsyncCommand request, CancellationToken cancellationToken)

@@ -3,8 +3,12 @@ using Core.Application.Interfaces.IdentitySevices;
 using MediatR.NotificationPublishers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Claims;
@@ -16,20 +20,22 @@ namespace Infrastructure.Identity.Services
 {
     public class AuthService : IAuthService
     {
-        private SignInManager<IdentityUser> _signInManager { get; set; }
+        //private SignInManager<IdentityUser> _signInManager { get; set; }
         private UserManager<IdentityUser> _userManager { get; set; }
+        private IConfiguration _configuration { get; set; }
 
-        public AuthService(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public AuthService( UserManager<IdentityUser> userManager, IConfiguration configuration)
         {
-            _signInManager = signInManager;
+            //_signInManager = signInManager;
             _userManager = userManager;
+            _configuration = configuration;
         }
         public Task<AuthenticationResponse> ChangePasswordAsync(ClaimsPrincipal user, string currentPassword, string newPassword)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<AuthenticationBaseResponse> ConfirmEmailAsync(EmailConfirmationRequest emailConfirmationRequest)
+        public async Task<AuthenticationBaseResponse> ConfirmEmailAsync(TokenConfirmationResponse emailConfirmationRequest)
         {
             var user = await _userManager.FindByIdAsync(emailConfirmationRequest.UserId);
             if (user == null)
@@ -57,32 +63,41 @@ namespace Infrastructure.Identity.Services
             };
         }
 
-        public Task<TokenResponse> GenerateEmailChangeAsync(ClaimsPrincipal user, string newEmail)
+        public Task<TokenRequest> GenerateEmailChangeAsync(ClaimsPrincipal user, string newEmail)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<TokenResponse> GenerateEmailConfirmationAsync(ClaimsPrincipal principal)
+        public async Task<TokenConfirmationResponse> GenerateTokenAsync(string EmailOrName, IList<string> roles)
         {
-            var User = await _userManager.GetUserAsync(principal);
-            if (User == null)
+            //find user 
+            var user = await FindByEmailOrUsername(EmailOrName);
+            // Create claims
+            var claims = new List<Claim>();
+
+            claims.Add(new Claim(ClaimTypes.Email, user.Email));
+            claims.Add(new Claim(ClaimTypes.Name, user.UserName));
+
+            foreach (var role in roles.ToList())
             {
-                return new TokenResponse()
-                {
-                    Succeeded = false,
-                    Errors = new List<string>() { "invalid request" }
-                };
+                claims.Add(new Claim(ClaimTypes.Role, role));
             }
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(User);
-            return new TokenResponse
-            {
-                Succeeded = true,
-                UserId = User.Id,
-                Token = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token))
-            };
+
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                _configuration["Jwt:Issuer"],
+                _configuration["Jwt:Audience"],
+                claims,
+                expires: DateTime.Now.AddMinutes(15),
+                signingCredentials: credentials);
+
+            return new TokenConfirmationResponse { Token = new JwtSecurityTokenHandler().WriteToken(token) , UserId = user.Id};
         }
 
-        public Task<TokenResponse> GeneratePasswordResetTokenAsync(string email)
+        public Task<TokenRequest> GeneratePasswordResetTokenAsync(string email)
         {
             throw new NotImplementedException();
         }
@@ -102,18 +117,23 @@ namespace Infrastructure.Identity.Services
             throw new NotImplementedException();
         }
 
-        public async Task<AuthenticationResponse> SignInAsync(SignInRequest signInRequest)
+        public async Task<AuthenticationBaseResponse> SignInAsync(SignInRequest signInRequest)
         {
-            var user = new IdentityUser();
-            var isEmail = (await _userManager.FindByEmailAsync(signInRequest.EmailOrUsername)) == null ? false : true;
-            if (isEmail)
-                user.Email = signInRequest.EmailOrUsername;
-            else
-                user.UserName = signInRequest.EmailOrUsername;
+            var user = await FindByEmailOrUsername(signInRequest.EmailOrUsername);
+            //check email or user name
+            if (user == null)
+            {
+                return new AuthenticationBaseResponse { Succeeded = false };
+            }
+            // check password 
+            bool checkPassword = await _userManager.CheckPasswordAsync(user, signInRequest.Password); 
+            if(!checkPassword)
+            {
+                return new AuthenticationBaseResponse { Succeeded = false };
+            }
 
+            return new AuthenticationBaseResponse { Succeeded = true };
 
-            var result = await _signInManager.PasswordSignInAsync(user, signInRequest.Password, signInRequest.RememberMe, false);
-            return new AuthenticationResponse { Succeeded = true };
         }
 
         public Task SignOutAsync()
@@ -129,12 +149,38 @@ namespace Infrastructure.Identity.Services
                 UserName = signUpRequest.UserName,
             };
             var result = await _userManager.CreateAsync(user, signUpRequest.Password);
-
-            return new AuthenticationResponse 
+            if (!result.Succeeded)
             {
-                Succeeded = result.Succeeded ,
+                return new AuthenticationResponse
+                {
+                    Succeeded = result.Succeeded,
+                    Errors = result.Errors.Select(x => x.Description).ToList()
+                };
+            }
+
+            result = await _userManager.AddToRolesAsync(user, signUpRequest.Roles);
+
+            return new AuthenticationResponse
+            {
+                Succeeded = result.Succeeded,
                 Errors = result.Errors.Select(x => x.Description).ToList()
             };
+        }
+        public async Task<IdentityUser?>  FindByEmailOrUsername(string emailOrUSerName)
+        {
+            var Email = await _userManager.FindByEmailAsync(emailOrUSerName);
+            if (Email != null)
+            {
+                return Email;
+            }
+
+            var Name = await _userManager.FindByNameAsync(emailOrUSerName);
+            if(Name != null)
+            {
+                return Name;
+            }
+
+            return null;    
         }
     }
 }

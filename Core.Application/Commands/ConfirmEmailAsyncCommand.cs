@@ -10,6 +10,6 @@ namespace Core.Application.Commands
 {
     public class ConfirmEmailAsyncCommand : IRequest<AuthenticationBaseResponse>
     {
-        public EmailConfirmationRequest emailConfirmationRequest { get; set; }
+        public TokenConfirmationResponse emailConfirmationRequest { get; set; }
     }
 }
