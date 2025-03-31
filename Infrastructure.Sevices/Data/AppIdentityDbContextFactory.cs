@@ -14,7 +14,7 @@ public class AppIdentityDbContextFactory : IDesignTimeDbContextFactory<AppIdenti
     {
         var optionsBuilder = new DbContextOptionsBuilder<AppIdentityDbContext>();
         optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=IdentityDatabase;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
-
+        
         return new AppIdentityDbContext(optionsBuilder.Options);
     }
 }

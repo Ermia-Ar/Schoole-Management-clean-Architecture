@@ -12,7 +12,7 @@ namespace Core.Application.Validators
     {
         public SignInRequestValidator()
         {
-            RuleFor(x => x.EmailOrUsername)
+            RuleFor(x => x.CodeMelly)
                 .MinimumLength(4)
                  .NotNull();
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mQIUDFec6wc=",
+  "dgSpecHash": "NT1dB0UGv8Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Schoolmanagement\\School_Management.Api.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\School_Management.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

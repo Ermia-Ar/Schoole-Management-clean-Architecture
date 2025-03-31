@@ -17,7 +17,7 @@ namespace Core.Application.Validators
                 .NotNull()
                 .MinimumLength(4);
 
-            RuleFor(x => x.Email)
+            RuleFor(x => x.CodeMelly)
                 .NotNull()
                 .EmailAddress();
 

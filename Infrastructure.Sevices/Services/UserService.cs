@@ -1,5 +1,6 @@
 ﻿using Core.Application.DTOs;
 using Core.Application.Interfaces.IdentitySevices;
+using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -13,9 +14,9 @@ namespace Infrastructure.Identity.Services
     public class UserService : IUserService
     {
         //private SignInManager<IdentityUser> _signInManager { get; set; }
-        private UserManager<IdentityUser> _userManager { get; set; }
+        private UserManager<ApplicationUser> _userManager { get; set; }
 
-        public UserService( UserManager<IdentityUser> userManager)
+        public UserService( UserManager<ApplicationUser> userManager)
         {
             //_signInManager = signInManager;
             _userManager = userManager;

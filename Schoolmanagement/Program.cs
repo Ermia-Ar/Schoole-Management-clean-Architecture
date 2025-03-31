@@ -13,6 +13,7 @@ using Core.Application.Interfaces.IdentitySevices;
 using Microsoft.OpenApi.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Infrastructure.Identity.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -58,12 +59,15 @@ builder.Services.AddSwaggerGen(option =>
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
 
+builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationConnection")));
+
 
 #region Identity
 
-builder.Services.AddIdentityCore<IdentityUser>()
+builder.Services.AddIdentityCore<ApplicationUser>()
         .AddRoles<IdentityRole>()
-        .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("Auth")
+        .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>("Auth")
         .AddEntityFrameworkStores<AppIdentityDbContext>()
         .AddDefaultTokenProviders();
 
@@ -92,6 +96,7 @@ builder.Services.ConfigureApplicationCookie(option =>
     option.Cookie.HttpOnly = true;
     option.ExpireTimeSpan = TimeSpan.FromSeconds(3);
 });
+
 #region ImediatR
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(SignInAsyncCommand).Assembly));
@@ -121,6 +126,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

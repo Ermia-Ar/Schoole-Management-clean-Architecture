@@ -5333,11 +5333,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Core.Application.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Core.Application.csproj",
       "projectName": "Core.Application",
-      "projectPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Core.Application.csproj",
+      "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Core.Application.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\obj\\",
+      "outputPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",

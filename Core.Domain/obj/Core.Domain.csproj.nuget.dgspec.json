@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Domain\\Core.Domain.csproj": {}
+    "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Core.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Domain\\Core.Domain.csproj": {
+    "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Core.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Domain\\Core.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Core.Domain.csproj",
         "projectName": "Core.Domain",
-        "projectPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Domain\\Core.Domain.csproj",
+        "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Core.Domain.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Domain\\obj\\",
+        "outputPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",

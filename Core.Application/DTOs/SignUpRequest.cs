@@ -4,16 +4,16 @@ namespace Core.Application.DTOs
 {
     public class SignUpRequest
     {
-        [JsonPropertyName("User name")]
+        [JsonPropertyName("اسم کامل")]
         public string UserName { get; set; }
 
-        [JsonPropertyName("email")] 
-        public string Email { get; set; }
+        [JsonPropertyName("کد ملی")] 
+        public string CodeMelly { get; set; }
 
-        [JsonPropertyName("password")]
+        [JsonPropertyName("رمز ورورد")]
         public string Password { get; set; }
 
-        [JsonPropertyName("Roles")]
+        [JsonPropertyName("نقش")]
         public string[] Roles { get; set; }
     }
 }

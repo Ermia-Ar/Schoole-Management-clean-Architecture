@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NVfSfTJYCdE=",
+  "dgSpecHash": "MJNq3km7rgU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Domain\\Core.Domain.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Core.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

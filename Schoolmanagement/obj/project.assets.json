@@ -4509,11 +4509,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Schoolmanagement\\School_Management.Api.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\School_Management.Api.csproj",
       "projectName": "School_Management.Api",
-      "projectPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Schoolmanagement\\School_Management.Api.csproj",
+      "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\School_Management.Api.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Schoolmanagement\\obj\\",
+      "outputPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4531,11 +4531,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Core.Application.csproj": {
-              "projectPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Core.Application\\Core.Application.csproj"
+            "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Core.Application.csproj": {
+              "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Core.Application.csproj"
             },
-            "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Infrastructure.Identity.csproj": {
-              "projectPath": "C:\\Users\\DELL\\source\\repos\\Idetity.NET\\Infrastructure.Sevices\\Infrastructure.Identity.csproj"
+            "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Infrastructure.Identity.csproj": {
+              "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Infrastructure.Identity.csproj"
             }
           }
         }

@@ -1,5 +1,6 @@
 ﻿using Core.Application.DTOs;
 using Core.Application.Interfaces.IdentitySevices;
+using Infrastructure.Identity.Models;
 using MediatR.NotificationPublishers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
@@ -21,10 +22,10 @@ namespace Infrastructure.Identity.Services
     public class AuthService : IAuthService
     {
         //private SignInManager<IdentityUser> _signInManager { get; set; }
-        private UserManager<IdentityUser> _userManager { get; set; }
+        private UserManager<ApplicationUser> _userManager { get; set; }
         private IConfiguration _configuration { get; set; }
 
-        public AuthService( UserManager<IdentityUser> userManager, IConfiguration configuration)
+        public AuthService( UserManager<ApplicationUser> userManager, IConfiguration configuration)
         {
             //_signInManager = signInManager;
             _userManager = userManager;
@@ -119,7 +120,7 @@ namespace Infrastructure.Identity.Services
 
         public async Task<AuthenticationBaseResponse> SignInAsync(SignInRequest signInRequest)
         {
-            var user = await FindByEmailOrUsername(signInRequest.EmailOrUsername);
+            var user = await FindByEmailOrUsername(signInRequest.CodeMelly);
             //check email or user name
             if (user == null)
             {
@@ -143,9 +144,9 @@ namespace Infrastructure.Identity.Services
 
         public async Task<AuthenticationResponse> SignUpAsync(SignUpRequest signUpRequest)
         {
-            var user = new IdentityUser
+            var user = new ApplicationUser
             {
-                Email = signUpRequest.Email,
+                Email = signUpRequest.CodeMelly,
                 UserName = signUpRequest.UserName,
             };
             var result = await _userManager.CreateAsync(user, signUpRequest.Password);
@@ -166,7 +167,7 @@ namespace Infrastructure.Identity.Services
                 Errors = result.Errors.Select(x => x.Description).ToList()
             };
         }
-        public async Task<IdentityUser?>  FindByEmailOrUsername(string emailOrUSerName)
+        public async Task<ApplicationUser?>  FindByEmailOrUsername(string emailOrUSerName)
         {
             var Email = await _userManager.FindByEmailAsync(emailOrUSerName);
             if (Email != null)

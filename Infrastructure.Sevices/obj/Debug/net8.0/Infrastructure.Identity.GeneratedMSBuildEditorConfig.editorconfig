@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Infrastructure.Identity
-build_property.ProjectDir = C:\Users\DELL\source\repos\Idetity.NET\Infrastructure.Sevices\
+build_property.ProjectDir = C:\Users\DELL\source\repos\School_Manegement\Infrastructure.Sevices\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

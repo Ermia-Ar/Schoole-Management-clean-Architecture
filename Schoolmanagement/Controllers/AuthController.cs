@@ -53,7 +53,7 @@ namespace School_Management.Api.Controllers
 
 
             // Get Roles for this user
-            var responseGet = new GetRolesAsyncQuery { usernameOrName = loginRequest.EmailOrUsername };
+            var responseGet = new GetRolesAsyncQuery { usernameOrName = loginRequest.CodeMelly };
             var roles = await _mediator.Send(responseGet);
 
             //Generate Token
@@ -64,7 +64,7 @@ namespace School_Management.Api.Controllers
                     Request = new TokenRequest
                     {
                         Roles = roles,
-                        EmailOrName = loginRequest.EmailOrUsername
+                        EmailOrName = loginRequest.CodeMelly
                     }
                 };
                 var tokenConfirmationResponse = await _mediator.Send(tokenRequest);
