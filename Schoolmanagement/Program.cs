@@ -1,7 +1,6 @@
 using Infrastructure.Identity.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Core.Application.Commands;
-using Core.Application.DTOs;
 using FluentValidation;
 using Core.Application.Validators;
 using Core.Application.Interfaces.Email;
@@ -14,6 +13,16 @@ using Microsoft.OpenApi.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Infrastructure.Identity.Models;
+using Infrastructure.Data.Data;
+using Infrastructure.Identity.InfrastructureProfile;
+using Core.Application.Interfaces;
+using Infrastructure.Data.Services;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Core.Application.Featurs.Students.StudentProfile;
+using Core.Application.DTOs.Student.StudentDtos;
+using Core.Application.DTOs.Student.Validator;
+using Core.Application.DTOs.NewFolder;
+using Core.Application.Featurs.Teachers.TeacherProfile;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -59,8 +68,9 @@ builder.Services.AddSwaggerGen(option =>
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
 
-builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationConnection")));
+
 
 
 #region Identity
@@ -74,13 +84,10 @@ builder.Services.AddIdentityCore<ApplicationUser>()
 builder.Services.Configure<IdentityOptions>(option =>
 {
     //user 
-    option.User.RequireUniqueEmail = true;
-    option.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._";
-    //sign in 
-    option.SignIn.RequireConfirmedEmail = true;
+    option.User.RequireUniqueEmail = false;
     // password
     option.Password.RequireUppercase = false;
-    option.Password.RequireLowercase = true;
+    option.Password.RequireLowercase = false;
     option.Password.RequiredLength = 8;
     // lock out
     option.Lockout.AllowedForNewUsers = false;
@@ -103,14 +110,21 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(SignI
 builder.Services.AddScoped<IMediator, Mediator>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IStudentServices, StudentServices>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
+builder.Services.AddScoped<ITeacherServices, TeacherServices>();
+builder.Services.AddAutoMapper(typeof(InfraProfile));
+builder.Services.AddAutoMapper(typeof(StudentMapper));
+builder.Services.AddAutoMapper(typeof(TeacherProfile));
+
+
 
 #endregion
 
 #region Validation
-
 builder.Services.AddScoped<IValidator<SignUpRequest>, SignUpRequestValidator>();
 builder.Services.AddScoped<IValidator<SignInRequest>, SignInRequestValidator>();
+builder.Services.AddScoped<IValidator<AddStudentRequest>, AddStudentRequestValidator>();
 
 #endregion
 

@@ -1,11 +1,5 @@
-﻿using Infrastructure.Identity.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Core.Domain;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Entities
 {
@@ -19,16 +13,21 @@ namespace Infrastructure.Data.Entities
 
         public decimal Salary { get; set; }
 
-        public Lessons Lesson { get; set; }
+        public Subjects Subject { get; set; }
+
+        public string FullName { get; set; }
+
+        public DateTime Birthday { get; set; }
+
+        public string CodeMelly { get; set; }
+
+        public string PhoneNumber { get; set; }
+
+        public Gender Gender { get; set; }
 
         public ICollection<TeacherCourse> TeacherCourses { get; set; }
 
     }
 
-    public enum Lessons
-    {
-        Math,
-        Chemistry,
-        physics,
-    }
+ 
 }

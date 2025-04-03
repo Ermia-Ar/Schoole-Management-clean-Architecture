@@ -1,5 +1,5 @@
 ﻿using Core.Application.Commands;
-using Core.Application.DTOs;
+using Core.Application.DTOs.NewFolder;
 using Core.Application.Interfaces.Email;
 using MediatR;
 

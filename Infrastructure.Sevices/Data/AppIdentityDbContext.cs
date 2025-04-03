@@ -1,4 +1,5 @@
-﻿using Infrastructure.Identity.Models;
+﻿using Core.Domain.Entities;
+using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -21,34 +22,35 @@ namespace Infrastructure.Identity.Data
         {
             base.OnModelCreating(builder);
 
-            var Admin = "a71a55d6-99d7-4123-b4e0-1218ecb90e3e";
-            var Teacher = "c309fa92-2123-47be-b397-a1c77adb502c";
-            var Student = "a5510348-12d0-422c-9912-3faad602e3e4";
+       
 
             var roles = new List<IdentityRole>
             {
                 new IdentityRole
                 {
-                    Id = Admin,
-                    ConcurrencyStamp = Admin,
+                    Id = "Admin",
+                    ConcurrencyStamp = "Admin",
                     Name = "Admin",
                     NormalizedName = "Admin".ToUpper()
                 },
                 new IdentityRole
                 {
-                    Id = Teacher,
-                    ConcurrencyStamp = Teacher,
+                    Id = "Teacher",
+                    ConcurrencyStamp = "Teacher",
                     Name = "Teacher",
-                    NormalizedName = "Writer".ToUpper()
+                    NormalizedName = "Teacher".ToUpper()
                 },
                 new IdentityRole
                 {
-                    Id = Student,
-                    ConcurrencyStamp = Student,
+                    Id = "Student",
+                    ConcurrencyStamp = "Student",
                     Name = "Student",
                     NormalizedName = "Student".ToUpper()
                 }
             };
+            builder.Entity<ApplicationUser>()
+                .HasIndex(u => u.UserName)
+                .IsUnique(false);
 
             builder.Entity<IdentityRole>().HasData(roles);
             builder.Entity<ApplicationUser>().ToTable("Users");

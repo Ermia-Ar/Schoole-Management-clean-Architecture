@@ -1,4 +1,4 @@
-﻿using Core.Application.DTOs;
+﻿using Core.Application.DTOs.NewFolder;
 using Core.Application.Interfaces.IdentitySevices;
 using Core.Application.Queries;
 using MediatR;

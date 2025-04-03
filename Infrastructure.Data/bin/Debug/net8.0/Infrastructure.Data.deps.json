@@ -9,6 +9,8 @@
       "Infrastructure.Data/1.0.0": {
         "dependencies": {
           "AutoMapper": "14.0.0",
+          "Core.Application": "1.0.0",
+          "Core.Domain": "1.0.0",
           "Infrastructure.Identity": "1.0.0",
           "MediatR": "12.4.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
@@ -1200,6 +1202,7 @@
       "Core.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "14.0.0",
+          "Core.Domain": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "MediatR": "12.4.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
@@ -1215,10 +1218,29 @@
           "Core.Application.dll": {}
         }
       },
+      "Core.Domain/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "14.0.0",
+          "FluentValidation.AspNetCore": "11.3.0",
+          "MediatR": "12.4.1",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.AspNetCore.Identity": "2.3.1",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Configuration.Json": "8.0.0",
+          "Microsoft.IdentityModel.Tokens": "8.7.0",
+          "System.IdentityModel.Tokens.Jwt": "8.7.0"
+        },
+        "runtime": {
+          "Core.Domain.dll": {}
+        }
+      },
       "Infrastructure.Identity/1.0.0": {
         "dependencies": {
           "AutoMapper": "14.0.0",
           "Core.Application": "1.0.0",
+          "Core.Domain": "1.0.0",
           "MediatR": "12.4.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.AspNetCore.Identity": "2.3.1",
@@ -2026,6 +2048,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "Core.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

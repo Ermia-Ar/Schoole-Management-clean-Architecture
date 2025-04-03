@@ -1,4 +1,4 @@
-﻿using Core.Application.DTOs;
+﻿using Core.Application.DTOs.NewFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,18 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Core.Domain;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Identity.Models
 {
     [Index(nameof(CodeMelly), IsUnique = true)]
     public class ApplicationUser : IdentityUser
     {
+        public override string? UserName { get; set; }
+        
+        public override string? Email { get; set; } 
+
         public DateTime Birthday { get; set; }
 
         public string FullName { get; set; }
@@ -21,12 +19,7 @@ namespace Infrastructure.Identity.Models
 
         public Gender Gender { get; set; }
     }
-
-    public  enum Gender
-    {
-        Male ,
-        Female
-    }
-
-   
 }
+
+
+

@@ -101,6 +101,8 @@ namespace Infrastructure.Identity.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("UserName");
+
                     b.ToTable("Users", (string)null);
                 });
 
@@ -133,22 +135,22 @@ namespace Infrastructure.Identity.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a71a55d6-99d7-4123-b4e0-1218ecb90e3e",
-                            ConcurrencyStamp = "a71a55d6-99d7-4123-b4e0-1218ecb90e3e",
+                            Id = "Admin",
+                            ConcurrencyStamp = "Admin",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "c309fa92-2123-47be-b397-a1c77adb502c",
-                            ConcurrencyStamp = "c309fa92-2123-47be-b397-a1c77adb502c",
+                            Id = "Teacher",
+                            ConcurrencyStamp = "Teacher",
                             Name = "Teacher",
-                            NormalizedName = "WRITER"
+                            NormalizedName = "TEACHER"
                         },
                         new
                         {
-                            Id = "a5510348-12d0-422c-9912-3faad602e3e4",
-                            ConcurrencyStamp = "a5510348-12d0-422c-9912-3faad602e3e4",
+                            Id = "Student",
+                            ConcurrencyStamp = "Student",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         });

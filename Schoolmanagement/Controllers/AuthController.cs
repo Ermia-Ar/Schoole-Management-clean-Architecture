@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Core.Application.Commands;
-using Core.Application.DTOs;
+using Core.Application.DTOs.NewFolder;
 using Core.Application.Handlers;
 using Core.Application.Interfaces.IdentitySevices;
 using Core.Application.Queries;

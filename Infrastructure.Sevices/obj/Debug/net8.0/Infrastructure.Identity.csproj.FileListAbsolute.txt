@@ -34,3 +34,5 @@ C:\Users\DELL\source\repos\School_Manegement\Infrastructure.Sevices\obj\Debug\ne
 C:\Users\DELL\source\repos\School_Manegement\Infrastructure.Sevices\obj\Debug\net8.0\Infrastructure.Identity.pdb
 C:\Users\DELL\source\repos\School_Manegement\Infrastructure.Sevices\obj\Debug\net8.0\Infrastructure.Identity.genruntimeconfig.cache
 C:\Users\DELL\source\repos\School_Manegement\Infrastructure.Sevices\obj\Debug\net8.0\ref\Infrastructure.Identity.dll
+C:\Users\DELL\source\repos\School_Manegement\Infrastructure.Sevices\bin\Debug\net8.0\Core.Domain.dll
+C:\Users\DELL\source\repos\School_Manegement\Infrastructure.Sevices\bin\Debug\net8.0\Core.Domain.pdb

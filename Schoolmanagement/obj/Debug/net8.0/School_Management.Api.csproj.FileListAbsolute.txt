@@ -186,3 +186,7 @@ C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\r
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.pdb
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.genruntimeconfig.cache
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\ref\School_Management.Api.dll
+C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Core.Domain.dll
+C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Core.Domain.pdb
+C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Infrastructure.Data.dll
+C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Infrastructure.Data.pdb

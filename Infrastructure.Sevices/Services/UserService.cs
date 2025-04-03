@@ -1,4 +1,4 @@
-﻿using Core.Application.DTOs;
+﻿using Core.Application.DTOs.NewFolder;
 using Core.Application.Interfaces.IdentitySevices;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
@@ -22,26 +22,6 @@ namespace Infrastructure.Identity.Services
             _userManager = userManager;
         }
 
-        public Task<AuthenticationResponse> AddPasswordAsync(ClaimsPrincipal principal, string newPassword)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<AuthenticationResponse> ChangeEmailAsync(ClaimsPrincipal principal, string email, string code)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<AuthenticationResponse> ChangePasswordAsync(ClaimsPrincipal principal, string oldPassword, string newPassword)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ApplicationUserDto> FindByEmailAsync(string email)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<IdentityUser> FindByEmailOrNameAsync(string emailOrUsername)
         {
             var Email = await _userManager.FindByEmailAsync(emailOrUsername);
@@ -58,22 +38,7 @@ namespace Infrastructure.Identity.Services
 
             return null;
         }
-
-        public Task<ApplicationUserDto> FindByIdAsync(string userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<string> GetEmailAsync(ClaimsPrincipal principal)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<string> GetPhoneNumberAsync(ClaimsPrincipal principal)
-        {
-            throw new NotImplementedException();
-        }
-
+     
         public async Task<IList<string>> GetRolesAsync(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
@@ -83,27 +48,12 @@ namespace Infrastructure.Identity.Services
             return roles;
         }
 
-        public Task<string> GetUserIdAsync(ClaimsPrincipal principal)
+        public Task<ApplicationUserDto> FindByIdAsync(string userId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<string> GetUserNameAsync(ClaimsPrincipal principal)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> HasPasswordAsync(ClaimsPrincipal principal)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> IsEmailConfirmedAsync(string email)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<AuthenticationResponse> SetPhoneNumberAsync(ClaimsPrincipal principal, string phoneNumber)
+        public Task<ApplicationUserDto> FindByEmailAsync(string email)
         {
             throw new NotImplementedException();
         }

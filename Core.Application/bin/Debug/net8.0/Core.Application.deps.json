@@ -9,6 +9,7 @@
       "Core.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "14.0.0",
+          "Core.Domain": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "MediatR": "12.4.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
@@ -1196,6 +1197,24 @@
             "fileVersion": "6.0.21.52210"
           }
         }
+      },
+      "Core.Domain/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "14.0.0",
+          "FluentValidation.AspNetCore": "11.3.0",
+          "MediatR": "12.4.1",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.AspNetCore.Identity": "2.3.1",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Configuration.Json": "8.0.0",
+          "Microsoft.IdentityModel.Tokens": "8.7.0",
+          "System.IdentityModel.Tokens.Jwt": "8.7.0"
+        },
+        "runtime": {
+          "Core.Domain.dll": {}
+        }
       }
     }
   },
@@ -1988,6 +2007,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "Core.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

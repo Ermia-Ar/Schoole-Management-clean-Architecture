@@ -28,3 +28,6 @@ C:\Users\DELL\source\repos\School_Manegement\Core.Application\obj\Debug\net8.0\r
 C:\Users\DELL\source\repos\School_Manegement\Core.Application\obj\Debug\net8.0\Core.Application.pdb
 C:\Users\DELL\source\repos\School_Manegement\Core.Application\obj\Debug\net8.0\Core.Application.genruntimeconfig.cache
 C:\Users\DELL\source\repos\School_Manegement\Core.Application\obj\Debug\net8.0\ref\Core.Application.dll
+C:\Users\DELL\source\repos\School_Manegement\Core.Application\bin\Debug\net8.0\Core.Domain.dll
+C:\Users\DELL\source\repos\School_Manegement\Core.Application\bin\Debug\net8.0\Core.Domain.pdb
+C:\Users\DELL\source\repos\School_Manegement\Core.Application\obj\Debug\net8.0\Core.App.01B2A2D7.Up2Date

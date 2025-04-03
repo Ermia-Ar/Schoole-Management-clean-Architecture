@@ -1,4 +1,4 @@
-﻿using Core.Application.DTOs;
+﻿using Core.Application.DTOs.NewFolder;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 

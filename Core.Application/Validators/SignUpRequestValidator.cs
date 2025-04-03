@@ -1,4 +1,4 @@
-﻿using Core.Application.DTOs;
+﻿using Core.Application.DTOs.NewFolder;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using System;
@@ -13,17 +13,20 @@ namespace Core.Application.Validators
     {
         public SignUpRequestValidator()
         {
-            RuleFor(x => x.UserName)
+            RuleFor(x => x.FullName)
                 .NotNull()
-                .MinimumLength(4);
+                .MinimumLength(10)
+                .WithMessage("نام وارد شده کوتاه تر از حد مجاز است");
 
             RuleFor(x => x.CodeMelly)
-                .NotNull()
-                .EmailAddress();
+                .MaximumLength(10)
+                .WithMessage("تعداد رقم وارد شده بیش از 10 است ")
+                .MinimumLength(10)
+                .WithMessage("تعداد رقم وارد شده کمتر از 10 است");
 
             RuleFor(x => x.Password)
-                .NotNull()
-                .MinimumLength(8);
+                .MinimumLength(8)
+                .WithMessage("حداقل طول رمز عبور 8 کاراکتر است");
         }
     }
 }

@@ -33,12 +33,30 @@ namespace Infrastructure.Data.Migrations
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CodeMelly")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Salary")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Admins");
+                    b.ToTable("Admins", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.Course", b =>
@@ -47,12 +65,18 @@ namespace Infrastructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Lesson")
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Subject")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.Student", b =>
@@ -66,12 +90,30 @@ namespace Infrastructure.Data.Migrations
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CodeMelly")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
                     b.Property<int>("Grade")
                         .HasColumnType("int");
 
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.StudentCourse", b =>
@@ -89,7 +131,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("StudentCourses");
+                    b.ToTable("StudentCourses", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.Teacher", b =>
@@ -103,15 +145,33 @@ namespace Infrastructure.Data.Migrations
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Lesson")
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CodeMelly")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Gender")
                         .HasColumnType("int");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Salary")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("Subject")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Teachers");
+                    b.ToTable("Teachers", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.TeacherCourse", b =>
@@ -126,7 +186,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("TeacherCourses");
+                    b.ToTable("TeacherCourses", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.StudentCourse", b =>

@@ -1,4 +1,4 @@
-﻿using Core.Application.DTOs;
+﻿using Core.Application.DTOs.NewFolder;
 using Core.Application.Interfaces.Email;
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,6 @@ namespace Infrastructure.Identity.Services
                     Body = email.Body,
                     IsBodyHtml = true,
                 };
-                // Host => forExample webmail.codeyad.com
 
                 try
                 {
