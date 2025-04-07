@@ -1,10 +1,10 @@
 ﻿using Core.Domain;
 
-namespace Core.Application.DTOs.Course.CourseDtos
+namespace Core.Application.DTOs.Course
 {
     public class CourseInStudentCourse
     {
-        public string Id { get; set; }  
+        public string Id { get; set; }
 
         public string Name { get; set; }
 

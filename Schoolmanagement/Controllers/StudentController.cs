@@ -2,6 +2,7 @@
 using Core.Application.Featurs.Students.StudentCommands;
 using Core.Application.Featurs.Students.StudentQuery;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using School_Management.Api.Base;
 
@@ -20,6 +21,7 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("Create")]
+        [Authorize(Roles= "Admin")]
         public async Task<IActionResult> Create([FromBody] AddStudentRequest request)
         {
             var response = new AddStudentCommand { student = request };
@@ -30,6 +32,7 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("GetListOfStudent")]
+        [Authorize(Roles= "Admin")]
         public async Task<IActionResult> GetStudentList()
         {
             var response = new GetStudentListQuery();
@@ -40,6 +43,7 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("{id:guid}FindStudentById")]
+        [Authorize(Roles= "Admin")]
         public async Task<IActionResult> GetStudentById([FromRoute] Guid id)
         {
             var response = new GetStudentByIdQuery { Id = id.ToString() };
@@ -50,6 +54,7 @@ namespace School_Management.Api.Controllers
 
         [HttpDelete]
         [Route("{id:guid}DeleteStudent")]
+        [Authorize(Roles= "Admin")]
         public async Task<IActionResult> DeleteStudent([FromRoute] Guid id)
         {
             var response = new DeleteStudentCommand { Id = id.ToString() };

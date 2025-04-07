@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Core.Application.DTOs.Course.CourseDtos;
-using Core.Application.DTOs.StudentCourse.StudentDtos;
+using Core.Application.DTOs.Course;
+using Core.Application.DTOs.StudentCourse;
 using Core.Application.Featurs.StudentCourse.StudentCourseCommands;
 using Core.Application.Featurs.StudentCourse.StudentCourseQueries;
 using Core.Application.Interfaces;

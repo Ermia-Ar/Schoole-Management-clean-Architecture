@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Application.DTOs.StudentCourse.StudentDtos
+namespace Core.Application.DTOs.StudentCourse
 {
     public class RegisterInCourseRequest
     {

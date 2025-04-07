@@ -8,10 +8,10 @@ using StudentCourseCore = Core.Domain.Entities.StudentCourse;
 using StudentCore = Core.Domain.Entities.Student;
 using CoreCourses = Core.Domain.Entities.Course;
 using Microsoft.EntityFrameworkCore;
-using Core.Application.DTOs.StudentCourse.StudentDtos;
 using SchoolProject.Infrustructure.UnitOfWork;
-using Infrastructure.Data.CurrentUserServices.Abstracts;
+using Infrastructure.Data.CurrentUserService.Abstracts;
 using System.Net.WebSockets;
+using Core.Application.DTOs.StudentCourse;
 
 namespace Infrastructure.Data.Services
 {

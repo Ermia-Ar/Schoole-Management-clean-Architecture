@@ -1,4 +1,4 @@
-﻿using Core.Application.DTOs.Course.CourseDtos;
+﻿using Core.Application.DTOs.Course;
 using Core.Domain.Entities;
 
 namespace Core.Application.Interfaces

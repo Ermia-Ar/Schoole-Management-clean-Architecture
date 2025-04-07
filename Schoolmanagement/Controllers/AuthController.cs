@@ -1,6 +1,7 @@
 ﻿using Core.Application.DTOs.Authontication;
 using Core.Application.Featurs.Authontication.Commands;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using School_Management.Api.Base;
 
@@ -30,6 +31,7 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("RefreshToken")]
+        [Authorize("Admin")]
         public async Task<IActionResult> RefreshToken([FromForm] RefreshTokenRequest refreshTokenRequest)
         {
             var request = new RefreshTokenCommand { RefreshTokenRequest = refreshTokenRequest };

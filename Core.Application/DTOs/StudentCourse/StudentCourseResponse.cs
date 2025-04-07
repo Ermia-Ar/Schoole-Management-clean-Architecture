@@ -1,6 +1,4 @@
-﻿using Core.Domain.Entities;
-
-namespace Core.Application.DTOs.StudentCourse.StudentDtos
+﻿namespace Core.Application.DTOs.StudentCourse
 {
     public class StudentCourseResponse
     {

@@ -8,9 +8,9 @@ using CoreCourse = Core.Domain.Entities.Course;
 //using CoreTCourse = Core.Domain.Entities.Course;
 using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.DTOs.Teacher.TeacherDtos;
-using Core.Application.DTOs.Course.CourseDtos;
 using Infrastructure.Data;
 using Infrastructure.Data.InfrastructureProfile;
+using Core.Application.DTOs.Course;
 
 namespace Infrastructure.Identity.InfrastructureProfile
 {

@@ -3,7 +3,6 @@ using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.Featurs.Students.StudentCommands;
 using Core.Application.Featurs.Students.StudentQuery;
 using Core.Application.Interfaces;
-using Core.Application.Interfaces.IdentityServices;
 using Core.Domain.Bases;
 using FluentValidation;
 using MediatR;

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Core.Application.DTOs.Course.CourseDtos;
+using Core.Application.DTOs.Course;
 using Core.Application.DTOs.Student.StudentDtos;
-using Core.Application.DTOs.StudentCourse.StudentDtos;
+using Core.Application.DTOs.StudentCourse;
 using Core.Application.DTOs.Teacher.TeacherDtos;
 using Core.Domain.Entities;
 

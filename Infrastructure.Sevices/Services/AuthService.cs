@@ -1,27 +1,17 @@
 ﻿using AutoMapper;
 using Core.Application.DTOs.Authontication;
-using Core.Application.DTOs.NewFolder;
-using Core.Application.Interfaces.IdentityServices;
+using Core.Application.Interfaces;
 using Core.Domain.Helper;
 using Infrastructure.Identity.Data;
 using Infrastructure.Identity.Models;
-using MediatR.NotificationPublishers;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using SchoolProject.Data.Helper;
-using System;
-using System.Collections.Generic;
-using System.Data;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Identity.Services
 {
@@ -42,30 +32,22 @@ namespace Infrastructure.Identity.Services
             _dbContext = dbContext;
         }
 
-        public async Task<AuthenticationBaseResponse> SignInAsync(SignInRequest signInRequest)
+        public async Task<bool> SignInAsync(SignInRequest signInRequest)
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(user => user.CodeMelly == signInRequest.CodeMelly);
             //check email or user name
             if (user == null)
             {
-                return new AuthenticationBaseResponse
-                {
-                    Succeeded = false,
-                    Errors = new List<string> { "User not found !" }
-                };
+                return false;
             }
             // check password 
             bool checkPassword = await _userManager.CheckPasswordAsync(user, signInRequest.Password);
             if (!checkPassword)
             {
-                return new AuthenticationBaseResponse
-                {
-                    Succeeded = false,
-                    Errors = new List<string> { "user name or password is not correct !" }
-                };
+                return false;
             }
 
-            return new AuthenticationBaseResponse { Succeeded = true };
+            return  true;
 
         }
 

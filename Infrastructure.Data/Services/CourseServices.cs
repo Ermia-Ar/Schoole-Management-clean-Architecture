@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Core.Application.DTOs.Course.CourseDtos;
+using Core.Application.DTOs.Course;
 using Core.Application.Interfaces;
 using Infrastructure.Data.Data;
 using Infrastructure.Data.Entities;

@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Identity.Models;
 
-namespace Infrastructure.Data.CurrentUserServices.Abstracts
+namespace Infrastructure.Data.CurrentUserService.Abstracts
 {
     public interface ICurrentUserServices
     {

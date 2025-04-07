@@ -1,12 +1,8 @@
 ﻿using Core.Application.DTOs.Authontication;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Core.Application.Validators
+
+namespace Core.Application.DTOs.Authontication.validators
 {
     public class SignInRequestValidator : AbstractValidator<SignInRequest>
     {
@@ -23,4 +19,4 @@ namespace Core.Application.Validators
                 .WithMessage("حداقل طول رمز عبور 8 کاراکتر است");
         }
     }
-} 
+}

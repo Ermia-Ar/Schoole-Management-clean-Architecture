@@ -1,6 +1,7 @@
 ﻿using Core.Application.DTOs.Email;
 using Core.Application.Featurs.Email;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using School_Management.Api.Base;
@@ -20,6 +21,7 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("SendEmail")]
+        [Authorize(Roles = "Teacher,Admin")]
         public async Task<IActionResult> SendEmail([FromForm]EmailRequest emailRequest)
         {
             var request  = new EmailSenderCommand {  EmailRequest = emailRequest };

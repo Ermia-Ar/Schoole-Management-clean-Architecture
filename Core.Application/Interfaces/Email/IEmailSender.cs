@@ -1,5 +1,5 @@
-﻿using Core.Application.DTOs.Email;
-using Core.Application.DTOs.NewFolder;
+﻿using Core.Application.DTOs.Authontication;
+using Core.Application.DTOs.Email;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,6 @@ namespace Core.Application.Interfaces.Email
 {
     public interface IEmailSender
     {
-        Task<AuthenticationResponse> SendEmailAsync(EmailRequest EmailInfo);
+        Task<bool> SendEmailAsync(EmailRequest EmailInfo);
     }
 }

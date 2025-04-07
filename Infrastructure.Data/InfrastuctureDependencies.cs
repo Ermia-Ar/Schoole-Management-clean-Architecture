@@ -1,6 +1,7 @@
 ﻿using Core.Application.Interfaces;
 using Core.Application.Interfaces.Email;
-using Core.Application.Interfaces.IdentityServices;
+using Infrastructure.Data.CurrentUserService.Abstracts;
+using Infrastructure.Data.CurrentUserService.Implementation;
 using Infrastructure.Data.InfrustructureBases;
 using Infrastructure.Data.Interfaces;
 using Infrastructure.Data.Repositories;
@@ -18,7 +19,6 @@ namespace Infrastructure.Data
         {
             services.AddScoped<IMediator, Mediator>();
             services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IStudentServices, StudentServices>();
             services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -31,6 +31,7 @@ namespace Infrastructure.Data
             services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICurrentUserServices, CurrentUserServices>();
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
 
             return services;

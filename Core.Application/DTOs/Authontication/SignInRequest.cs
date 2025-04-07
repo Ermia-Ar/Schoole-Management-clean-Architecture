@@ -4,10 +4,8 @@ namespace Core.Application.DTOs.Authontication
 {
     public class SignInRequest
     {
-        //[JsonPropertyName("کد ملی")]
         public string CodeMelly { get; set; }
 
-        //[JsonPropertyName("رمز ورورد")]
         public string Password { get; set; }
 
     }

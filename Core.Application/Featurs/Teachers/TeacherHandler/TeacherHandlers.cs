@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Core.Application.DTOs.Course.CourseDtos;
 using Core.Application.DTOs.Teacher.TeacherDtos;
 using Core.Application.Featurs.Teachers.TeacherCommands;
 using Core.Application.Featurs.Teachers.TeacherQuery;
@@ -80,14 +79,5 @@ namespace Core.Application.Featurs.Teachers.TeacherHandler
 
             return Success(teacherResponse);
         }
-
-        //public async Task<Response<List<CourseResponse>>> Handle(GetTeacherCoursesByIdQuery request, CancellationToken cancellationToken)
-        //{
-        //    var result = await _teacherServices.GetTeacherCoursesById(request.Id);
-
-        //    var coursesResponse = _mapper.Map<List<CourseResponse>>(result);
-
-        //    return Success(coursesResponse);
-        //}
     }
 }

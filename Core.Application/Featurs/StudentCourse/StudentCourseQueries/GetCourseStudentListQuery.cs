@@ -1,4 +1,4 @@
-﻿using Core.Application.DTOs.StudentCourse.StudentDtos;
+﻿using Core.Application.DTOs.StudentCourse;
 using Core.Domain.Bases;
 using MediatR;
 

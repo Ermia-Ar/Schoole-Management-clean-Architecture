@@ -47,8 +47,18 @@ namespace Infrastructure.Identity
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = JwtSettings.Issuer,
                     ValidAudience = JwtSettings.Audience,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSettings.Key))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSettings.Key)),
                 });
+                
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("Teacher", policy =>
+            //        policy.RequireRole("Teacher"));
+            //    options.AddPolicy("Student", policy =>
+            //        policy.RequireRole("Student"));
+            //    options.AddPolicy("Admin", policy =>
+            //        policy.RequireRole("Admin"));
+            //});
             return services;
         }
     }

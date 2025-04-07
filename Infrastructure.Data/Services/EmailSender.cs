@@ -1,5 +1,5 @@
-﻿using Core.Application.DTOs.Email;
-using Core.Application.DTOs.NewFolder;
+﻿using Core.Application.DTOs.Authontication;
+using Core.Application.DTOs.Email;
 using Core.Application.Interfaces.Email;
 using System.Net.Mail;
 
@@ -7,7 +7,7 @@ namespace Infrastructure.Data.Services
 {
     public class EmailSender : IEmailSender
     {
-        public async Task<AuthenticationResponse> SendEmailAsync(EmailRequest email)
+        public async Task<bool> SendEmailAsync(EmailRequest email)
         {
             using (SmtpClient smtpServer = new SmtpClient("smtp.gmail.com", 587)
             {
@@ -31,12 +31,12 @@ namespace Infrastructure.Data.Services
                     smtpServer.Send(mail);
                     await Task.CompletedTask;
 
-                    return new AuthenticationResponse { Succeeded = true };
+                    return true; 
                 }
                 catch (Exception ex)
                 {
                     await Task.CompletedTask;
-                    return new AuthenticationResponse { Succeeded = false, Errors = new List<string> { "1", "Email is invalid." } };
+                    return false;
                 }
             }
         }

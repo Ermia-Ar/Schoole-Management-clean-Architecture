@@ -1,11 +1,7 @@
-using Core.Application.DTOs.Authontication;
-using Core.Application.DTOs.Student.StudentDtos;
-using Core.Application.DTOs.Student.Validator;
-using Core.Application.Featurs.Authontication.Commands;
+using Core.Application;
 using Core.Application.Mapper;
 using Core.Application.Middleware;
-using Core.Application.Validators;
-using FluentValidation;
+using FluentValidation.AspNetCore;
 using Infrastructure.Data;
 using Infrastructure.Data.Data;
 using Infrastructure.Identity;
@@ -13,7 +9,9 @@ using Infrastructure.Identity.Data;
 using Infrastructure.Identity.InfrastructureProfile;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -62,24 +60,16 @@ builder.Services.AddDbContext<AppIdentityDbContext>(options =>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationConnection")));
 
+builder.Services.AddFluentValidationAutoValidation();
 
-//Identity
-builder.Services.AddIdentityDependendcies();
+builder.Services.AddInfrustructureDependendcies()
+    .AddIdentityDependendcies()
+    .AddCoreDependencies();
 
-//mediatr
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(SignInAsyncCommand).Assembly));
-builder.Services.AddInfrustructureDependendcies();
+
 
 builder.Services.AddAutoMapper(typeof(InfraProfile));
 builder.Services.AddAutoMapper(typeof(AppMapper));
-
-
-#region Validation
-builder.Services.AddScoped<IValidator<SignInRequest>, SignInRequestValidator>();
-builder.Services.AddScoped<IValidator<AddStudentRequest>, AddStudentRequestValidator>();
-
-#endregion
-
 
 
 var app = builder.Build();
@@ -95,8 +85,8 @@ app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 
 
 app.MapControllers();

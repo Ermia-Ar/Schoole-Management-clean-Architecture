@@ -6,6 +6,6 @@ namespace Core.Application.Featurs.Authontication.Commands
 {
     public class GenerateTokenAsyncCommand : IRequest<JwtAuthResult>
     {
-        public string Request { get; set; }
+        public string CodeMelly { get; set; }
     }
 }

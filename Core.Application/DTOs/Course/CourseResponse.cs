@@ -1,14 +1,12 @@
 ﻿using Core.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Core.Domain.Entities;
 
-namespace Core.Application.DTOs.Course.CourseDtos
+namespace Core.Application.DTOs.Course
 {
-    public class AddCourseRequest
+    public class CourseResponse
     {
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
         public DateTime StartDate { get; set; }
@@ -19,6 +17,7 @@ namespace Core.Application.DTOs.Course.CourseDtos
 
         public decimal CourseFee { get; set; }
 
-        public string TeacherId { get; set; }
+        public TeacherCourse TeacherCourse { get; set; }
+
     }
 }

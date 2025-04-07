@@ -1,8 +1,9 @@
-﻿using Core.Application.DTOs.StudentCourse.StudentDtos;
+﻿using Core.Application.DTOs.StudentCourse;
 using Core.Application.Featurs.StudentCourse.StudentCourseCommands;
 using Core.Application.Featurs.StudentCourse.StudentCourseQueries;
 using Core.Application.Featurs.Teachers.TeacherQuery;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using School_Management.Api.Base;
 
@@ -21,6 +22,7 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("RegisterInCourse")]
+        [Authorize(Roles ="Student")]
         public async Task<IActionResult> RegisterInCourse([FromBody]RegisterInCourseRequest studentCourse)
         {
             var request = new RegisterInCourseCommand { StudentCourse = studentCourse };
@@ -31,6 +33,7 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("GetStudentCourses")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetStudentCourses()
         {
             var request = new GetCourseStudentListQuery { };
@@ -41,6 +44,7 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("{id:guid}FindCoursesByStudentId")]
+        [Authorize(Roles = "Admin,Student")]
         public async Task<IActionResult> GetCoursesByStudentId([FromRoute] Guid id)
         {
             var response = new GetCoursesByStudentIdQuery { Id = id.ToString() };

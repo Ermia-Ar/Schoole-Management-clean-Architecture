@@ -1,11 +1,11 @@
 ﻿using Core.Domain.Helper;
-using Infrastructure.Data.CurrentUserServices.Abstracts;
+using Infrastructure.Data.CurrentUserService.Abstracts;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
 
-namespace SchoolProject.Service.CurrentUserServices.Implementation
+namespace Infrastructure.Data.CurrentUserService.Implementation
 {
     public class CurrentUserServices:ICurrentUserServices
     {
