@@ -13,6 +13,8 @@ namespace Infrastructure.Identity.Data
 {
     public class AppIdentityDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<UserRefreshToken> userRefreshToken { get; set; }
+
         public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options)
         {
 

@@ -14,9 +14,12 @@ namespace Core.Application.Interfaces
 
         Task<List<Student>> GetStudentListAsync();
 
-        Task<Student> GetStudentByIdAsync(string Id);
+        Task<Student?> GetStudentByIdAsync(string id);
 
         Task<Student?> DeleteStudentAsync(string id);
+
+        Task<bool> StudentIsInAnyCourse(string id);
+
 
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Core.Application.DTOs.NewFolder;
-using Core.Application.Interfaces.IdentitySevices;
+using Core.Application.Interfaces.IdentityServices;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -48,14 +48,6 @@ namespace Infrastructure.Identity.Services
             return roles;
         }
 
-        public Task<ApplicationUserDto> FindByIdAsync(string userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ApplicationUserDto> FindByEmailAsync(string email)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

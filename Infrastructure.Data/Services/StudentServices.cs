@@ -7,6 +7,7 @@ using Infrastructure.Data.Entities;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SchoolProject.Infrustructure.UnitOfWork;
 using CoreStudent = Core.Domain.Entities.Student;
 
 namespace Infrastructure.Data.Services
@@ -15,14 +16,16 @@ namespace Infrastructure.Data.Services
     {
         private UserManager<ApplicationUser> _userManager { get; set; }
         private ApplicationDbContext _context { get; set; }
+        private IUnitOfWork _unitOfWork { get; set; }
         private IMapper _mapper { get; set; }
 
-        public StudentServices(UserManager<ApplicationUser> userManager, ApplicationDbContext context, IMapper mapper)
+        public StudentServices(UserManager<ApplicationUser> userManager, ApplicationDbContext context, IMapper mapper, IUnitOfWork unitOfWork)
         {
             //_signInManager = signInManager;
             _userManager = userManager;
             _context = context;
             _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<bool> AddStudentAsync(AddStudentRequest request)
@@ -34,27 +37,17 @@ namespace Infrastructure.Data.Services
                 var user = _mapper.Map<ApplicationUser>(request);
 
                 //add to asp user table 
-                var result = await _userManager.CreateAsync(user, request.Password);
-                if (!result.Succeeded)
+                var result = await _unitOfWork.Users.CreateUserAsync(user, request.Password, "Student");
+                if (!result)
                 {
                     return false;
                 }
-
-                //add to role table
-                result = await _userManager.AddToRoleAsync(user, "Student");
-                if (!result.Succeeded)
-                {
-                    return false;
-                }
-
                 // add to students table
                 var student = _mapper.Map<Student>(user);
                 student.Id = Guid.NewGuid();
                 student.Grade = request.Grade;
 
-                await _context.Students.AddAsync(student);
-                await _context.SaveChangesAsync();
-
+                await _unitOfWork.Students.AddAsync(student);
                 await transaction.CommitAsync();
 
                 return true;
@@ -68,18 +61,18 @@ namespace Infrastructure.Data.Services
 
         public async Task<List<CoreStudent>> GetStudentListAsync()
         {
-            var Students = await _context.Students.ToListAsync();
-
+            var Students = await _unitOfWork.Students.GetStudentListAsync();
             //map student to core student
             var coreStudents = _mapper.Map<List<CoreStudent>>(Students);
 
             return coreStudents;
         }
 
-        public async Task<CoreStudent> GetStudentByIdAsync(string id)
+        public async Task<CoreStudent?> GetStudentByIdAsync(string id)
         {
-            var student = await _context.Students.FindAsync(Guid.Parse(id));
-
+            var student = await _unitOfWork.Students.GetByIdAsync(Guid.Parse(id));
+            if (student == null)
+                return null;
             var coreStudent  = _mapper.Map<CoreStudent>(student);
 
             return coreStudent;
@@ -92,29 +85,22 @@ namespace Infrastructure.Data.Services
             try
             {
                 //find user by id in student table 
-                var student = await _context.Students.FindAsync(Guid.Parse(id));
+                var student = await _unitOfWork.Students.GetByIdAsync(Guid.Parse(id));
                 if (student == null)
                 {
                     return null;
                 }
-
+                //return null if student have course
+                var course = await _context.StudentCourses.AnyAsync(x => x.StudentId == student.Id);
+                if (course)
+                {
+                    return null;
+                }
                 //remove from student table 
-                _context.Students.Remove(student);
-                await _context.SaveChangesAsync();
+                await _unitOfWork.Students.DeleteAsync(student);
 
-                //find user by ApplicationsUserId
-                var user = await _userManager.FindByIdAsync(student.ApplicationUserId);
-                if (user == null)
-                {
-                    return null;
-                }
-
-                // remove from user table
-                var result = await _userManager.DeleteAsync(user);
-                if (!result.Succeeded)
-                {
-                    return null;
-                }
+                //remove from user table
+                var user = _unitOfWork.Users.DeleteUserAsyncById(student.ApplicationUserId);
 
                 //map to core student 
                 var coreStudent = _mapper.Map<CoreStudent>(student);
@@ -128,6 +114,13 @@ namespace Infrastructure.Data.Services
                 return null;
             }
 
+        }
+
+        public async Task<bool> StudentIsInAnyCourse(string id)
+        {
+            var result = await _unitOfWork.StudentsCourse.StudentIsInAnyCourse(Guid.Parse(id));
+
+            return result;  
         }
     }
 }

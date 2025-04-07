@@ -1,10 +1,8 @@
-﻿using Core.Application.Commands;
-using Core.Application.DTOs.Student.StudentDtos;
+﻿using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.Featurs.Students.StudentCommands;
 using Core.Application.Featurs.Students.StudentQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR.Protocol;
 using School_Management.Api.Base;
 
 namespace School_Management.Api.Controllers
@@ -41,7 +39,7 @@ namespace School_Management.Api.Controllers
         }
 
         [HttpGet]
-        [Route("{id:guid}")]
+        [Route("{id:guid}FindStudentById")]
         public async Task<IActionResult> GetStudentById([FromRoute] Guid id)
         {
             var response = new GetStudentByIdQuery { Id = id.ToString() };
@@ -51,7 +49,7 @@ namespace School_Management.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("{id:guid}")]
+        [Route("{id:guid}DeleteStudent")]
         public async Task<IActionResult> DeleteStudent([FromRoute] Guid id)
         {
             var response = new DeleteStudentCommand { Id = id.ToString() };

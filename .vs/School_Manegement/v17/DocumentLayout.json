@@ -1,7 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.sevices\\identitydependencies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\identitydependencies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\core.application\\middleware\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\middleware\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.data\\services\\studentcourseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|solutionrelative:infrastructure.data\\services\\studentcourseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.data\\currentuserservices\\abstracts\\icurrentuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|solutionrelative:infrastructure.data\\currentuserservices\\abstracts\\icurrentuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.data\\currentuserservices\\implementation\\currentuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|solutionrelative:infrastructure.data\\currentuserservices\\implementation\\currentuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4333FF3-F012-456F-AC05-3C13B5794E0D}|Core.Domain\\Core.Domain.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\core.domain\\helper\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4333FF3-F012-456F-AC05-3C13B5794E0D}|Core.Domain\\Core.Domain.csproj|solutionrelative:core.domain\\helper\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,8 +38,60 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Program.cs",
+              "RelativeDocumentMoniker": "Schoolmanagement\\Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Program.cs",
+              "RelativeToolTip": "Schoolmanagement\\Program.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAAAGMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:57:18.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ErrorHandlerMiddleWare.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Middleware\\ErrorHandlerMiddleWare.cs",
+              "RelativeDocumentMoniker": "Core.Application\\Middleware\\ErrorHandlerMiddleWare.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Middleware\\ErrorHandlerMiddleWare.cs",
+              "RelativeToolTip": "Core.Application\\Middleware\\ErrorHandlerMiddleWare.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAAAAcAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:54:20.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CurrentUserServices.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\CurrentUserServices\\Implementation\\CurrentUserServices.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Data\\CurrentUserServices\\Implementation\\CurrentUserServices.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\CurrentUserServices\\Implementation\\CurrentUserServices.cs",
+              "RelativeToolTip": "Infrastructure.Data\\CurrentUserServices\\Implementation\\CurrentUserServices.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:47:21.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICurrentUserServices.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\CurrentUserServices\\Abstracts\\ICurrentUserServices.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Data\\CurrentUserServices\\Abstracts\\ICurrentUserServices.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\CurrentUserServices\\Abstracts\\ICurrentUserServices.cs",
+              "RelativeToolTip": "Infrastructure.Data\\CurrentUserServices\\Abstracts\\ICurrentUserServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:46:26.682Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
@@ -26,6 +107,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentCourseServices.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\Services\\StudentCourseServices.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Data\\Services\\StudentCourseServices.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\Services\\StudentCourseServices.cs",
+              "RelativeToolTip": "Infrastructure.Data\\Services\\StudentCourseServices.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:43:50.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Helper\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "Core.Domain\\Helper\\JwtSettings.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Helper\\JwtSettings.cs",
+              "RelativeToolTip": "Core.Domain\\Helper\\JwtSettings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:38:07.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IdentityDependencies.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\IdentityDependencies.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Sevices\\IdentityDependencies.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\IdentityDependencies.cs",
+              "RelativeToolTip": "Infrastructure.Sevices\\IdentityDependencies.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACgAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:28:53.749Z",
+              "EditorCaption": ""
             }
           ]
         },

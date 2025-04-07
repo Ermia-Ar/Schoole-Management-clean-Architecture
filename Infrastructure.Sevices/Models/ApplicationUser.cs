@@ -7,6 +7,10 @@ namespace Infrastructure.Identity.Models
     [Index(nameof(CodeMelly), IsUnique = true)]
     public class ApplicationUser : IdentityUser
     {
+        public ApplicationUser()
+        {
+            UserRefreshTokens = new HashSet<UserRefreshToken>();
+        }
         public override string? UserName { get; set; }
         
         public override string? Email { get; set; } 
@@ -18,6 +22,9 @@ namespace Infrastructure.Identity.Models
         public string CodeMelly { get; set; }
 
         public Gender Gender { get; set; }
+
+        public ICollection<UserRefreshToken> UserRefreshTokens { get; set; }
+
     }
 }
 

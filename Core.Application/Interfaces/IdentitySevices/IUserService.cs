@@ -2,12 +2,11 @@
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
-namespace Core.Application.Interfaces.IdentitySevices
+namespace Core.Application.Interfaces.IdentityServices
 {
     public interface IUserService
     {
-        Task<ApplicationUserDto> FindByIdAsync(string userId);
-        Task<ApplicationUserDto> FindByEmailAsync(string email);
+        
         Task<IdentityUser> FindByEmailOrNameAsync(string emailOrUsername);
         Task<IList<string>> GetRolesAsync(string  email);
     }

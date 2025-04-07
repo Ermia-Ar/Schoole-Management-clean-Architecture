@@ -4,13 +4,19 @@ using Infrastructure.Identity.Models;
 using CoreStudent = Core.Domain.Entities.Student;
 using CoreAdmin = Core.Domain.Entities.Admin;
 using CoreTeacher = Core.Domain.Entities.Teacher;
+using CoreCourse = Core.Domain.Entities.Course;
+//using CoreTCourse = Core.Domain.Entities.Course;
 using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.DTOs.Teacher.TeacherDtos;
+using Core.Application.DTOs.Course.CourseDtos;
+using Infrastructure.Data;
+using Infrastructure.Data.InfrastructureProfile;
 
 namespace Infrastructure.Identity.InfrastructureProfile
 {
     public class InfraProfile : Profile
     {
+
         public InfraProfile()
         {
             //Teacher Maps
@@ -22,7 +28,7 @@ namespace Infrastructure.Identity.InfrastructureProfile
               .ForMember(op => op.Id, des => des.MapFrom(op => op.Id))
              .ReverseMap();
 
-            CreateMap<ApplicationUser , AddTeacherRequest>()
+            CreateMap<ApplicationUser, AddTeacherRequest>()
                 .ReverseMap();
 
             //Student Maps
@@ -34,8 +40,8 @@ namespace Infrastructure.Identity.InfrastructureProfile
                  .ForMember(op => op.Id, des => des.MapFrom(op => Guid.Parse(op.Id)))
                 .ReverseMap();
 
-           CreateMap<ApplicationUser , AddStudentRequest>()
-                .ReverseMap();
+            CreateMap<ApplicationUser, AddStudentRequest>()
+                 .ReverseMap();
 
             //Amin Maps
 
@@ -46,6 +52,19 @@ namespace Infrastructure.Identity.InfrastructureProfile
             CreateMap<CoreAdmin, Admin>()
                  .ForMember(op => op.Id, des => des.MapFrom(op => op.Id))
                 .ReverseMap();
+
+            //Course Maps
+            CreateMap<AddCourseRequest, Course>()
+                .ForMember(op => op.TeacherId, dex => dex.MapFrom(op => Guid.Parse(op.TeacherId)))
+                .ReverseMap();
+
+            CreateMap<Course , CoreCourse>()
+                .ForMember(x => x.TeacherCourse , dex => dex.MapFrom(x => Convertor.ConvertToTeacher(x.Teacher)))
+                .ReverseMap();
+
+            //
+
+
         }
     }
 }

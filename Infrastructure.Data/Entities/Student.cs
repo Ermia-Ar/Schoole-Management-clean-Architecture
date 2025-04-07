@@ -27,6 +27,4 @@ namespace Infrastructure.Data.Entities
         public ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
 
     }
-
-  
 }

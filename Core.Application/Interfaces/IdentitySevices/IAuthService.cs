@@ -6,15 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Core.Application.DTOs.NewFolder;
+using Core.Application.DTOs.Authontication;
 
-namespace Core.Application.Interfaces.IdentitySevices
+namespace Core.Application.Interfaces.IdentityServices
 {
-    public interface IAuthService 
+    public interface IAuthService : IAuthenticationServices
     {
         Task<AuthenticationBaseResponse> SignInAsync(SignInRequest signInRequest);
-        Task SignOutAsync();
-        Task<AuthenticationResponse> SignUpAsync(SignUpRequest signUpRequest);
-        Task<TokenConfirmationResponse> GenerateTokenAsync(string EmailOrName, IList<string> roles);
-        Task<AuthenticationBaseResponse> ConfirmEmailAsync(TokenConfirmationResponse emailConfirmationRequest);
     }
 }

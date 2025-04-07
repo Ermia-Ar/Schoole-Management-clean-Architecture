@@ -1,4 +1,5 @@
-﻿using Core.Application.DTOs.NewFolder;
+﻿using Core.Application.DTOs.Email;
+using Core.Application.DTOs.NewFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;

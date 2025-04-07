@@ -1,11 +1,11 @@
-﻿using Core.Application.Commands;
-using Core.Application.DTOs.NewFolder;
-using Core.Application.Interfaces.IdentitySevices;
+﻿using Core.Application.DTOs.Authontication;
+using Core.Application.Featurs.Authontication.Commands;
+using Core.Application.Interfaces.IdentityServices;
 using MediatR;
 
 namespace Core.Application.Handlers
 {
-    public class GenerateTokenAsyncHandler : IRequestHandler<GenerateTokenAsyncCommand, TokenConfirmationResponse>
+    public class GenerateTokenAsyncHandler : IRequestHandler<GenerateTokenAsyncCommand, JwtAuthResult>
     {
 
         private IAuthService _authService { get; set; }
@@ -14,9 +14,9 @@ namespace Core.Application.Handlers
         {
             _authService = userService;
         }
-        public async Task<TokenConfirmationResponse> Handle(GenerateTokenAsyncCommand request, CancellationToken cancellationToken)
+        public async Task<JwtAuthResult> Handle(GenerateTokenAsyncCommand request, CancellationToken cancellationToken)
         {
-            return await _authService.GenerateTokenAsync(request.Request.EmailOrName , request.Request.Roles);
+            return await _authService.GetJWTToken(request.Request);
         }
     }
 }

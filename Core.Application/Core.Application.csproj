@@ -32,4 +32,8 @@
     <ProjectReference Include="..\Core.Domain\Core.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Featurs\Authontication\Queries\" />
+  </ItemGroup>
+
 </Project>

@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
 using Core.Application.DTOs.Teacher.TeacherDtos;
 using Core.Application.Interfaces;
+using Core.Domain.Entities;
 using Infrastructure.Data.Data;
 using Infrastructure.Data.Entities;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using SchoolProject.Infrustructure.UnitOfWork;
 using CoreTeacher = Core.Domain.Entities.Teacher;
 
 
@@ -13,16 +14,18 @@ namespace Infrastructure.Data.Services
 {
     public class TeacherServices : ITeacherServices
     {
-
+        private IUnitOfWork _unitOfWork {  get; set; }
         private UserManager<ApplicationUser> _userManager { get; set; }
         private ApplicationDbContext _context { get; set; }
         private IMapper _mapper { get; set; }
 
-        public TeacherServices(UserManager<ApplicationUser> userManager, ApplicationDbContext context, IMapper mapper)
+        public TeacherServices(UserManager<ApplicationUser> userManager, ApplicationDbContext context
+            , IMapper mapper, IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
             _context = context;
             _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<bool> AddTeacherAsync(AddTeacherRequest request)
@@ -33,27 +36,20 @@ namespace Infrastructure.Data.Services
                 // map to ApplicationUser
                 var user = _mapper.Map<ApplicationUser>(request);
 
-                //add to user table 
-                var result = await _userManager.CreateAsync(user, request.Password);
-                if (!result.Succeeded)
+                //add to user table and role table
+                var result = await _unitOfWork.Users.CreateUserAsync(user , request.Password ,"Teacher");
+                if (!result)
                 {
                     return false;
                 }
-                //add to role table
-                result = await _userManager.AddToRoleAsync(user, "Teacher");
-                if (!result.Succeeded)
-                {
-                    return false;
-                }
-
+               
                 // add to teachers table
-                var teacher = _mapper.Map<Teacher>(user);
+                var teacher = _mapper.Map<Entities.Teacher>(user);
                 teacher.Id = Guid.NewGuid();
                 teacher.Salary = request.Salary;
                 teacher.Subject = request.Subject;
 
-                await _context.Teachers.AddAsync(teacher);
-                await _context.SaveChangesAsync();
+                await _unitOfWork.Teachers.AddAsync(teacher);
 
                 await transaction.CommitAsync();
 
@@ -70,27 +66,18 @@ namespace Infrastructure.Data.Services
             await using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
-                //find user by id in student table 
-                var teacher = await _context.Teachers.FindAsync(Guid.Parse(id));
+                //find user by id in Teachers table 
+                var teacher = await _unitOfWork.Teachers.GetByIdAsync(Guid.Parse(id));
                 if (teacher == null)
                 {
                     return null;
                 }
-
-                //remove from student table 
-                _context.Teachers.Remove(teacher);
-                await _context.SaveChangesAsync();
-
-                //find user by ApplicationsUserId
-                var user = await _userManager.FindByIdAsync(teacher.ApplicationUserId);
-                if (user == null)
-                {
-                    return null;
-                }
-
+                //remove from teachers table 
+                await _unitOfWork.Teachers.DeleteAsync(teacher);
+                
                 // remove from user table
-                var result = await _userManager.DeleteAsync(user);
-                if (!result.Succeeded)
+                var result = await _unitOfWork.Users.DeleteUserAsyncById(teacher.ApplicationUserId);
+                if (!result)
                 {
                     return null;
                 }
@@ -108,9 +95,11 @@ namespace Infrastructure.Data.Services
             }
         }
 
-        public async Task<CoreTeacher> GetTeacherByIdAsync(string id)
+        public async Task<CoreTeacher?> GetTeacherByIdAsync(string id)
         {
-            var teacher = await _context.Teachers.FindAsync(Guid.Parse(id));
+            var teacher = await _unitOfWork.Teachers.GetByIdAsync(Guid.Parse(id));
+            if (teacher == null) 
+                return null;
             //map ro core teacher
             var coreTeacher = _mapper.Map<CoreTeacher>(teacher);
 
@@ -119,12 +108,19 @@ namespace Infrastructure.Data.Services
 
         public async Task<List<CoreTeacher>> GetTeacherListAsync()
         {
-            var Teachers = await _context.Teachers.ToListAsync();
+            var Teachers = await _unitOfWork.Teachers.GetTeacherListAsync();
 
             //map teachers to core teachers
             var coreTeachers = _mapper.Map<List<CoreTeacher>>(Teachers);
 
             return coreTeachers;
+        }
+
+        public async Task<bool> TeacherIsInAnyCourse(string id)
+        {
+            var IsIn = await _unitOfWork.Courses.TeacherIsInAnyCourse(Guid.Parse(id));
+            
+            return IsIn;
         }
     }
 }

@@ -1,28 +1,34 @@
 ﻿using Core.Domain;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace Infrastructure.Data.Entities
 {
     public class Course
     {
+        public Course()
+        {
+            StudentCourses = new List<StudentCourse>();
+        }
         [Key]
         public Guid Id { get; set; }
+
+        [ForeignKey(nameof(TeacherId))]
+        public Guid TeacherId { get; set; }
+        public Teacher Teacher { get; set; }
+
+        public string Name { get; set; }
 
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
 
-        public Subjects Subject { get; set; } // مثلا Math, Chemistry, Physics
+        public Subjects Subject { get; set; } 
 
-        public ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
-        public ICollection<TeacherCourse> TeacherCourses { get; set; } = new List<TeacherCourse>();
+        public decimal CourseFee { get; set; }
+
+        public ICollection<StudentCourse> StudentCourses { get; set; } 
 
     }
-
-
 }

@@ -1,12 +1,19 @@
 ﻿using Core.Domain;
+using Core.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.Data.Entities
 {
     public class Teacher
     {
+        Teacher()
+        {
+            Courses = new List<Course>();
+        }
+
         [Key]
         public Guid Id { get; set; }
+
         [Required]
         [MaxLength(450)]
         public string ApplicationUserId { get; set; }
@@ -25,9 +32,7 @@ namespace Infrastructure.Data.Entities
 
         public Gender Gender { get; set; }
 
-        public ICollection<TeacherCourse> TeacherCourses { get; set; }
+        public ICollection<Course> Courses { get; set; }
 
     }
-
- 
 }

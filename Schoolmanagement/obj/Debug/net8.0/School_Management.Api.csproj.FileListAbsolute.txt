@@ -169,7 +169,6 @@ C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\S
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.AssemblyInfoInputs.cache
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.AssemblyInfo.cs
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.csproj.CoreCompileInputs.cache
-C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.sourcelink.json
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\staticwebassets.build.json
@@ -190,3 +189,4 @@ C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\C
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Core.Domain.pdb
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Infrastructure.Data.dll
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Infrastructure.Data.pdb
+C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.MvcApplicationPartsAssemblyInfo.cs

@@ -3,7 +3,7 @@ using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.Featurs.Students.StudentCommands;
 using Core.Application.Featurs.Students.StudentQuery;
 using Core.Application.Interfaces;
-using Core.Application.Interfaces.IdentitySevices;
+using Core.Application.Interfaces.IdentityServices;
 using Core.Domain.Bases;
 using FluentValidation;
 using MediatR;
@@ -38,6 +38,7 @@ namespace Core.Application.Featurs.Students.StudentHandlers
             }
             //add to student and user table
             var result = await _studentServices.AddStudentAsync(request.student);
+
             if (result)
                 return Created("");
             else
@@ -61,15 +62,26 @@ namespace Core.Application.Featurs.Students.StudentHandlers
         {
             //get from students table by id
             var student = await _studentServices.GetStudentByIdAsync(request.Id);
+            if(student == null)
+            {
+                return NotFound<StudentResponse>();
+            }
             // map to student response
             var studentResponse = _mapper.Map<StudentResponse>(student);
-            var result = Success(studentResponse);
 
+            var result = Success(studentResponse);
             return result;
+
         }
 
         public async Task<Response<StudentResponse>> Handle(DeleteStudentCommand request, CancellationToken cancellationToken)
         {
+            // check student have course
+            var result = await _studentServices.StudentIsInAnyCourse(request.Id);
+            if (result)
+            {
+                return BadRequest<StudentResponse>("student have course");
+            }
             //Delete student from tables student and user
             var student = await _studentServices.DeleteStudentAsync(request.Id);
             if (student == null)
@@ -78,9 +90,7 @@ namespace Core.Application.Featurs.Students.StudentHandlers
             }
             //map to student response
             var studentResponse = _mapper.Map<StudentResponse>(student);
-            var result = Deleted(studentResponse);
-
-            return result;
+            return Deleted(studentResponse);
         }
     }
 }

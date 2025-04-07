@@ -1,4 +1,4 @@
-﻿using Core.Application.Interfaces.IdentitySevices;
+﻿using Core.Application.Interfaces.IdentityServices;
 using Core.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Identity;

@@ -56,7 +56,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Admins", (string)null);
+                    b.ToTable("Admins");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.Course", b =>
@@ -65,8 +65,15 @@ namespace Infrastructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<decimal>("CourseFee")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -74,9 +81,14 @@ namespace Infrastructure.Data.Migrations
                     b.Property<int>("Subject")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("TeacherId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Courses", (string)null);
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.Student", b =>
@@ -113,7 +125,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Students", (string)null);
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.StudentCourse", b =>
@@ -124,14 +136,14 @@ namespace Infrastructure.Data.Migrations
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("Score")
+                    b.Property<double?>("Score")
                         .HasColumnType("float");
 
                     b.HasKey("StudentId", "CourseId");
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("StudentCourses", (string)null);
+                    b.ToTable("StudentCourses");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.Teacher", b =>
@@ -171,22 +183,18 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Teachers", (string)null);
+                    b.ToTable("Teachers");
                 });
 
-            modelBuilder.Entity("Infrastructure.Data.Entities.TeacherCourse", b =>
+            modelBuilder.Entity("Infrastructure.Data.Entities.Course", b =>
                 {
-                    b.Property<Guid>("TeacherId")
-                        .HasColumnType("uniqueidentifier");
+                    b.HasOne("Infrastructure.Data.Entities.Teacher", "Teacher")
+                        .WithMany("Courses")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<Guid>("CourseId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("TeacherId", "CourseId");
-
-                    b.HasIndex("CourseId");
-
-                    b.ToTable("TeacherCourses", (string)null);
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.StudentCourse", b =>
@@ -208,30 +216,9 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("Infrastructure.Data.Entities.TeacherCourse", b =>
-                {
-                    b.HasOne("Infrastructure.Data.Entities.Course", "Course")
-                        .WithMany("TeacherCourses")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Infrastructure.Data.Entities.Teacher", "Teacher")
-                        .WithMany("TeacherCourses")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Teacher");
-                });
-
             modelBuilder.Entity("Infrastructure.Data.Entities.Course", b =>
                 {
                     b.Navigation("StudentCourses");
-
-                    b.Navigation("TeacherCourses");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Entities.Student", b =>
@@ -241,7 +228,7 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Infrastructure.Data.Entities.Teacher", b =>
                 {
-                    b.Navigation("TeacherCourses");
+                    b.Navigation("Courses");
                 });
 #pragma warning restore 612, 618
         }

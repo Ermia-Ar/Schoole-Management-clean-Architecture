@@ -1,13 +1,7 @@
-﻿using Core.Application.Commands;
-using Core.Application.DTOs;
-using Core.Application.DTOs.Student.StudentDtos;
-using Core.Application.DTOs.Teacher.TeacherDtos;
-using Core.Application.Featurs.Students.StudentCommands;
-using Core.Application.Featurs.Students.StudentQuery;
+﻿using Core.Application.DTOs.Teacher.TeacherDtos;
 using Core.Application.Featurs.Teachers.TeacherCommands;
 using Core.Application.Featurs.Teachers.TeacherQuery;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using School_Management.Api.Base;
 
@@ -36,7 +30,7 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("GetListOfTeachers")]
-        public async Task<IActionResult> GetStudentList()
+        public async Task<IActionResult> GetTeacherList()
         {
             var response = new GetTeacherListQuery();
             var result = await _mediator.Send(response);
@@ -45,18 +39,28 @@ namespace School_Management.Api.Controllers
         }
 
         [HttpGet]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> GetStudentById([FromRoute] Guid id)
+        [Route("{id:guid}FindTeacherById")]
+        public async Task<IActionResult> GetTeacherById([FromRoute] Guid id)
         {
             var response = new GetTeacherByIdQuery { Id = id.ToString() };
             var result = await _mediator.Send(response);
 
             return NewResult(result);
         }
+        
+        [HttpGet]
+        [Route("{id:guid}FindTeacherCourses")]
+        public async Task<IActionResult> GetTeacherCoursesById([FromRoute] Guid id)
+        {
+            var response = new GetTeacherCoursesByIdQuery { Id = id.ToString() };
+            var result = await _mediator.Send(response);
+
+            return NewResult(result);
+        }
 
         [HttpDelete]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> DeleteStudent([FromRoute] Guid id)
+        [Route("{id:guid}DeleteTeacher")]
+        public async Task<IActionResult> DeleteTeacher([FromRoute] Guid id)
         {
             var response = new DeleteTeacherCommand { Id = id.ToString() };
             var result = await _mediator.Send(response);
