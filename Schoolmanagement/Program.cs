@@ -1,20 +1,29 @@
+﻿using Application.Behaviors;
 using Core.Application;
 using Core.Application.Mapper;
 using Core.Application.Middleware;
 using FluentValidation.AspNetCore;
 using Infrastructure.Data;
 using Infrastructure.Data.Data;
+using Infrastructure.Data.InfrustructureBases.InfrastructureProfile;
 using Infrastructure.Identity;
 using Infrastructure.Identity.Data;
-using Infrastructure.Identity.InfrastructureProfile;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Text;
-
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Host.UseSerilog((context, services, configuration) =>
+{
+    configuration
+        .ReadFrom.Configuration(context.Configuration)
+        .WriteTo.Console()
+        .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day);
+});
 
 // Add services to the container.
 
@@ -66,7 +75,9 @@ builder.Services.AddInfrustructureDependendcies()
     .AddIdentityDependendcies()
     .AddCoreDependencies();
 
-
+builder.Services.AddScoped(
+    typeof(IPipelineBehavior<,>),
+    typeof(LoggingPipelineBehavior<,>));
 
 builder.Services.AddAutoMapper(typeof(InfraProfile));
 builder.Services.AddAutoMapper(typeof(AppMapper));
@@ -82,6 +93,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
+
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 

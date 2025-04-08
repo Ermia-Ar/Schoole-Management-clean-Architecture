@@ -21,7 +21,7 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("SendEmail")]
-        [Authorize(Roles = "Teacher,Admin")]
+        //[Authorize(Roles = "Teacher,Admin")]
         public async Task<IActionResult> SendEmail([FromForm]EmailRequest emailRequest)
         {
             var request  = new EmailSenderCommand {  EmailRequest = emailRequest };

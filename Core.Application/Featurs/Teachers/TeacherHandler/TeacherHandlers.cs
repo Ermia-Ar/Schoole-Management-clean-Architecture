@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using Core.Application.DTOs.Course;
 using Core.Application.DTOs.Teacher.TeacherDtos;
 using Core.Application.Featurs.Teachers.TeacherCommands;
 using Core.Application.Featurs.Teachers.TeacherQuery;
 using Core.Application.Interfaces;
+using Core.Application.Wrapper;
 using Core.Domain.Bases;
 using MediatR;
 
@@ -11,9 +13,8 @@ namespace Core.Application.Featurs.Teachers.TeacherHandler
     public class TeacherHandlers : ResponseHandler
         , IRequestHandler<AddTeacherCommand, Response<string>>
         , IRequestHandler<DeleteTeacherCommand, Response<TeacherResponse>>
-        , IRequestHandler<GetTeacherListQuery, Response<List<TeacherResponse>>>
+        , IRequestHandler<GetTeacherListQuery, Response<PaginatedResult<TeacherResponse>>>
         , IRequestHandler<GetTeacherByIdQuery, Response<TeacherResponse>>
-        //, IRequestHandler<GetTeacherCoursesByIdQuery, Response<List<CourseResponse>>>
     {
         private ITeacherServices _teacherServices { get; set; }
         private IMapper _mapper { get; set; }
@@ -55,14 +56,17 @@ namespace Core.Application.Featurs.Teachers.TeacherHandler
 
         }
 
-        public async Task<Response<List<TeacherResponse>>> Handle(GetTeacherListQuery request, CancellationToken cancellationToken)
+        public async Task<Response<PaginatedResult<TeacherResponse>>> Handle(GetTeacherListQuery request, CancellationToken cancellationToken)
         {
             // get teacher list from teachers table
             var teachers = await _teacherServices.GetTeacherListAsync();
             //map to teacher response
             var teacherResponse = _mapper.Map<List<TeacherResponse>>(teachers);
+            //paginate
+            var teacherResponsePaginated = await teacherResponse.AsQueryable()
+                .ToPaginatedListAsync(request.pageNumber , request.pageSize);
 
-            return Success(teacherResponse);
+            return Success(teacherResponsePaginated);
 
         }
 
@@ -79,5 +83,6 @@ namespace Core.Application.Featurs.Teachers.TeacherHandler
 
             return Success(teacherResponse);
         }
+
     }
 }

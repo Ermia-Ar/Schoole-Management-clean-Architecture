@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Application.DTOs.Authontication
+namespace Core.Application.DTOs.Authentication
 {
     public class JwtAuthResult
     {

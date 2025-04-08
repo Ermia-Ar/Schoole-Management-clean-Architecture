@@ -1,4 +1,4 @@
-﻿using Core.Application.DTOs.Authontication;
+﻿using Core.Application.DTOs.Authentication;
 using Core.Application.DTOs.Email;
 using System;
 using System.Collections.Generic;

@@ -53,19 +53,30 @@ namespace Infrastructure.Data.Services
 
         public async Task<bool> DeleteCourseAsync(string id)
         {
-            //get course from data base
-            var course = await _context.Courses.FindAsync(Guid.Parse(id));
-            if (course == null)
-                return false;
 
-            //delete course from data base
+            await using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
+                //get course from data base
+                var course = await _context.Courses.FindAsync(Guid.Parse(id));
+                if (course == null)
+                    return false;
+
+                //delete from course table
                 await _unitOfWork.Courses.DeleteAsync(course);
+
+                //delete course in StudentCourse table
+                var result = await _unitOfWork.StudentsCourse.DeleteRangeByCourseId(id);
+                if (!result)
+                {
+                    return false;
+                }
+                await transaction.CommitAsync();
                 return true;
             }
             catch
             {
+                await transaction.RollbackAsync();
                 return false;
             }
         }
@@ -89,5 +100,7 @@ namespace Infrastructure.Data.Services
             var coreCourses = _mapper.Map<List<CoreCourse>>(courses);
             return coreCourses;
         }
+
+        
     }
 }

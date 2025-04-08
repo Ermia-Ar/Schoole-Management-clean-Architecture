@@ -1,11 +1,10 @@
 ﻿using Core.Application.Interfaces;
 using Core.Application.Interfaces.Email;
-using Infrastructure.Data.CurrentUserService.Abstracts;
-using Infrastructure.Data.CurrentUserService.Implementation;
 using Infrastructure.Data.InfrustructureBases;
 using Infrastructure.Data.Interfaces;
 using Infrastructure.Data.Repositories;
 using Infrastructure.Data.Services;
+using Infrastructure.Identity.CurrentUserServices;
 using Infrastructure.Identity.Services;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;

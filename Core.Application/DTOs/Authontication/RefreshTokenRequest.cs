@@ -1,4 +1,4 @@
-﻿namespace Core.Application.DTOs.Authontication
+﻿namespace Core.Application.DTOs.Authentication
 {
     public class RefreshTokenRequest
     {

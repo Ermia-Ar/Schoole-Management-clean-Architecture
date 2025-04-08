@@ -17,14 +17,15 @@ namespace Infrastructure.Data.Repositories
 
         public async Task<List<Course>> GetCourseListAsync()
         {
-            var courses = await _courses.Include(x => x.Teacher).ToListAsync();
+            var courses = await _courses.AsNoTracking()
+                .Include(x => x.Teacher).ToListAsync();
 
             return courses;
         }
 
         public async Task<List<Course>> GetTeacherCoursesById(string id)
         {
-            var courses = await _courses
+            var courses = await _courses.AsNoTracking()
                 .Where(x => x.TeacherId == Guid.Parse(id)).ToListAsync();
 
             return courses;
@@ -32,7 +33,7 @@ namespace Infrastructure.Data.Repositories
 
         public async Task<bool> TeacherIsInAnyCourse(Guid id)
         {
-            var isIn = await _courses.AnyAsync(x => x.TeacherId == id);
+            var isIn = await _courses.AsNoTracking().AnyAsync(x => x.TeacherId == id);
             return isIn;
         }
     }

@@ -1,8 +1,8 @@
-﻿using Core.Application.DTOs.Authontication;
+﻿using Core.Application.DTOs.Authentication;
 using FluentValidation;
 
 
-namespace Core.Application.DTOs.Authontication.validators
+namespace Core.Application.DTOs.Authentication.validators
 {
     public class SignInRequestValidator : AbstractValidator<SignInRequest>
     {

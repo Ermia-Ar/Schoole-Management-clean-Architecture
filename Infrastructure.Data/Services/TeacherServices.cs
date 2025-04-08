@@ -57,6 +57,7 @@ namespace Infrastructure.Data.Services
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync();
                 return false;
             }
         }
@@ -91,6 +92,7 @@ namespace Infrastructure.Data.Services
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync();
                 return null;
             }
         }

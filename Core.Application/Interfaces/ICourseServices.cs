@@ -12,5 +12,7 @@ namespace Core.Application.Interfaces
         Task<bool> DeleteCourseAsync(string id);
 
         Task<Course?> GetCourseById(string id);
+
+        Task<List<Course>> GetTeacherCoursesById(string id);
     }
 }

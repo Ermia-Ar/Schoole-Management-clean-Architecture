@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
-using Core.Application.DTOs.Authontication;
+using Core.Application.DTOs.Authentication;
 using Core.Application.Interfaces;
 using Core.Domain.Helper;
+using Infrastructure.Identity.CurrentUserServices;
 using Infrastructure.Identity.Data;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -17,19 +19,23 @@ namespace Infrastructure.Identity.Services
 {
     public class AuthService : IAuthService
     {
-        //private SignInManager<IdentityUser> _signInManager { get; set; }
         private UserManager<ApplicationUser> _userManager { get; set; }
+        private ICurrentUserServices _currentUserServices { get; set; }
         private AppIdentityDbContext _dbContext { get; set; }
         private IConfiguration _configuration { get; set; }
         private IMapper _mapper { get; set; }
 
-        public AuthService(UserManager<ApplicationUser> userManager, IConfiguration configuration, IMapper mapper, AppIdentityDbContext dbContext)
+
+
+        public AuthService(UserManager<ApplicationUser> userManager,
+            IConfiguration configuration, IMapper mapper, AppIdentityDbContext dbContext, ICurrentUserServices currentUserServices)
         {
             //_signInManager = signInManager;
             _userManager = userManager;
             _configuration = configuration;
             _mapper = mapper;
             _dbContext = dbContext;
+            _currentUserServices = currentUserServices;
         }
 
         public async Task<bool> SignInAsync(SignInRequest signInRequest)
@@ -47,7 +53,7 @@ namespace Infrastructure.Identity.Services
                 return false;
             }
 
-            return  true;
+            return true;
 
         }
 
@@ -150,7 +156,8 @@ namespace Infrastructure.Identity.Services
             return claims;
         }
 
-        public async Task<JwtAuthResult> GetRefreshToken(string codeMelly, JwtSecurityToken JwtToken, DateTime? ExpiryDate, string refreshToken)
+        public async Task<JwtAuthResult> GetRefreshToken(string codeMelly, JwtSecurityToken JwtToken
+            , DateTime? ExpiryDate, string refreshToken)
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.CodeMelly == codeMelly);
 
@@ -164,7 +171,7 @@ namespace Infrastructure.Identity.Services
 
             var refreshTokenResult = new RefreshToken();
             refreshTokenResult.TokenString = refreshToken;
-            refreshTokenResult.ExpireAt = (DateTime)ExpiryDate; 
+            refreshTokenResult.ExpireAt = (DateTime)ExpiryDate;
             //get user name
             var username = JwtToken.Claims.FirstOrDefault(x => x.Type == nameof(UserClaimsModel.UserName)).Value;
             refreshTokenResult.UserName = username;
@@ -263,5 +270,52 @@ namespace Infrastructure.Identity.Services
             await _dbContext.SaveChangesAsync();
         }
 
+        public async Task<ForgotPasswordResponse?> ForgotPassword(ForgotPasswordRequest forgotPassword)
+        {
+            //check code melly and phone number 
+            var user = await _userManager.Users.
+                FirstOrDefaultAsync(x => x.CodeMelly == forgotPassword.CodeMelly);
+
+            if (user == null || user.PhoneNumber != forgotPassword.PhoneNumber)
+            {
+                return null;
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            token = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
+
+            return new ForgotPasswordResponse { Token = token };
+
+        }
+
+        public async Task<bool> ResetPassword(ResetPasswordRequest forgotPassword , string codeMelly)
+        {
+            var user = await _userManager.Users.
+               FirstOrDefaultAsync(x => x.CodeMelly == codeMelly);
+
+            var token = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(forgotPassword.Token));
+
+            var result = await _userManager.
+                ResetPasswordAsync(user, token , forgotPassword.NewPassword);
+
+            if (!result.Succeeded)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public async Task<bool> ChangePassword(ChangePasswordRequest changePasswordRequest)
+        {
+            var user = await _currentUserServices.GetUserAsync();
+            var result = await _userManager.ChangePasswordAsync(user,
+                changePasswordRequest.CurrenPassword, changePasswordRequest.NewPassword);
+
+            if(result.Succeeded)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

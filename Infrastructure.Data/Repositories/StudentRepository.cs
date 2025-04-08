@@ -17,7 +17,7 @@ namespace Infrastructure.Data.Repositories
 
         public async Task<List<Student>> GetStudentListAsync()
         {
-            var Students = await _student.ToListAsync();
+            var Students = await _student.AsNoTracking().ToListAsync();
 
             return Students;
         }

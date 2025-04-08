@@ -1,17 +1,18 @@
 ﻿using AutoMapper;
+using Core.Application.DTOs.StudentCourse;
 using Core.Application.Interfaces;
+using Core.Domain.Entities;
 using Infrastructure.Data.Data;
 using Infrastructure.Data.Entities;
+using Infrastructure.Identity.CurrentUserServices;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
-using StudentCourseCore = Core.Domain.Entities.StudentCourse;
-using StudentCore = Core.Domain.Entities.Student;
-using CoreCourses = Core.Domain.Entities.Course;
 using Microsoft.EntityFrameworkCore;
 using SchoolProject.Infrustructure.UnitOfWork;
-using Infrastructure.Data.CurrentUserService.Abstracts;
-using System.Net.WebSockets;
-using Core.Application.DTOs.StudentCourse;
+using CoreCourses = Core.Domain.Entities.Course;
+using StudentCore = Core.Domain.Entities.Student;
+using StudentCourse = Infrastructure.Data.Entities.StudentCourse;
+using StudentCourseCore = Core.Domain.Entities.StudentCourse;
 
 namespace Infrastructure.Data.Services
 {
@@ -37,12 +38,15 @@ namespace Infrastructure.Data.Services
         {
             try
             {
-                var userId = _currentUserServices.GetUserId();
+                var ApplicationUserId = _currentUserServices.GetUserId();
+
+                var Student = await _unitOfWork.Students.GetTableNoTracking()
+                    .FirstOrDefaultAsync(x => x.ApplicationUserId == ApplicationUserId);
 
                 var studentCourse = new StudentCourse
                 {
                     CourseId = Guid.Parse(request.CourseId),
-                    StudentId = userId,
+                    StudentId = Student.Id,
                 };
 
                 await _unitOfWork.StudentsCourse.AddAsync(studentCourse);
@@ -96,5 +100,8 @@ namespace Infrastructure.Data.Services
             var coreCourses = _mapper.Map<List<CoreCourses>>(courses);
             return coreCourses;
         }
+
+     
+
     }
 }

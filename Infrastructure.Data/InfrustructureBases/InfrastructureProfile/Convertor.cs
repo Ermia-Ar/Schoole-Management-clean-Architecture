@@ -1,7 +1,7 @@
 ﻿using Core.Domain.Entities;
 using System.Net.Http.Headers;
 
-namespace Infrastructure.Data.InfrastructureProfile
+namespace Infrastructure.Data.InfrustructureBases.InfrastructureProfile
 {
     public static class Convertor
     {

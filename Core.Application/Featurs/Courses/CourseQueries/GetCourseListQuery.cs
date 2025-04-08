@@ -1,15 +1,13 @@
 ﻿using Core.Application.DTOs.Course;
+using Core.Application.Wrapper;
 using Core.Domain.Bases;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Application.Featurs.Courses.CourseQueries
 {
-    public class GetCourseListQuery : IRequest<Response<List<CourseResponse>>>
+    public class GetCourseListQuery : IRequest<Response<PaginatedResult<CourseResponse>>>
     {
+        public int pageSize { get; set; }
+        public int pageNumber { get; set; }
     }
 }

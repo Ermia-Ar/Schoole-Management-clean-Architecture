@@ -4,19 +4,22 @@ using Core.Domain.Bases;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Core.Application.Middleware
 {
 	public class ErrorHandlerMiddleware
 	{
 		private readonly RequestDelegate _next;
+		private ILogger<ErrorHandlerMiddleware> _logger;
 
-		public ErrorHandlerMiddleware(RequestDelegate next)
-		{
-			_next = next;
-		}
+        public ErrorHandlerMiddleware(RequestDelegate next, ILogger<ErrorHandlerMiddleware> logger)
+        {
+            _next = next;
+            _logger = logger;
+        }
 
-		public async Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context)
 		{
 			try
 			{
@@ -28,7 +31,8 @@ namespace Core.Application.Middleware
 				response.ContentType = "application/json";
 				var responseModel = new Response<string>() { Succeeded = false, Message = error?.Message };
 				// Logging
-                //Log.Error(error, error.Message, context.Request, "");
+				var errorId = Guid.NewGuid();
+				_logger.LogError($"{errorId} : {error.Message}");
 
                 //TODO:: cover all validation errors
                 switch (error)

@@ -21,7 +21,7 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("Create")]
-        [Authorize(Roles= "Admin")]
+        //[Authorize(Roles= "Admin")]
         public async Task<IActionResult> Create([FromBody] AddStudentRequest request)
         {
             var response = new AddStudentCommand { student = request };
@@ -32,10 +32,10 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("GetListOfStudent")]
-        [Authorize(Roles= "Admin")]
-        public async Task<IActionResult> GetStudentList()
+        //[Authorize(Roles= "Admin,Student")]
+        public async Task<IActionResult> GetStudentList( int pageSize, int pageNumber)
         {
-            var response = new GetStudentListQuery();
+            var response = new GetStudentListQuery() { pageSize = pageSize , pageNumber  = pageNumber};
             var result = await _mediator.Send(response);
 
             return NewResult(result);
@@ -43,7 +43,7 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("{id:guid}FindStudentById")]
-        [Authorize(Roles= "Admin")]
+        //[Authorize(Roles= "Admin")]
         public async Task<IActionResult> GetStudentById([FromRoute] Guid id)
         {
             var response = new GetStudentByIdQuery { Id = id.ToString() };
@@ -54,7 +54,7 @@ namespace School_Management.Api.Controllers
 
         [HttpDelete]
         [Route("{id:guid}DeleteStudent")]
-        [Authorize(Roles= "Admin")]
+        //[Authorize(Roles= "Admin")]
         public async Task<IActionResult> DeleteStudent([FromRoute] Guid id)
         {
             var response = new DeleteStudentCommand { Id = id.ToString() };

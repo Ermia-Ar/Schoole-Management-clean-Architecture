@@ -1,11 +1,11 @@
 ﻿using Infrastructure.Identity.Models;
 
-namespace Infrastructure.Data.CurrentUserService.Abstracts
+namespace Infrastructure.Identity.CurrentUserServices
 {
     public interface ICurrentUserServices
     {
         public Task<ApplicationUser> GetUserAsync();
-        public Guid GetUserId();
+        public string GetUserId();
         public Task<List<string>> GetCurrentUserRolesAsync();
     }
 }

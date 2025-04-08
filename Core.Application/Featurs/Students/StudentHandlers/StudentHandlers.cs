@@ -3,6 +3,7 @@ using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.Featurs.Students.StudentCommands;
 using Core.Application.Featurs.Students.StudentQuery;
 using Core.Application.Interfaces;
+using Core.Application.Wrapper;
 using Core.Domain.Bases;
 using FluentValidation;
 using MediatR;
@@ -11,7 +12,7 @@ namespace Core.Application.Featurs.Students.StudentHandlers
 {
     public class StudentHandlers : ResponseHandler
         , IRequestHandler<AddStudentCommand, Response<string>>
-        , IRequestHandler<GetStudentListQuery, Response<List<StudentResponse>>>
+        , IRequestHandler<GetStudentListQuery, Response<PaginatedResult<StudentResponse>>>
         , IRequestHandler<GetStudentByIdQuery, Response<StudentResponse>>
         , IRequestHandler<DeleteStudentCommand, Response<StudentResponse>>
     {
@@ -44,17 +45,17 @@ namespace Core.Application.Featurs.Students.StudentHandlers
                 return UnprocessableEntity<string>();
         }
 
-        public async Task<Response<List<StudentResponse>>> Handle(GetStudentListQuery request, CancellationToken cancellationToken)
+        public async Task<Response<PaginatedResult<StudentResponse>>> Handle(GetStudentListQuery request, CancellationToken cancellationToken)
         {
             //get from students table
             var students = await _studentServices.GetStudentListAsync();
 
             //map to list of student response 
             var studentsResponse = _mapper.Map<List<StudentResponse>>(students);
-            var result = Success(studentsResponse);
+            var paginated = await studentsResponse.AsQueryable()
+                .ToPaginatedListAsync(request.pageNumber, request.pageSize);
 
-            result.Meta = new { Count = studentsResponse.Count() };
-            return result;
+            return Success(paginated);
         }
 
         public async Task<Response<StudentResponse>> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)

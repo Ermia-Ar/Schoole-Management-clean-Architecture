@@ -21,7 +21,6 @@ namespace Infrastructure.Data.Services
 
         public StudentServices(UserManager<ApplicationUser> userManager, ApplicationDbContext context, IMapper mapper, IUnitOfWork unitOfWork)
         {
-            //_signInManager = signInManager;
             _userManager = userManager;
             _context = context;
             _mapper = mapper;
@@ -54,6 +53,7 @@ namespace Infrastructure.Data.Services
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync();
                 return false;
             }
 
@@ -90,12 +90,7 @@ namespace Infrastructure.Data.Services
                 {
                     return null;
                 }
-                //return null if student have course
-                var course = await _context.StudentCourses.AnyAsync(x => x.StudentId == student.Id);
-                if (course)
-                {
-                    return null;
-                }
+               
                 //remove from student table 
                 await _unitOfWork.Students.DeleteAsync(student);
 
@@ -111,6 +106,7 @@ namespace Infrastructure.Data.Services
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync();
                 return null;
             }
 

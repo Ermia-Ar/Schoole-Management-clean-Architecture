@@ -1,15 +1,13 @@
 ﻿using Core.Application.DTOs.Student.StudentDtos;
+using Core.Application.Wrapper;
 using Core.Domain.Bases;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Application.Featurs.Students.StudentQuery
 {
-    public class GetStudentListQuery : IRequest<Response<List<StudentResponse>>>
+    public class GetStudentListQuery : IRequest<Response<PaginatedResult<StudentResponse>>>
     {
+        public int pageSize { get; set; }
+        public int pageNumber { get; set; }
     }
 }

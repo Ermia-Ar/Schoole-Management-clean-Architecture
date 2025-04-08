@@ -1,5 +1,6 @@
 ﻿using Core.Application.DTOs.StudentCourse;
 using Core.Domain.Entities;
+using System.Linq.Expressions;
 
 namespace Core.Application.Interfaces
 {
@@ -9,6 +10,7 @@ namespace Core.Application.Interfaces
 
         Task<List<StudentCourse>> GetCourseStudentList();
 
-        Task<List<Course>> GetCoursesByStudentId(string Id);
+        Task<List<Course>> GetCoursesByStudentId(string id);
+
     }
 }

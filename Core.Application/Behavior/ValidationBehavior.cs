@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using MediatR;
-using Microsoft.Extensions.Localization;
 
 namespace Core.Application.Behavior
 {

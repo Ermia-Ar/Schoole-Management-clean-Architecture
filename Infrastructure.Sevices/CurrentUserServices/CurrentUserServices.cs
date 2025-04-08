@@ -1,13 +1,12 @@
 ﻿using Core.Domain.Helper;
-using Infrastructure.Data.CurrentUserService.Abstracts;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
 
-namespace Infrastructure.Data.CurrentUserService.Implementation
+namespace Infrastructure.Identity.CurrentUserServices
 {
-    public class CurrentUserServices:ICurrentUserServices
+    public class CurrentUserServices : ICurrentUserServices
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly UserManager<ApplicationUser> _userManager;
@@ -16,14 +15,16 @@ namespace Infrastructure.Data.CurrentUserService.Implementation
             _httpContextAccessor = httpContextAccessor;
             _userManager = userManager;
         }
-        public Guid GetUserId()
+        public string GetUserId()
         {
-            var userId = _httpContextAccessor.HttpContext.User.Claims.SingleOrDefault(claim => claim.Type == nameof(UserClaimsModel.Id)).Value;
+            var userId = _httpContextAccessor.HttpContext.User.Claims
+                .SingleOrDefault(claim => claim.Type == nameof(UserClaimsModel.Id)).Value;
+
             if (userId == null)
             {
                 throw new UnauthorizedAccessException();
             }
-            return Guid.Parse(userId);
+            return userId;
         }
 
         public async Task<ApplicationUser> GetUserAsync()

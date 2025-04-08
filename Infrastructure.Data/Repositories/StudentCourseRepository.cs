@@ -17,7 +17,7 @@ namespace Infrastructure.Data.Repositories
 
         public async Task<List<StudentCourse>> GetCourseStudentListAsync()
         {
-            var studentCourses = await _studentCourses
+            var studentCourses = await GetTableNoTracking()
                 .Include(x => x.Course).Include(x => x.Course.Teacher).Include(x => x.Student)
                 .ToListAsync();
 
@@ -26,7 +26,7 @@ namespace Infrastructure.Data.Repositories
 
         public async Task<List<Course>> GetCoursesByStudentId(string id)
         {
-            var courses = await _studentCourses.Where(x => x.StudentId == Guid.Parse(id))
+            var courses = await GetTableNoTracking().Where(x => x.StudentId == Guid.Parse(id))
                 .Include(x => x.Course)
                 .Include(x => x.Course.Teacher)
                 .Select(x => x.Course)
@@ -37,8 +37,24 @@ namespace Infrastructure.Data.Repositories
 
         public async Task<bool> StudentIsInAnyCourse(Guid id)
         {
-            var isIn = await _studentCourses.AnyAsync(x => x.StudentId == id);
+            var isIn = await GetTableNoTracking().AnyAsync(x => x.StudentId == id);
             return isIn;
+        }
+
+        public async Task<bool> DeleteRangeByCourseId(string courseId)
+        {
+            var studentCourses = await _studentCourses.AsNoTracking()
+                .Where(x => x.CourseId.ToString() == courseId).ToListAsync();
+
+            try
+            {
+                await DeleteRangeAsync(studentCourses);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

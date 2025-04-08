@@ -9,10 +9,9 @@ using CoreCourse = Core.Domain.Entities.Course;
 using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.DTOs.Teacher.TeacherDtos;
 using Infrastructure.Data;
-using Infrastructure.Data.InfrastructureProfile;
 using Core.Application.DTOs.Course;
 
-namespace Infrastructure.Identity.InfrastructureProfile
+namespace Infrastructure.Data.InfrustructureBases.InfrastructureProfile
 {
     public class InfraProfile : Profile
     {
@@ -58,8 +57,8 @@ namespace Infrastructure.Identity.InfrastructureProfile
                 .ForMember(op => op.TeacherId, dex => dex.MapFrom(op => Guid.Parse(op.TeacherId)))
                 .ReverseMap();
 
-            CreateMap<Course , CoreCourse>()
-                .ForMember(x => x.TeacherCourse , dex => dex.MapFrom(x => Convertor.ConvertToTeacher(x.Teacher)))
+            CreateMap<Course, CoreCourse>()
+                .ForMember(x => x.TeacherCourse, dex => dex.MapFrom(x => Convertor.ConvertToTeacher(x.Teacher)))
                 .ReverseMap();
 
             //
