@@ -10,23 +10,23 @@ using MediatR;
 namespace Core.Application.Featurs.Authentication.Handler
 {
     public class AuthHandlers : ResponseHandler
-        , IRequestHandler<SignInAsyncCommand, Response<JwtAuthResult>>
+        , IRequestHandler<LoginAsyncCommand, Response<JwtAuthResult>>
         , IRequestHandler<RefreshTokenCommand, Response<JwtAuthResult>>
         , IRequestHandler<GenerateTokenAsyncCommand, JwtAuthResult>
         , IRequestHandler<ForgotPasswordCommand, Response<ForgotPasswordResponse>>
         , IRequestHandler<ResetPasswordCommand, Response<string>>
         , IRequestHandler<ChangePasswordCommand, Response<string>>
     {
-        private IValidator<SignInRequest> _signInValidator { get; set; }
+        private IValidator<LoginInRequest> _signInValidator { get; set; }
         private IAuthService _authService { get; set; }
 
-        public AuthHandlers(IAuthService userService, IValidator<SignInRequest> signInValidator)
+        public AuthHandlers(IAuthService userService, IValidator<LoginInRequest> signInValidator)
         {
             _authService = userService;
             _signInValidator = signInValidator;
         }
 
-        public async Task<Response<JwtAuthResult>> Handle(SignInAsyncCommand request, CancellationToken cancellationToken)
+        public async Task<Response<JwtAuthResult>> Handle(LoginAsyncCommand request, CancellationToken cancellationToken)
         {
             var result = await _authService.SignInAsync(request.SignInRequest);
             if (!result)

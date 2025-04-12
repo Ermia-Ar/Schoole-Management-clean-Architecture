@@ -2,6 +2,7 @@
 using AutoMapper;
 using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.Interfaces;
+using Core.Domain.Shared;
 using Infrastructure.Data.Data;
 using Infrastructure.Data.Entities;
 using Infrastructure.Identity.Models;
@@ -68,14 +69,15 @@ namespace Infrastructure.Data.Services
             return coreStudents;
         }
 
-        public async Task<CoreStudent?> GetStudentByIdAsync(string id)
+        public async Task<Result<CoreStudent>> GetStudentByIdAsync(string id)
         {
             var student = await _unitOfWork.Students.GetByIdAsync(Guid.Parse(id));
             if (student == null)
-                return null;
+                return Result.Failure<CoreStudent>(Error.None);
+
             var coreStudent  = _mapper.Map<CoreStudent>(student);
 
-            return coreStudent;
+            return Result.Success(coreStudent);
 
         }
 

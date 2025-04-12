@@ -38,7 +38,7 @@ namespace Infrastructure.Identity.Services
             _currentUserServices = currentUserServices;
         }
 
-        public async Task<bool> SignInAsync(SignInRequest signInRequest)
+        public async Task<bool> SignInAsync(LoginInRequest signInRequest)
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(user => user.CodeMelly == signInRequest.CodeMelly);
             //check email or user name

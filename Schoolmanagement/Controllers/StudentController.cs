@@ -2,7 +2,6 @@
 using Core.Application.Featurs.Students.StudentCommands;
 using Core.Application.Featurs.Students.StudentQuery;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using School_Management.Api.Base;
 

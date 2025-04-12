@@ -1,5 +1,6 @@
 ﻿using Core.Application.DTOs.Student.StudentDtos;
 using Core.Domain.Entities;
+using Core.Domain.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Core.Application.Interfaces
 
         Task<List<Student>> GetStudentListAsync();
 
-        Task<Student?> GetStudentByIdAsync(string id);
+        Task<Result<Student>> GetStudentByIdAsync(string id);
 
         Task<Student?> DeleteStudentAsync(string id);
 

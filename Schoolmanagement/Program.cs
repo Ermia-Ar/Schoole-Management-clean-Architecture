@@ -8,6 +8,7 @@ using Infrastructure.Data.Data;
 using Infrastructure.Data.InfrustructureBases.InfrastructureProfile;
 using Infrastructure.Identity;
 using Infrastructure.Identity.Data;
+using Infrastructure.Identity.Mapper;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -81,6 +82,7 @@ builder.Services.AddScoped(
 
 builder.Services.AddAutoMapper(typeof(InfraProfile));
 builder.Services.AddAutoMapper(typeof(AppMapper));
+builder.Services.AddAutoMapper(typeof(IdentityProfile));
 
 
 var app = builder.Build();

@@ -2,7 +2,7 @@
 
 namespace Core.Application.DTOs.Authentication
 {
-    public class SignInRequest
+    public class LoginInRequest
     {
         public string CodeMelly { get; set; }
 

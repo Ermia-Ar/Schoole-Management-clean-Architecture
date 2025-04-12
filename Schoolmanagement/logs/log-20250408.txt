@@ -265,3 +265,17 @@ INNER JOIN [Teachers] AS [t] ON [c].[TeacherId] = [t].[Id]
 2025-04-08 19:30:14.887 +04:30 [INF] Executed endpoint 'School_Management.Api.Controllers.CourseController.GetCourseList (School_Management.Api)'
 2025-04-08 19:30:14.889 +04:30 [INF] HTTP GET /api/Course/GetListOfCourses responded 200 in 51.3993 ms
 2025-04-08 19:30:14.892 +04:30 [INF] Request finished HTTP/2 GET https://localhost:7017/api/Course/GetListOfCourses?pageSize=1&pageNumber=1 - 200 null application/json; charset=utf-8 62.6899ms
+2025-04-08 21:53:21.224 +04:30 [INF] User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-08 21:53:21.550 +04:30 [INF] Now listening on: https://localhost:7017
+2025-04-08 21:53:21.553 +04:30 [INF] Now listening on: http://localhost:5020
+2025-04-08 21:53:21.557 +04:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-08 21:53:21.558 +04:30 [INF] Hosting environment: Development
+2025-04-08 21:53:21.560 +04:30 [INF] Content root path: C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement
+2025-04-08 21:53:22.465 +04:30 [INF] Request starting HTTP/2 GET https://localhost:7017/swagger/index.html - null null
+2025-04-08 21:53:22.729 +04:30 [INF] Request finished HTTP/2 GET https://localhost:7017/swagger/index.html - 200 null text/html;charset=utf-8 269.8234ms
+2025-04-08 21:53:22.739 +04:30 [INF] Request starting HTTP/2 GET https://localhost:7017/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-08 21:53:22.750 +04:30 [INF] Request starting HTTP/2 GET https://localhost:7017/_vs/browserLink - null null
+2025-04-08 21:53:22.752 +04:30 [INF] Request finished HTTP/2 GET https://localhost:7017/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 12.2331ms
+2025-04-08 21:53:22.845 +04:30 [INF] Request finished HTTP/2 GET https://localhost:7017/_vs/browserLink - 200 null text/javascript; charset=UTF-8 95.4106ms
+2025-04-08 21:53:22.877 +04:30 [INF] Request starting HTTP/2 GET https://localhost:7017/swagger/v1/swagger.json - null null
+2025-04-08 21:53:23.040 +04:30 [INF] Request finished HTTP/2 GET https://localhost:7017/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 163.6213ms

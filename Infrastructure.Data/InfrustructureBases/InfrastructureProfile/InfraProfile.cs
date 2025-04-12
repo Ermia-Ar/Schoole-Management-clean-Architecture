@@ -61,7 +61,11 @@ namespace Infrastructure.Data.InfrustructureBases.InfrastructureProfile
                 .ForMember(x => x.TeacherCourse, dex => dex.MapFrom(x => Convertor.ConvertToTeacher(x.Teacher)))
                 .ReverseMap();
 
-            //
+            CreateMap<Course, Course>()
+                .ForMember(op => op.Teacher , dex => dex.MapFrom(x => x.Teacher))
+                .ReverseMap();
+
+           
 
 
         }

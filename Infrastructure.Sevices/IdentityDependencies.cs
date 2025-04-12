@@ -1,11 +1,8 @@
 ﻿using Infrastructure.Identity.Data;
 using Infrastructure.Identity.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
 
 namespace Infrastructure.Identity
 {
@@ -13,7 +10,7 @@ namespace Infrastructure.Identity
     {
         public static IServiceCollection AddIdentityDependendcies(this IServiceCollection services)
         {
-            services.AddIdentityCore<ApplicationUser>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddRoles<IdentityRole>()
                 .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>("Auth")
                 .AddEntityFrameworkStores<AppIdentityDbContext>()
@@ -32,32 +29,36 @@ namespace Infrastructure.Identity
                 option.Lockout.MaxFailedAccessAttempts = 3;
             });
 
-            services.ConfigureApplicationCookie(option =>
-            {
-                option.Cookie.HttpOnly = true;
-                option.ExpireTimeSpan = TimeSpan.FromSeconds(3);
-            });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/account/login"; // آدرس صفحه ورود
+                    options.LogoutPath = "/account/logout";
+                    options.ExpireTimeSpan = TimeSpan.FromDays(14);
+                    options.SlidingExpiration = true;
+                });
+            services.AddAuthorization();
 
 
 
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(op =>
-            op.TokenValidationParameters = new TokenValidationParameters()
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = JwtSettings.Issuer,
-                ValidAudience = JwtSettings.Audience,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSettings.Key)),
-            });
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //})
+            //.AddJwtBearer(op =>
+            //op.TokenValidationParameters = new TokenValidationParameters()
+            //{
+            //    ValidateIssuer = true,
+            //    ValidateAudience = true,
+            //    ValidateLifetime = true,
+            //    ValidateIssuerSigningKey = true,
+            //    ValidIssuer = JwtSettings.Issuer,
+            //    ValidAudience = JwtSettings.Audience,
+            //    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSettings.Key)),
+            //});
 
-            
+
             return services;
         }
     }

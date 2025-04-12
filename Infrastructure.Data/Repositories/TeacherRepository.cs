@@ -17,7 +17,12 @@ namespace Infrastructure.Data.Repositories
 
         public async Task<List<Teacher>> GetTeacherListAsync()
         {
-            var Teachers = await _teacher.AsNoTracking().ToListAsync();
+            var Teachers = await _teacher
+                .FromSqlInterpolated($@"
+                    SELECT * FROM Teachers
+                    ")
+                .AsNoTracking()
+                .ToListAsync();
 
             return Teachers;
         }

@@ -6,6 +6,7 @@ namespace Infrastructure.Identity.CurrentUserServices
     {
         public Task<ApplicationUser> GetUserAsync();
         public string GetUserId();
+        bool IsSignIn();
         public Task<List<string>> GetCurrentUserRolesAsync();
     }
 }

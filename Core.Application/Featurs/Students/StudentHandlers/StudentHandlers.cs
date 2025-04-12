@@ -61,16 +61,15 @@ namespace Core.Application.Featurs.Students.StudentHandlers
         public async Task<Response<StudentResponse>> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
         {
             //get from students table by id
-            var student = await _studentServices.GetStudentByIdAsync(request.Id);
-            if(student == null)
+            var result = await _studentServices.GetStudentByIdAsync(request.Id);
+            if(result.IsFailure)
             {
                 return NotFound<StudentResponse>();
             }
             // map to student response
-            var studentResponse = _mapper.Map<StudentResponse>(student);
+            var studentResponse = _mapper.Map<StudentResponse>(result.Value);
 
-            var result = Success(studentResponse);
-            return result;
+            return Success(studentResponse);
 
         }
 

@@ -189,7 +189,6 @@ C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\C
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Core.Domain.pdb
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Infrastructure.Data.dll
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Infrastructure.Data.pdb
-C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll

@@ -19,10 +19,10 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login([FromBody] SignInRequest loginRequest)
+        public async Task<IActionResult> Login([FromBody] LoginInRequest loginRequest)
         {
             //check request
-            var response = new SignInAsyncCommand { SignInRequest = loginRequest };
+            var response = new LoginAsyncCommand { SignInRequest = loginRequest };
             var result = await _mediator.Send(response);
 
             return NewResult(result);

@@ -2,6 +2,7 @@
 using Core.Application.Featurs.StudentCourse.StudentCourseCommands;
 using Core.Application.Featurs.StudentCourse.StudentCourseQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using School_Management.Api.Base;
 
@@ -20,7 +21,7 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("RegisterInCourse")]
-        //[Authorize(Roles ="Student")]
+        //[Authorize(Roles = "Student")]
         public async Task<IActionResult> RegisterInCourse([FromBody]RegisterInCourseRequest studentCourse)
         {
             
@@ -32,7 +33,7 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("GetStudentCourses")]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetStudentCourses(int pageSize, int pageNumber)
         {
             var request = new GetCourseStudentListQuery { pageNumber = pageNumber , pageSize = pageSize };

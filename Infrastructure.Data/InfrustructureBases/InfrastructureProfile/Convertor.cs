@@ -1,5 +1,4 @@
 ﻿using Core.Domain.Entities;
-using System.Net.Http.Headers;
 
 namespace Infrastructure.Data.InfrustructureBases.InfrastructureProfile
 {

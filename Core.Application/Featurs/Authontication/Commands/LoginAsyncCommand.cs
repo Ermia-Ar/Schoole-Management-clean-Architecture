@@ -4,8 +4,8 @@ using MediatR;
 
 namespace Core.Application.Featurs.Authentication.Commands
 {
-    public class SignInAsyncCommand : IRequest<Response<JwtAuthResult>>
+    public class LoginAsyncCommand : IRequest<Response<JwtAuthResult>>
     {
-        public SignInRequest SignInRequest { get; set; }
+        public LoginInRequest SignInRequest { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace Core.Application.Interfaces
 {
     public interface IAuthService
     {
-        Task<bool> SignInAsync(SignInRequest signInRequest);
+        Task<bool> SignInAsync(LoginInRequest signInRequest);
         Task<ForgotPasswordResponse?> ForgotPassword(ForgotPasswordRequest forgotPassword);
         Task<bool> ChangePassword(ChangePasswordRequest changePasswordRequest);
         Task<bool> ResetPassword(ResetPasswordRequest forgotPassword, string codeMelly);

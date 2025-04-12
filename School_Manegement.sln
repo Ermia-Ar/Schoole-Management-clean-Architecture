@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School_Management.UI", "Idetity.NET\School_Management.UI.csproj", "{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{B4333FF3-F012-456F-AC05-3C13B5794E0D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application", "Core.Application\Core.Application.csproj", "{CBC49560-0D6F-4D04-B99B-07A84485313F}"
@@ -13,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Data", "Infr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Identity", "Infrastructure.Sevices\Infrastructure.Identity.csproj", "{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School_Management.Api", "Schoolmanagement\School_Management.Api.csproj", "{368F67A2-65BD-4FA1-A46F-9F222389EA54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School_Management.Api", "Schoolmanagement\School_Management.Api.csproj", "{368F67A2-65BD-4FA1-A46F-9F222389EA54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C314AA34-3BAA-4017-9973-D3C72F0F8F9A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B4333FF3-F012-456F-AC05-3C13B5794E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B4333FF3-F012-456F-AC05-3C13B5794E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4333FF3-F012-456F-AC05-3C13B5794E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -2,6 +2,7 @@
 using Core.Application.Featurs.Courses.CourseCommands;
 using Core.Application.Featurs.Courses.CourseQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using School_Management.Api.Base;
 
@@ -65,6 +66,7 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("{id:guid}FindTeacherCourses")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetTeacherCoursesById([FromRoute] Guid id , int pageSize , int pageNumber)
         {
             var response = new GetTeacherCoursesByIdQuery { Id = id.ToString(), 

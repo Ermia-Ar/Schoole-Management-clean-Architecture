@@ -18,6 +18,7 @@ namespace Infrastructure.Data.InfrustructureBases
 
 		public virtual async Task<T> GetByIdAsync(Guid id)
 		{
+		
 		 	var entity = await _dbContext.Set<T>().FindAsync(id);
             if (entity == null)
             {

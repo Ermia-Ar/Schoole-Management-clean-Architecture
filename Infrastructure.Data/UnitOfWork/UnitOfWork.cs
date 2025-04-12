@@ -1,4 +1,5 @@
-﻿using Infrastructure.Data.Data;
+﻿using AutoMapper;
+using Infrastructure.Data.Data;
 using Infrastructure.Data.Interfaces;
 using Infrastructure.Data.Repositories;
 

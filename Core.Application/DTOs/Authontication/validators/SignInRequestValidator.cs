@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Core.Application.DTOs.Authentication.validators
 {
-    public class SignInRequestValidator : AbstractValidator<SignInRequest>
+    public class SignInRequestValidator : AbstractValidator<LoginInRequest>
     {
         public SignInRequestValidator()
         {

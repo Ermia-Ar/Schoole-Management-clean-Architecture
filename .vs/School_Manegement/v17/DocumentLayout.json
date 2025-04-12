@@ -3,60 +3,50 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\core.application\\wrapper\\queryableextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\wrapper\\queryableextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\logs\\log-20250408.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\logs\\log-20250408.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\core.application\\behavior\\validationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\behavior\\validationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\core.application\\behavior\\loggingactionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\behavior\\loggingactionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\controllers\\authorizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\controllers\\authorizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\core.application\\middleware\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC49560-0D6F-4D04-B99B-07A84485313F}|Core.Application\\Core.Application.csproj|solutionrelative:core.application\\middleware\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\logs\\log-20250408.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\logs\\log-20250408.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4333FF3-F012-456F-AC05-3C13B5794E0D}|Core.Domain\\Core.Domain.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\core.domain\\shared\\resultt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4333FF3-F012-456F-AC05-3C13B5794E0D}|Core.Domain\\Core.Domain.csproj|solutionrelative:core.domain\\shared\\resultt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.sevices\\services\\authorizeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\services\\authorizeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4333FF3-F012-456F-AC05-3C13B5794E0D}|Core.Domain\\Core.Domain.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\core.domain\\shared\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4333FF3-F012-456F-AC05-3C13B5794E0D}|Core.Domain\\Core.Domain.csproj|solutionrelative:core.domain\\shared\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./SchoolManagementDatebase/True/SqlTable/dbo.Teachers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4333FF3-F012-456F-AC05-3C13B5794E0D}|Core.Domain\\Core.Domain.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\core.domain\\shared\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4333FF3-F012-456F-AC05-3C13B5794E0D}|Core.Domain\\Core.Domain.csproj|solutionrelative:core.domain\\shared\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.data\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|solutionrelative:infrastructure.data\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.data\\infrustructurebases\\genericrepositoryasync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|solutionrelative:infrastructure.data\\infrustructurebases\\genericrepositoryasync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.sevices\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.sevices\\currentuserservices\\currentuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0BFFC28-B2BE-4D1A-ABB4-0647943D02D8}|Infrastructure.Sevices\\Infrastructure.Identity.csproj|solutionrelative:infrastructure.sevices\\currentuserservices\\currentuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./IdentityDatabase/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\infrastructure.data\\services\\studentcourseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB364894-D8B1-4AF0-9605-75197108F047}|Infrastructure.Data\\Infrastructure.Data.csproj|solutionrelative:infrastructure.data\\services\\studentcourseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\controllers\\studentcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,8 +57,8 @@
       "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|c:\\users\\dell\\source\\repos\\school_manegement\\schoolmanagement\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{368F67A2-65BD-4FA1-A46F-9F222389EA54}|Schoolmanagement\\School_Management.Api.csproj|solutionrelative:schoolmanagement\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -99,163 +89,175 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "QueryableExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Wrapper\\QueryableExtensions.cs",
-              "RelativeDocumentMoniker": "Core.Application\\Wrapper\\QueryableExtensions.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Wrapper\\QueryableExtensions.cs",
-              "RelativeToolTip": "Core.Application\\Wrapper\\QueryableExtensions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAEAAAA",
+              "Title": "TeacherController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\TeacherController.cs",
+              "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\TeacherController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\TeacherController.cs*",
+              "RelativeToolTip": "Schoolmanagement\\Controllers\\TeacherController.cs*",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACUAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T15:03:14.866Z",
+              "WhenOpened": "2025-04-12T17:30:49.203Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "log-20250408.txt",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\logs\\log-20250408.txt",
               "RelativeDocumentMoniker": "Schoolmanagement\\logs\\log-20250408.txt",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\logs\\log-20250408.txt",
               "RelativeToolTip": "Schoolmanagement\\logs\\log-20250408.txt",
-              "ViewState": "AQIAAPYAAAAAAAAAAAAAAAsBAAAAAAAA",
+              "ViewState": "AQIAAAoBAAAAAAAAAAAAAFsAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-04-08T15:00:21.758Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ValidationBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Behavior\\ValidationBehavior.cs",
-              "RelativeDocumentMoniker": "Core.Application\\Behavior\\ValidationBehavior.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Behavior\\ValidationBehavior.cs",
-              "RelativeToolTip": "Core.Application\\Behavior\\ValidationBehavior.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:57:34.919Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Program.cs",
-              "RelativeDocumentMoniker": "Schoolmanagement\\Program.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Program.cs",
-              "RelativeToolTip": "Schoolmanagement\\Program.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAAAE8AAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:21:11.994Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ResultT.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Shared\\ResultT.cs",
-              "RelativeDocumentMoniker": "Core.Domain\\Shared\\ResultT.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Shared\\ResultT.cs",
-              "RelativeToolTip": "Core.Domain\\Shared\\ResultT.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T14:20:51.4Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\appsettings.json",
-              "RelativeDocumentMoniker": "Schoolmanagement\\appsettings.json",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\appsettings.json",
-              "RelativeToolTip": "Schoolmanagement\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-08T14:24:53.851Z"
+              "WhenOpened": "2025-04-12T17:29:43.206Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "AuthorizeServices.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Services\\AuthorizeServices.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Sevices\\Services\\AuthorizeServices.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Services\\AuthorizeServices.cs",
+              "RelativeToolTip": "Infrastructure.Sevices\\Services\\AuthorizeServices.cs",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAAG4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T15:35:26.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CurrentUserServices.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\CurrentUserServices\\CurrentUserServices.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Sevices\\CurrentUserServices\\CurrentUserServices.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\CurrentUserServices\\CurrentUserServices.cs",
+              "RelativeToolTip": "Infrastructure.Sevices\\CurrentUserServices\\CurrentUserServices.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAIAwwCsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T15:32:17.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "dbo.Users [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./IdentityDatabase/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-11T15:30:50.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthorizeController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\AuthorizeController.cs",
+              "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\AuthorizeController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\AuthorizeController.cs",
+              "RelativeToolTip": "Schoolmanagement\\Controllers\\AuthorizeController.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAEcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T15:26:11.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Schoolmanagement\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T15:26:09.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CourseController.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\CourseController.cs",
               "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\CourseController.cs",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\CourseController.cs",
               "RelativeToolTip": "Schoolmanagement\\Controllers\\CourseController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACQAAABiAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAADYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:12:31.498Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoggingActionFilter.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Behavior\\LoggingActionFilter.cs",
-              "RelativeDocumentMoniker": "Core.Application\\Behavior\\LoggingActionFilter.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Behavior\\LoggingActionFilter.cs",
-              "RelativeToolTip": "Core.Application\\Behavior\\LoggingActionFilter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T14:17:13.799Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ErrorHandlerMiddleWare.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Middleware\\ErrorHandlerMiddleWare.cs",
-              "RelativeDocumentMoniker": "Core.Application\\Middleware\\ErrorHandlerMiddleWare.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Application\\Middleware\\ErrorHandlerMiddleWare.cs",
-              "RelativeToolTip": "Core.Application\\Middleware\\ErrorHandlerMiddleWare.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:34:22.091Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Error.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Shared\\Error.cs",
-              "RelativeDocumentMoniker": "Core.Domain\\Shared\\Error.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Shared\\Error.cs",
-              "RelativeToolTip": "Core.Domain\\Shared\\Error.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T14:20:42.351Z"
+              "WhenOpened": "2025-04-11T15:26:28.887Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Schoolmanagement\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\appsettings.Development.json",
-              "RelativeToolTip": "Schoolmanagement\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-08T14:25:24.308Z"
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Sevices\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Services\\AuthService.cs",
+              "RelativeToolTip": "Infrastructure.Sevices\\Services\\AuthService.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAABcAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T15:35:16.219Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Result.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Shared\\Result.cs",
-              "RelativeDocumentMoniker": "Core.Domain\\Shared\\Result.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Shared\\Result.cs",
-              "RelativeToolTip": "Core.Domain\\Shared\\Result.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAVAAAA",
+              "DocumentIndex": 7,
+              "Title": "CourseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\Repositories\\CourseRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Data\\Repositories\\CourseRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\Repositories\\CourseRepository.cs",
+              "RelativeToolTip": "Infrastructure.Data\\Repositories\\CourseRepository.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T14:22:43.586Z"
+              "WhenOpened": "2025-04-11T17:43:48.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo.Teachers [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./SchoolManagementDatebase/True/SqlTable/dbo.Teachers.sql",
+              "ToolTip": "dbo.Teachers [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-11T18:11:34.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "StudentCourseServices.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\Services\\StudentCourseServices.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Data\\Services\\StudentCourseServices.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\Services\\StudentCourseServices.cs",
+              "RelativeToolTip": "Infrastructure.Data\\Services\\StudentCourseServices.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T15:28:34.678Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "GenericRepositoryAsync.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\InfrustructureBases\\GenericRepositoryAsync.cs",
-              "RelativeDocumentMoniker": "Infrastructure.Data\\InfrustructureBases\\GenericRepositoryAsync.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Data\\InfrustructureBases\\GenericRepositoryAsync.cs",
-              "RelativeToolTip": "Infrastructure.Data\\InfrustructureBases\\GenericRepositoryAsync.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAiwGsAAAADAAAA",
+              "Title": "StudentCourseController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\StudentCourseController.cs",
+              "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\StudentCourseController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\StudentCourseController.cs",
+              "RelativeToolTip": "Schoolmanagement\\Controllers\\StudentCourseController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAACIAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:51:50.338Z"
+              "WhenOpened": "2025-04-11T15:27:20.656Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Schoolmanagement\\Controllers\\StudentController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T15:27:06.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "EmailController.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\EmailController.cs",
               "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\EmailController.cs",
@@ -263,43 +265,7 @@
               "RelativeToolTip": "Schoolmanagement\\Controllers\\EmailController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:14:54.116Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "StudentCourseController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\StudentCourseController.cs",
-              "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\StudentCourseController.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\StudentCourseController.cs",
-              "RelativeToolTip": "Schoolmanagement\\Controllers\\StudentCourseController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:13:52.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\StudentController.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "Schoolmanagement\\Controllers\\StudentController.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACUAAABlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:13:32.25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "TeacherController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\TeacherController.cs",
-              "RelativeDocumentMoniker": "Schoolmanagement\\Controllers\\TeacherController.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Schoolmanagement\\Controllers\\TeacherController.cs",
-              "RelativeToolTip": "Schoolmanagement\\Controllers\\TeacherController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:11:45.999Z"
+              "WhenOpened": "2025-04-11T15:27:03.044Z"
             }
           ]
         },
