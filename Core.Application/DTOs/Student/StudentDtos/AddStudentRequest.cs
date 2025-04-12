@@ -1,12 +1,11 @@
 ﻿using Core.Domain;
-using System.Text.Json.Serialization;
 
 namespace Core.Application.DTOs.Student.StudentDtos
 {
     public class AddStudentRequest
     {
         public string UserName { get; set; }
-        
+
         //[JsonPropertyName("نام و نام خانوادگی")]
         public string FullName { get; set; }
 

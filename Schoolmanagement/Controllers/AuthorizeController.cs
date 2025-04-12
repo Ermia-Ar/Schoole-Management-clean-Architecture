@@ -20,7 +20,7 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("SignIn")]
-        public async Task<IActionResult> SignIn([FromBody]SignInRequest signInRequest)
+        public async Task<IActionResult> SignIn([FromBody] SignInRequest signInRequest)
         {
             var request = new SignInCommand { SignInRequest = signInRequest };
             var result = await _mediator.Send(request);
@@ -45,7 +45,7 @@ namespace School_Management.Api.Controllers
             var request = new GetRolesQuery();
             var result = await _mediator.Send(request);
 
-            return NewResult(result);   
+            return NewResult(result);
         }
 
         [HttpGet]
@@ -60,7 +60,7 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("AddRoleRoUser")]
-        public async Task<IActionResult> AddRoleToUser( string roleId ,string userId)
+        public async Task<IActionResult> AddRoleToUser(string roleId, string userId)
         {
             var request = new AddRoleToUserCommand { RoleId = roleId, UserId = userId };
             var result = await _mediator.Send(request);

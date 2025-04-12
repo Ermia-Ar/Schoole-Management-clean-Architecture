@@ -18,13 +18,13 @@ namespace Infrastructure.Data.Services
 {
     public class StudentCourseServices : IStudentCourseServices
     {
-        private ApplicationDbContext _context {  get; set; }
+        private ApplicationDbContext _context { get; set; }
         private UserManager<ApplicationUser> _userManager { get; set; }
         private ICurrentUserServices _currentUserServices { get; set; }
         private IUnitOfWork _unitOfWork { get; set; }
-        private IMapper _mapper {  get; set; }
+        private IMapper _mapper { get; set; }
 
-        public StudentCourseServices(IMapper mapper, ApplicationDbContext context, 
+        public StudentCourseServices(IMapper mapper, ApplicationDbContext context,
             UserManager<ApplicationUser> userManager, IUnitOfWork unitOfWork, ICurrentUserServices currentUserServices)
         {
             _mapper = mapper;
@@ -58,7 +58,7 @@ namespace Infrastructure.Data.Services
             }
         }
 
-        private async Task<bool> CheckRegisterInfo(string codeMelly , string password , string courseId)
+        private async Task<bool> CheckRegisterInfo(string codeMelly, string password, string courseId)
         {
             var course = await _context.Courses.FindAsync(Guid.Parse(courseId));
             if (course == null)
@@ -101,7 +101,7 @@ namespace Infrastructure.Data.Services
             return coreCourses;
         }
 
-     
+
 
     }
 }

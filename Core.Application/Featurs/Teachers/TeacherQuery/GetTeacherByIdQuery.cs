@@ -6,6 +6,6 @@ namespace Core.Application.Featurs.Teachers.TeacherQuery
 {
     public class GetTeacherByIdQuery : IRequest<Response<TeacherResponse>>
     {
-        public string Id { get; set; }  
+        public string Id { get; set; }
     }
 }

@@ -7,7 +7,6 @@ using Infrastructure.Data.Data;
 using Infrastructure.Data.Entities;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using SchoolProject.Infrustructure.UnitOfWork;
 using CoreStudent = Core.Domain.Entities.Student;
 
@@ -75,7 +74,7 @@ namespace Infrastructure.Data.Services
             if (student == null)
                 return Result.Failure<CoreStudent>(Error.None);
 
-            var coreStudent  = _mapper.Map<CoreStudent>(student);
+            var coreStudent = _mapper.Map<CoreStudent>(student);
 
             return Result.Success(coreStudent);
 
@@ -92,7 +91,7 @@ namespace Infrastructure.Data.Services
                 {
                     return null;
                 }
-               
+
                 //remove from student table 
                 await _unitOfWork.Students.DeleteAsync(student);
 
@@ -118,7 +117,7 @@ namespace Infrastructure.Data.Services
         {
             var result = await _unitOfWork.StudentsCourse.StudentIsInAnyCourse(Guid.Parse(id));
 
-            return result;  
+            return result;
         }
     }
 }

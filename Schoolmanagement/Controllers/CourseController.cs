@@ -12,7 +12,7 @@ namespace School_Management.Api.Controllers
     [ApiController]
     public class CourseController : AppControllerBase
     {
-        private IMediator _mediator {  get; set; }
+        private IMediator _mediator { get; set; }
 
         public CourseController(IMediator mediator)
         {
@@ -25,7 +25,7 @@ namespace School_Management.Api.Controllers
         public async Task<IActionResult> CreateCourse([FromBody] AddCourseRequest course)
         {
             var request = new AddCourseCommand { Course = course };
-            var result  = await _mediator.Send(request);
+            var result = await _mediator.Send(request);
 
             return NewResult(result);
         }
@@ -33,10 +33,10 @@ namespace School_Management.Api.Controllers
         [HttpGet]
         [Route("GetListOfCourses")]
         //[Authorize(Roles = "Student")]
-        public async Task<IActionResult> GetCourseList(int pageSize , int pageNumber)
+        public async Task<IActionResult> GetCourseList(int pageSize, int pageNumber)
         {
-            var request = new GetCourseListQuery() { pageNumber = pageNumber , pageSize = pageSize};
-            var result = await _mediator.Send(request); 
+            var request = new GetCourseListQuery() { pageNumber = pageNumber, pageSize = pageSize };
+            var result = await _mediator.Send(request);
 
             return NewResult(result);
         }
@@ -44,10 +44,10 @@ namespace School_Management.Api.Controllers
         [HttpDelete]
         [Route("{id:guid}DeleteCourse")]
         //[Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Delete([FromRoute]Guid id)
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var request = new DeleteCourseCommand { Id = id.ToString() };
-            var result  = await _mediator.Send(request);
+            var result = await _mediator.Send(request);
 
             return NewResult(result);
         }
@@ -55,7 +55,7 @@ namespace School_Management.Api.Controllers
         [HttpGet]
         [Route("{id:guid}FindCourseById")]
         //[Authorize(Roles = "Admin,Student,Teacher")]
-        public async Task<IActionResult> GetCourseById([FromRoute]Guid id)
+        public async Task<IActionResult> GetCourseById([FromRoute] Guid id)
         {
             var request = new GetCourseByIdQuery { Id = id.ToString() };
             var result = await _mediator.Send(request);
@@ -67,10 +67,14 @@ namespace School_Management.Api.Controllers
         [HttpGet]
         [Route("{id:guid}FindTeacherCourses")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetTeacherCoursesById([FromRoute] Guid id , int pageSize , int pageNumber)
+        public async Task<IActionResult> GetTeacherCoursesById([FromRoute] Guid id, int pageSize, int pageNumber)
         {
-            var response = new GetTeacherCoursesByIdQuery { Id = id.ToString(), 
-                PageNumber = pageNumber , PageSize = pageSize };
+            var response = new GetTeacherCoursesByIdQuery
+            {
+                Id = id.ToString(),
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            };
             var result = await _mediator.Send(response);
 
             return NewResult(result);

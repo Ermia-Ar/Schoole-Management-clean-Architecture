@@ -62,7 +62,7 @@ namespace Core.Application.Featurs.Students.StudentHandlers
         {
             //get from students table by id
             var result = await _studentServices.GetStudentByIdAsync(request.Id);
-            if(result.IsFailure)
+            if (result.IsFailure)
             {
                 return NotFound<StudentResponse>();
             }

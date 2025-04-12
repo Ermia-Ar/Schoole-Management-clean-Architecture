@@ -1,15 +1,14 @@
 ﻿using AutoMapper;
-using Infrastructure.Data.Entities;
-using Infrastructure.Identity.Models;
-using CoreStudent = Core.Domain.Entities.Student;
-using CoreAdmin = Core.Domain.Entities.Admin;
-using CoreTeacher = Core.Domain.Entities.Teacher;
-using CoreCourse = Core.Domain.Entities.Course;
+using Core.Application.DTOs.Course;
 //using CoreTCourse = Core.Domain.Entities.Course;
 using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.DTOs.Teacher.TeacherDtos;
-using Infrastructure.Data;
-using Core.Application.DTOs.Course;
+using Infrastructure.Data.Entities;
+using Infrastructure.Identity.Models;
+using CoreAdmin = Core.Domain.Entities.Admin;
+using CoreCourse = Core.Domain.Entities.Course;
+using CoreStudent = Core.Domain.Entities.Student;
+using CoreTeacher = Core.Domain.Entities.Teacher;
 
 namespace Infrastructure.Data.InfrustructureBases.InfrastructureProfile
 {
@@ -62,10 +61,10 @@ namespace Infrastructure.Data.InfrustructureBases.InfrastructureProfile
                 .ReverseMap();
 
             CreateMap<Course, Course>()
-                .ForMember(op => op.Teacher , dex => dex.MapFrom(x => x.Teacher))
+                .ForMember(op => op.Teacher, dex => dex.MapFrom(x => x.Teacher))
                 .ReverseMap();
 
-           
+
 
 
         }

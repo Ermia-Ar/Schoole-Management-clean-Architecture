@@ -12,7 +12,7 @@ namespace Core.Application.DTOs.Teacher.Validators
 
             RuleFor(x => x.Password)
                 .MinimumLength(8)
-                .WithMessage("حداقل طول رمز عبور 8 کاراکتر است"); 
+                .WithMessage("حداقل طول رمز عبور 8 کاراکتر است");
 
 
             RuleFor(user => user.PhoneNumber)

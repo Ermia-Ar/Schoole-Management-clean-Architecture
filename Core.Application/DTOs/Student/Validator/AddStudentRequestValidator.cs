@@ -12,8 +12,8 @@ namespace Core.Application.DTOs.Student.Validator
 
             RuleFor(x => x.Password)
                 .MinimumLength(8)
-                .WithMessage("حداقل طول رمز عبور 8 کاراکتر است"); 
-                
+                .WithMessage("حداقل طول رمز عبور 8 کاراکتر است");
+
 
             RuleFor(user => user.PhoneNumber)
                 .Matches("/((0?9)|(\\+?989))\\d{2}\\W?\\d{3}\\W?\\d{4}/g")
@@ -25,7 +25,7 @@ namespace Core.Application.DTOs.Student.Validator
 
             RuleFor(user => user.Birthday)
                 .NotNull();
-                
+
         }
     }
 }

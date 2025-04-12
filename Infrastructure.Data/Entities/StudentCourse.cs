@@ -8,6 +8,6 @@
         public Guid CourseId { get; set; }
         public Course Course { get; set; }
 
-        public double? Score { get; set; } 
+        public double? Score { get; set; }
     }
 }

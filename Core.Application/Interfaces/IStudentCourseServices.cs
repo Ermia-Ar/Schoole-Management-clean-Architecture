@@ -1,6 +1,5 @@
 ﻿using Core.Application.DTOs.StudentCourse;
 using Core.Domain.Entities;
-using System.Linq.Expressions;
 
 namespace Core.Application.Interfaces
 {

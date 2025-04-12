@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Core.Application.DTOs.Authentication
+﻿namespace Core.Application.DTOs.Authentication
 {
     public class LoginInRequest
     {

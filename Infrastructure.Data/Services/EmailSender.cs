@@ -1,5 +1,4 @@
-﻿using Core.Application.DTOs.Authentication;
-using Core.Application.DTOs.Email;
+﻿using Core.Application.DTOs.Email;
 using Core.Application.Interfaces.Email;
 using System.Net.Mail;
 
@@ -31,7 +30,7 @@ namespace Infrastructure.Data.Services
                     smtpServer.Send(mail);
                     await Task.CompletedTask;
 
-                    return true; 
+                    return true;
                 }
                 catch (Exception ex)
                 {

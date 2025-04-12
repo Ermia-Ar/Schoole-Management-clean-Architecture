@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
 using Core.Application.DTOs.Teacher.TeacherDtos;
 using Core.Application.Interfaces;
-using Core.Domain.Entities;
 using Infrastructure.Data.Data;
-using Infrastructure.Data.Entities;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using SchoolProject.Infrustructure.UnitOfWork;
@@ -14,7 +12,7 @@ namespace Infrastructure.Data.Services
 {
     public class TeacherServices : ITeacherServices
     {
-        private IUnitOfWork _unitOfWork {  get; set; }
+        private IUnitOfWork _unitOfWork { get; set; }
         private UserManager<ApplicationUser> _userManager { get; set; }
         private ApplicationDbContext _context { get; set; }
         private IMapper _mapper { get; set; }
@@ -37,12 +35,12 @@ namespace Infrastructure.Data.Services
                 var user = _mapper.Map<ApplicationUser>(request);
 
                 //add to user table and role table
-                var result = await _unitOfWork.Users.CreateUserAsync(user , request.Password ,"Teacher");
+                var result = await _unitOfWork.Users.CreateUserAsync(user, request.Password, "Teacher");
                 if (!result)
                 {
                     return false;
                 }
-               
+
                 // add to teachers table
                 var teacher = _mapper.Map<Entities.Teacher>(user);
                 teacher.Id = Guid.NewGuid();
@@ -75,7 +73,7 @@ namespace Infrastructure.Data.Services
                 }
                 //remove from teachers table 
                 await _unitOfWork.Teachers.DeleteAsync(teacher);
-                
+
                 // remove from user table
                 var result = await _unitOfWork.Users.DeleteUserAsyncById(teacher.ApplicationUserId);
                 if (!result)
@@ -100,7 +98,7 @@ namespace Infrastructure.Data.Services
         public async Task<CoreTeacher?> GetTeacherByIdAsync(string id)
         {
             var teacher = await _unitOfWork.Teachers.GetByIdAsync(Guid.Parse(id));
-            if (teacher == null) 
+            if (teacher == null)
                 return null;
             //map ro core teacher
             var coreTeacher = _mapper.Map<CoreTeacher>(teacher);
@@ -121,7 +119,7 @@ namespace Infrastructure.Data.Services
         public async Task<bool> TeacherIsInAnyCourse(string id)
         {
             var IsIn = await _unitOfWork.Courses.TeacherIsInAnyCourse(Guid.Parse(id));
-            
+
             return IsIn;
         }
     }

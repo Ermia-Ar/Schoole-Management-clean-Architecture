@@ -56,7 +56,7 @@ namespace Core.Application.Featurs.Authorize.Handlers
             {
                 return BadRequest<string>("User id or Role id is wrong");
             }
-            return Success<string>("Success"); 
+            return Success<string>("Success");
         }
 
         public async Task<Response<string>> Handle(DeleteFromRoleCommand request, CancellationToken cancellationToken)

@@ -2,7 +2,7 @@
 {
     public static class JwtSettings
     {
-        public static string  Issuer = "https://localhost:7017/";
+        public static string Issuer = "https://localhost:7017/";
         public static string Audience = "https://localhost:7017/";
         public static string Key = "TrTrWmtTtwUezw131252333ErmiaERMIAermia098098098098";
         public static bool ValidateIssuer { get; set; }

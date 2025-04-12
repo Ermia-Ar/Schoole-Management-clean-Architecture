@@ -12,10 +12,10 @@ namespace Infrastructure.Data.Repositories
         {
             _userManager = userManager;
         }
-        public async Task<bool> CreateUserAsync(ApplicationUser user, string password , params string[] roles)
+        public async Task<bool> CreateUserAsync(ApplicationUser user, string password, params string[] roles)
         {
-            var result = await _userManager.CreateAsync(user , password);
-            if(!result.Succeeded)
+            var result = await _userManager.CreateAsync(user, password);
+            if (!result.Succeeded)
                 return result.Succeeded;
 
             result = await _userManager.AddToRolesAsync(user, roles);
@@ -38,7 +38,7 @@ namespace Infrastructure.Data.Repositories
             return true;
         }
 
-        public async Task<bool> AddToRoles(ApplicationUser user ,params string[] roles)
+        public async Task<bool> AddToRoles(ApplicationUser user, params string[] roles)
         {
             var result = await _userManager.AddToRolesAsync(user, roles);
             return result.Succeeded;

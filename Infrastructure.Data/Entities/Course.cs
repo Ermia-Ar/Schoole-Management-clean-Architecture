@@ -24,11 +24,11 @@ namespace Infrastructure.Data.Entities
 
         public DateTime EndDate { get; set; }
 
-        public Subjects Subject { get; set; } 
+        public Subjects Subject { get; set; }
 
         public decimal CourseFee { get; set; }
 
-        public ICollection<StudentCourse> StudentCourses { get; set; } 
+        public ICollection<StudentCourse> StudentCourses { get; set; }
 
     }
 }

@@ -6,6 +6,6 @@ namespace Infrastructure.Data.Interfaces
     {
         Task<bool> DeleteUserAsyncById(string id);
         Task<bool> CreateUserAsync(ApplicationUser user, string password, params string[] roles);
-        Task<bool> AddToRoles(ApplicationUser user ,params string[] roles);
+        Task<bool> AddToRoles(ApplicationUser user, params string[] roles);
     }
 }

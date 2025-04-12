@@ -301,8 +301,8 @@
               "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Core.Domain.csproj": {
                 "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Core.Domain\\Core.Domain.csproj"
               },
-              "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Infrastructure.Identity.csproj": {
-                "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Infrastructure.Identity.csproj"
+              "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Identity\\Infrastructure.Identity.csproj": {
+                "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Identity\\Infrastructure.Identity.csproj"
               }
             }
           }
@@ -407,14 +407,14 @@
         }
       }
     },
-    "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Infrastructure.Identity.csproj": {
+    "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Identity\\Infrastructure.Identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Infrastructure.Identity.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Identity\\Infrastructure.Identity.csproj",
         "projectName": "Infrastructure.Identity",
-        "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\Infrastructure.Identity.csproj",
+        "projectPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Identity\\Infrastructure.Identity.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Sevices\\obj\\",
+        "outputPath": "C:\\Users\\DELL\\source\\repos\\School_Manegement\\Infrastructure.Identity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -455,72 +455,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[14.0.0, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[12.4.1, )"
-            },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.AspNetCore.Identity": {
-              "target": "Package",
-              "version": "[2.3.1, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.Extensions.Configuration.Json": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[8.7.0, )"
-            },
-            "Serilog": {
-              "target": "Package",
-              "version": "[4.2.0, )"
-            },
-            "Serilog.AspNetCore": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Serilog.Sinks.File": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[8.7.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

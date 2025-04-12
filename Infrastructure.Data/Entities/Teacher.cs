@@ -1,5 +1,4 @@
 ﻿using Core.Domain;
-using Core.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.Data.Entities

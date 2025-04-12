@@ -7,7 +7,7 @@ using Core.Domain.Entities;
 
 namespace Core.Application.Mapper
 {
-    public class AppMapper :Profile
+    public class AppMapper : Profile
     {
         public AppMapper()
         {
@@ -24,8 +24,8 @@ namespace Core.Application.Mapper
                 .ReverseMap();
 
             //Student Course
-            CreateMap<StudentCourseResponse , StudentCourse>()
-                .ReverseMap();   
+            CreateMap<StudentCourseResponse, StudentCourse>()
+                .ReverseMap();
         }
     }
 }

@@ -101,6 +101,6 @@ namespace Infrastructure.Data.Services
             return coreCourses;
         }
 
-        
+
     }
 }

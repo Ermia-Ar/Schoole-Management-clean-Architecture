@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data.Repositories
 {
-    public class AdminRepository : GenericRepositoryAsync<Admin> , IAdminRepository
+    public class AdminRepository : GenericRepositoryAsync<Admin>, IAdminRepository
     {
         private DbSet<Admin> _admins;
 

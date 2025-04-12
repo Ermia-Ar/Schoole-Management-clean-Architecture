@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Core.Application.DTOs.Course;
-using Core.Application.DTOs.Student.StudentDtos;
 using Core.Application.DTOs.StudentCourse;
 using Core.Application.Featurs.StudentCourse.StudentCourseCommands;
 using Core.Application.Featurs.StudentCourse.StudentCourseQueries;
@@ -8,13 +7,12 @@ using Core.Application.Interfaces;
 using Core.Application.Wrapper;
 using Core.Domain.Bases;
 using MediatR;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Core.Application.Featurs.StudentCourse.StudentCourseHandler
 {
     public class StudentCourseHandler : ResponseHandler
-        ,IRequestHandler<RegisterInCourseCommand, Response<string>>
-        ,IRequestHandler<GetCourseStudentListQuery , Response<PaginatedResult<StudentCourseResponse>>>
+        , IRequestHandler<RegisterInCourseCommand, Response<string>>
+        , IRequestHandler<GetCourseStudentListQuery, Response<PaginatedResult<StudentCourseResponse>>>
         , IRequestHandler<GetCoursesByStudentIdQuery, Response<PaginatedResult<CourseResponse>>>
 
     {
@@ -39,7 +37,7 @@ namespace Core.Application.Featurs.StudentCourse.StudentCourseHandler
         public async Task<Response<PaginatedResult<StudentCourseResponse>>> Handle(GetCourseStudentListQuery request, CancellationToken cancellationToken)
         {
             var result = await _studentCourseServices.GetCourseStudentList();
-            
+
             var studentCourseResponse = _mapper.Map<List<StudentCourseResponse>>(result);
             var paginated = await studentCourseResponse.AsQueryable()
                 .ToPaginatedListAsync(request.pageNumber, request.pageSize);

@@ -8,7 +8,7 @@ namespace Infrastructure.Data.Repositories
 {
     public class StudentCourseRepository : GenericRepositoryAsync<StudentCourse>, IStudentCourseRepository
     {
-        private DbSet<StudentCourse> _studentCourses {  get; set; }
+        private DbSet<StudentCourse> _studentCourses { get; set; }
 
         public StudentCourseRepository(ApplicationDbContext context) : base(context)
         {
@@ -64,12 +64,12 @@ namespace Infrastructure.Data.Repositories
                     StudentCourses = x.Course.StudentCourses,
                     Subject = x.Course.Subject,
                     Teacher = x.Course.Teacher,
-                    TeacherId = x.Course.TeacherId  
-                } )
+                    TeacherId = x.Course.TeacherId
+                })
                 .AsNoTracking()
                 .ToListAsync();
 
-            return courses; 
+            return courses;
         }
 
         public async Task<bool> StudentIsInAnyCourse(Guid id)
@@ -94,7 +94,7 @@ namespace Infrastructure.Data.Repositories
                     DELETE FROM StudentCourses
                     WHERE Id = {CourseId}");
 
-                await Task.CompletedTask;  
+                await Task.CompletedTask;
                 return true;
             }
             catch

@@ -42,7 +42,7 @@ namespace School_Management.Api.Controllers
         [Route("ForgotPassword")]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordRequest forgotPassword)
         {
-            var request = new ForgotPasswordCommand {  forgotPasswordRequest  = forgotPassword };
+            var request = new ForgotPasswordCommand { forgotPasswordRequest = forgotPassword };
             var result = await _mediator.Send(request);
 
             return NewResult(result);
@@ -50,9 +50,9 @@ namespace School_Management.Api.Controllers
 
         [HttpPost]
         [Route("ResetPassword")]
-        public async Task<IActionResult> ResetPassword(ResetPasswordRequest forgotPassword , string codeMelly)
+        public async Task<IActionResult> ResetPassword(ResetPasswordRequest forgotPassword, string codeMelly)
         {
-            var request = new ResetPasswordCommand { ResetPasswordRequest = forgotPassword , CodeMelly = codeMelly};
+            var request = new ResetPasswordCommand { ResetPasswordRequest = forgotPassword, CodeMelly = codeMelly };
             var result = await _mediator.Send(request);
 
             return NewResult(result);

@@ -13,11 +13,11 @@ namespace Core.Application.Interfaces
 
         public Task<List<string>?> GetUserRoles(string id);
 
-        public Task<bool> AddRoleToUser(string userId , string roleId);
+        public Task<bool> AddRoleToUser(string userId, string roleId);
 
-        public Task<bool> RemoveRoleFromUser(string userId , string roleId);
+        public Task<bool> RemoveRoleFromUser(string userId, string roleId);
 
         public Task<List<BaseUser>> GetUserInRole(string roleId);
-         
+
     }
 }

@@ -210,3 +210,4 @@ C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\S
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\DELL\source\repos\School_Manegement\Schoolmanagement\obj\Debug\net8.0\School_Management.Api.MvcApplicationPartsAssemblyInfo.cs

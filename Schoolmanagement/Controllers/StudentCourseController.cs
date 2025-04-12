@@ -12,7 +12,7 @@ namespace School_Management.Api.Controllers
     [ApiController]
     public class StudentCourseController : AppControllerBase
     {
-        private IMediator _mediator {  get; set; }
+        private IMediator _mediator { get; set; }
 
         public StudentCourseController(IMediator mediator)
         {
@@ -22,13 +22,13 @@ namespace School_Management.Api.Controllers
         [HttpPost]
         [Route("RegisterInCourse")]
         //[Authorize(Roles = "Student")]
-        public async Task<IActionResult> RegisterInCourse([FromBody]RegisterInCourseRequest studentCourse)
+        public async Task<IActionResult> RegisterInCourse([FromBody] RegisterInCourseRequest studentCourse)
         {
-            
+
             var request = new RegisterInCourseCommand { StudentCourse = studentCourse };
             var result = await _mediator.Send(request);
 
-            return NewResult(result); 
+            return NewResult(result);
         }
 
         [HttpGet]
@@ -36,7 +36,7 @@ namespace School_Management.Api.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetStudentCourses(int pageSize, int pageNumber)
         {
-            var request = new GetCourseStudentListQuery { pageNumber = pageNumber , pageSize = pageSize };
+            var request = new GetCourseStudentListQuery { pageNumber = pageNumber, pageSize = pageSize };
             var result = await _mediator.Send(request);
 
             return NewResult(result);
@@ -45,9 +45,9 @@ namespace School_Management.Api.Controllers
         [HttpGet]
         [Route("{id:guid}FindCoursesByStudentId")]
         //[Authorize(Roles = "Admin,Student")]
-        public async Task<IActionResult> GetCoursesByStudentId([FromRoute] Guid id , int pageSize, int pageNumber)
+        public async Task<IActionResult> GetCoursesByStudentId([FromRoute] Guid id, int pageSize, int pageNumber)
         {
-            var response = new GetCoursesByStudentIdQuery { Id = id.ToString() , pageSize = pageSize , pageNumber = pageNumber};
+            var response = new GetCoursesByStudentIdQuery { Id = id.ToString(), pageSize = pageSize, pageNumber = pageNumber };
             var result = await _mediator.Send(response);
 
             return NewResult(result);

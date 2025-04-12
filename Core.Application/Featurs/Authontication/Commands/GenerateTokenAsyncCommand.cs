@@ -1,6 +1,5 @@
 ﻿using Core.Application.DTOs.Authentication;
 using MediatR;
-using System.Security.Claims;
 
 namespace Core.Application.Featurs.Authentication.Commands
 {

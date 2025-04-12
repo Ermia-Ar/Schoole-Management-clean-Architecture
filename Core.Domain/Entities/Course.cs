@@ -11,7 +11,7 @@
 
         public DateTime EndDate { get; set; }
 
-        public Subjects Subject { get; set; } 
+        public Subjects Subject { get; set; }
 
         public decimal CourseFee { get; set; }
 

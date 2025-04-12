@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Core.Application.DTOs.Course;
 using Core.Application.DTOs.Teacher.TeacherDtos;
 using Core.Application.Featurs.Teachers.TeacherCommands;
 using Core.Application.Featurs.Teachers.TeacherQuery;
@@ -64,7 +63,7 @@ namespace Core.Application.Featurs.Teachers.TeacherHandler
             var teacherResponse = _mapper.Map<List<TeacherResponse>>(teachers);
             //paginate
             var teacherResponsePaginated = await teacherResponse.AsQueryable()
-                .ToPaginatedListAsync(request.pageNumber , request.pageSize);
+                .ToPaginatedListAsync(request.pageNumber, request.pageSize);
 
             return Success(teacherResponsePaginated);
 

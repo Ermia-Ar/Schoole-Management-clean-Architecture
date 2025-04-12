@@ -1,5 +1,4 @@
 ﻿using Core.Application.DTOs.Teacher.TeacherDtos;
-using Core.Application.Featurs.Courses.CourseQueries;
 using Core.Application.Featurs.Teachers.TeacherCommands;
 using Core.Application.Featurs.Teachers.TeacherQuery;
 using MediatR;
@@ -36,11 +35,11 @@ namespace School_Management.Api.Controllers
         [Authorize(Roles = "Student")]
         [Authorize(Roles = "Admin")]
         [Authorize(Roles = "Teacher")]
-        public async Task<IActionResult> GetTeacherList(int pageSize , int pageNumber)
+        public async Task<IActionResult> GetTeacherList(int pageSize, int pageNumber)
         {
-            var response = new GetTeacherListQuery() { pageNumber = pageNumber , pageSize = pageSize};
+            var response = new GetTeacherListQuery() { pageNumber = pageNumber, pageSize = pageSize };
             var result = await _mediator.Send(response);
-            
+
             return NewResult(result);
         }
 
@@ -54,7 +53,7 @@ namespace School_Management.Api.Controllers
 
             return NewResult(result);
         }
-        
+
 
         [HttpDelete]
         [Route("{id:guid}DeleteTeacher")]

@@ -32,9 +32,9 @@ namespace School_Management.Api.Controllers
         [HttpGet]
         [Route("GetListOfStudent")]
         //[Authorize(Roles= "Admin,Student")]
-        public async Task<IActionResult> GetStudentList( int pageSize, int pageNumber)
+        public async Task<IActionResult> GetStudentList(int pageSize, int pageNumber)
         {
-            var response = new GetStudentListQuery() { pageSize = pageSize , pageNumber  = pageNumber};
+            var response = new GetStudentListQuery() { pageSize = pageSize, pageNumber = pageNumber };
             var result = await _mediator.Send(response);
 
             return NewResult(result);

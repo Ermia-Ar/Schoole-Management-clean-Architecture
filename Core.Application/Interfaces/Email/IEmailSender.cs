@@ -1,10 +1,4 @@
-﻿using Core.Application.DTOs.Authentication;
-using Core.Application.DTOs.Email;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Application.DTOs.Email;
 
 namespace Core.Application.Interfaces.Email
 {

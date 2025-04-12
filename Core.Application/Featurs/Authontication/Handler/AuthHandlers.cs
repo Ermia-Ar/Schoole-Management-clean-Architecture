@@ -1,10 +1,8 @@
 ﻿using Core.Application.DTOs.Authentication;
 using Core.Application.Featurs.Authentication.Commands;
-using Core.Application.Featurs.Authentication.Commands;
 using Core.Application.Interfaces;
 using Core.Domain.Bases;
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using MediatR;
 
 namespace Core.Application.Featurs.Authentication.Handler
@@ -45,7 +43,7 @@ namespace Core.Application.Featurs.Authentication.Handler
             var userIdAndExpireDate = await _authService.ValidateDetails(jwtToken,
                 request.RefreshTokenRequest.AccessToken, request.RefreshTokenRequest.RefreshToken);
 
-            if(userIdAndExpireDate.Item2 == null)
+            if (userIdAndExpireDate.Item2 == null)
             {
                 return Unauthorized<JwtAuthResult>(userIdAndExpireDate.Item1);
             }
@@ -55,7 +53,7 @@ namespace Core.Application.Featurs.Authentication.Handler
             // generate new access token and refresh token 
             var (CodeMelly, ExpireDate) = userIdAndExpireDate;
             var jwtTokenResult = await _authService.GetJWTToken(CodeMelly);
-            if(jwtTokenResult == null)
+            if (jwtTokenResult == null)
             {
                 return BadRequest<JwtAuthResult>();
             }
@@ -75,12 +73,12 @@ namespace Core.Application.Featurs.Authentication.Handler
                 return BadRequest<ForgotPasswordResponse>("code melly or phone number is wrong !!");
             }
 
-            return Success(result , new { message = "user this token for set a new password"});
+            return Success(result, new { message = "user this token for set a new password" });
         }
 
         public async Task<Response<string>> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
         {
-            var result = await _authService.ResetPassword(request.ResetPasswordRequest , request.CodeMelly);
+            var result = await _authService.ResetPassword(request.ResetPasswordRequest, request.CodeMelly);
             if (!result)
             {
                 return BadRequest<string>("Token is not valid");

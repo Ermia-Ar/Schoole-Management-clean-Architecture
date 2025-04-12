@@ -1,5 +1,4 @@
-﻿using Core.Application.DTOs.Authentication;
-using FluentValidation;
+﻿using FluentValidation;
 
 
 namespace Core.Application.DTOs.Authentication.validators
