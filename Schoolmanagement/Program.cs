@@ -3,6 +3,7 @@ using Core.Application;
 using Core.Application.Mapper;
 using Core.Application.Middleware;
 using FluentValidation.AspNetCore;
+using Hangfire;
 using Infrastructure.Data;
 using Infrastructure.Data.Data;
 using Infrastructure.Data.InfrustructureBases.InfrastructureProfile;
@@ -69,6 +70,19 @@ builder.Services.AddDbContext<AppIdentityDbContext>(options =>
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationConnection")));
+//Hang fire setting
+builder.Services.AddHangfire(option =>
+{
+    option.UseSqlServerStorage(builder.Configuration.GetConnectionString("IdentityConnection"));
+
+    GlobalConfiguration.Configuration.UseFilter(new AutomaticRetryAttribute
+    {
+        Attempts = 3,
+        DelaysInSeconds = new[] { 10, 30, 60 }
+    });
+});
+builder.Services.AddHangfireServer();
+
 
 builder.Services.AddFluentValidationAutoValidation();
 
@@ -95,6 +109,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
+
+app.UseHangfireDashboard();
 
 app.UseSerilogRequestLogging();
 

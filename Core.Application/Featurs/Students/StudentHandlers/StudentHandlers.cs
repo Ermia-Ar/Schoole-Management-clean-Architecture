@@ -5,8 +5,8 @@ using Core.Application.Featurs.Students.StudentQuery;
 using Core.Application.Interfaces;
 using Core.Application.Wrapper;
 using Core.Domain.Bases;
-using FluentValidation;
 using MediatR;
+using System.Diagnostics;
 
 namespace Core.Application.Featurs.Students.StudentHandlers
 {
@@ -16,26 +16,20 @@ namespace Core.Application.Featurs.Students.StudentHandlers
         , IRequestHandler<GetStudentByIdQuery, Response<StudentResponse>>
         , IRequestHandler<DeleteStudentCommand, Response<StudentResponse>>
     {
-        private IStudentServices _studentServices { get; set; }
-        private IMapper _mapper { get; set; }
-        private IValidator<AddStudentRequest> _validator { get; set; }
+        private IStudentServices _studentServices;
+        private IBackgroundJobServices _backgroundJob;
+        private IMapper _mapper;
 
-        public StudentHandlers(IAuthService authService, IStudentServices studentServices, IMapper mapper
-            , IValidator<AddStudentRequest> validator)
+        public StudentHandlers(IAuthService authService, IStudentServices studentServices, IMapper mapper, IBackgroundJobServices backgroundJob)
         {
             _studentServices = studentServices;
             _mapper = mapper;
-            _validator = validator;
+            _backgroundJob = backgroundJob;
         }
 
         public async Task<Response<string>> Handle(AddStudentCommand request, CancellationToken cancellationToken)
         {
-            //validate the model
-            var validationResult = await _validator.ValidateAsync(request.student);
-            if (!validationResult.IsValid)
-            {
-                return BadRequest<string>(validationResult.Errors[0].ErrorMessage);
-            }
+           
             //add to student and user table
             var result = await _studentServices.AddStudentAsync(request.student);
 
@@ -54,6 +48,8 @@ namespace Core.Application.Featurs.Students.StudentHandlers
             var studentsResponse = _mapper.Map<List<StudentResponse>>(students);
             var paginated = await studentsResponse.AsQueryable()
                 .ToPaginatedListAsync(request.pageNumber, request.pageSize);
+
+            _backgroundJob.AddEnqueue(() => Task.Delay(TimeSpan.FromSeconds(20)).Wait());
 
             return Success(paginated);
         }

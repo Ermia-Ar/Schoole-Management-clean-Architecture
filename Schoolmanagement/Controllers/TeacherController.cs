@@ -32,9 +32,7 @@ namespace School_Management.Api.Controllers
 
         [HttpGet]
         [Route("GetListOfTeachers")]
-        [Authorize(Roles = "Student")]
         [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "Teacher")]
         public async Task<IActionResult> GetTeacherList(int pageSize, int pageNumber)
         {
             var response = new GetTeacherListQuery() { pageNumber = pageNumber, pageSize = pageSize };

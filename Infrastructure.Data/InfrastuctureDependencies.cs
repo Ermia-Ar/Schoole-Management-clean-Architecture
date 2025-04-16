@@ -32,6 +32,7 @@ namespace Infrastructure.Data
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICurrentUserServices, CurrentUserServices>();
             services.AddScoped<IAuthorizeServices, AuthorizeServices>();
+            services.AddScoped<IBackgroundJobServices, BackgroundServices>();
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
 
             return services;
