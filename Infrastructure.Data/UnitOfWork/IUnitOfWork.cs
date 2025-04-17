@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Data.Interfaces;
 
-namespace SchoolProject.Infrustructure.UnitOfWork
+namespace Infrastructure.Data.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {

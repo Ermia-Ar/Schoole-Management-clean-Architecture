@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Infrastructure.Data.InfrustructureBases
+namespace Core.Application.Interfaces
 {
     public interface IGenericRepositoryAsync<T> where T : class
     {

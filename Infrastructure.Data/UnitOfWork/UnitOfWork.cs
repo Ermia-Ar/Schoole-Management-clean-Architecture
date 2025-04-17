@@ -2,7 +2,7 @@
 using Infrastructure.Data.Interfaces;
 using Infrastructure.Data.Repositories;
 
-namespace SchoolProject.Infrustructure.UnitOfWork
+namespace Infrastructure.Data.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
